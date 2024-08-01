@@ -1,4 +1,4 @@
-import placeholder from "../assets/placeholder.png";
+import placeholder from "/placeholder.png";
 
 export function AboutPage() {
 	return <>
