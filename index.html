@@ -5,10 +5,40 @@
 		<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<title>Jenson Searle</title>
-		<script type="module" crossorigin src="/assets/index-B0liEQWm.js"></script>
-		<link rel="stylesheet" crossorigin href="/assets/index-HnBGyAfd.css">
+		<script>
+			// Avoid "Flash of Unstyled Content"
+			const query = window.matchMedia("(prefers-color-scheme: dark)");
+			function setTheme() {
+				if (
+					localStorage.theme === "dark"
+					|| (!("theme" in localStorage) && query.matches)
+				) {
+					document.documentElement.classList.add("dark");
+				} else {
+					document.documentElement.classList.remove("dark");
+				}
+			}
+
+			setTheme();
+			query.addEventListener("change", event => setTheme());
+		</script>
+		<meta property="og:title" content="Jenson Searle - About"/>
+		<meta property="og:type" content="profile"/>
+		<meta property="og:type" content="profile:first_name:Jenson"/>
+		<meta property="og:type" content="profile:last_name:Searle"/>
+		<meta property="og:type" content="profile:username:Bedrockbreaker"/>
+		<meta property="og:url" content="https://bedrockbreaker.github.io"/>
+		<meta property="og:image" content="https://bedrockbreaker.github.io/assets/placeholder.png"/>
+		<meta property="og:image:width" content="1280"/>
+		<meta property="og:image:height" content="320"/>
+		<meta property="og:image:alt" content="A placeholder image containing a green dragon, a white chess pawn, and the word Yggdrasil"/>
+		<meta name="description" content="Game Programmer, Designer, Fullstack Developer."/>
+		<meta property="og:description" content="Game Programmer, Designer, Fullstack Developer."/>
+		<!-- <meta property="og:locale:alternate" content="jp_JP"/> -->
+		<script type="module" crossorigin src="/assets/index-_uNkQCef.js"></script>
+		<link rel="stylesheet" crossorigin href="/assets/index-ecRz-F17.css">
 	</head>
-	<body class="font-sans">
+	<body>
 		<div id="root"></div>
 	</body>
 </html>
