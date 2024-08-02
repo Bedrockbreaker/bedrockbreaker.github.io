@@ -8,7 +8,7 @@
 		<script>
 			// Avoid "Flash of Unstyled Content"
 			const query = window.matchMedia("(prefers-color-scheme: dark)");
-			function setTheme() {
+			function rerenderTheme() {
 				if (
 					localStorage.theme === "dark"
 					|| (!("theme" in localStorage) && query.matches)
@@ -19,8 +19,8 @@
 				}
 			}
 
-			setTheme();
-			query.addEventListener("change", event => setTheme());
+			rerenderTheme();
+			query.addEventListener("change", event => rerenderTheme());
 		</script>
 		<meta property="og:title" content="Jenson Searle - About"/>
 		<meta property="og:type" content="profile"/>

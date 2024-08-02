@@ -5,6 +5,8 @@ import { createHashRouter, RouterProvider } from "react-router-dom";
 import { AboutPage } from "./pages/About.tsx";
 import { App } from "./components/App.tsx";
 import { BoardsPage } from "./pages/Boards.tsx";
+import { BoardsGDPage } from "./pages/BoardsGD.tsx";
+import { BoardsGPEPage } from "./pages/BoardsGPE.tsx";
 import { ErrorPage } from "./pages/Error.tsx";
 import { ProjectsPage } from "./pages/Projects.tsx";
 import { ResumePage } from "./pages/Resume.tsx";
@@ -27,7 +29,17 @@ const router = createHashRouter([
 			},
 			{
 				path: "/boards",
-				element: <BoardsPage/>
+				element: <BoardsPage/>,
+				children: [
+					{
+						path:"/boards/game-programming",
+						element: <BoardsGPEPage/>
+					},
+					{
+						path:"/boards/game-design",
+						element: <BoardsGDPage/>
+					}
+				]
 			},
 			{
 				path: "/resume",
