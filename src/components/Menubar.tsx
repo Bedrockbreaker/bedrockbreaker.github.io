@@ -1,4 +1,4 @@
-import { GlobeIcon, SunMoonIcon } from "lucide-react";
+import { LanguagesIcon, SunMoonIcon } from "lucide-react";
 
 import { Elevation } from "./Elevation";
 import { useTheme } from "../hooks/useTheme";
@@ -86,7 +86,7 @@ export function Menubar() {
 						aria-label="Open language selection menu" /* TODO: I18n */
 						className="focus:bg-neutral-100 dark:focus:bg-neutral-800 dark:focus:text-neutral-50 focus-visible:outline-none focus-visible:ring-transparent dark:focus-visible:ring-transparent focus-visible:ring-offset-transparent"
 					>
-						<GlobeIcon/>
+						<LanguagesIcon/>
 					</Button>
 				</DropdownMenuTrigger>
 				<DropdownMenuContent>
