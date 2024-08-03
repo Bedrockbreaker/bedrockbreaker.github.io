@@ -20,7 +20,7 @@ export function Footer() {
 					<Link to="/">About</Link>
 					<Link to="/projects">Projects</Link>
 					<Link to="/boards">School</Link>
-					<Link to="/resume">Resume</Link>
+					<Link to="/resume">Résumé</Link>
 				</div>
 				<Divider className="bg-neutral-300"/>
 				<div className="flex flex-row flex-wrap gap-x-3 gap-y-1">
