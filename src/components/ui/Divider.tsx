@@ -1,3 +1,5 @@
+// https://ui.shadcn.com/docs/components/separator
+
 import { Root } from "@radix-ui/react-separator";
 import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from "react";
 
