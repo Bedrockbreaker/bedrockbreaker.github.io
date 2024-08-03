@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-full">
 	<head>
 		<meta charset="UTF-8"/>
 		<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
@@ -7,20 +7,21 @@
 		<title>Jenson Searle</title>
 		<script>
 			// Avoid "Flash of Unstyled Content"
-			const query = window.matchMedia("(prefers-color-scheme: dark)");
-			function setTheme() {
+			function rerenderTheme() {
 				if (
 					localStorage.theme === "dark"
-					|| (!("theme" in localStorage) && query.matches)
+					|| (
+						!("theme" in localStorage)
+						&& window.matchMedia("(prefers-color-scheme: dark)")
+							.matches
+					)
 				) {
 					document.documentElement.classList.add("dark");
 				} else {
 					document.documentElement.classList.remove("dark");
 				}
 			}
-
-			setTheme();
-			query.addEventListener("change", event => setTheme());
+			rerenderTheme();
 		</script>
 		<meta property="og:title" content="Jenson Searle - About"/>
 		<meta property="og:type" content="profile"/>
@@ -35,10 +36,10 @@
 		<meta name="description" content="Game Programmer, Designer, Fullstack Developer."/>
 		<meta property="og:description" content="Game Programmer, Designer, Fullstack Developer."/>
 		<!-- <meta property="og:locale:alternate" content="jp_JP"/> -->
-		<script type="module" crossorigin src="/assets/index-CXOfMl6H.js"></script>
-		<link rel="stylesheet" crossorigin href="/assets/index-ecRz-F17.css">
+		<script type="module" crossorigin src="/assets/index-CTMkz6vC.js"></script>
+		<link rel="stylesheet" crossorigin href="/assets/index-Af2ayrue.css">
 	</head>
-	<body>
-		<div id="root"></div>
+	<body class="h-full">
+		<div id="root" class="h-full"></div>
 	</body>
 </html>
