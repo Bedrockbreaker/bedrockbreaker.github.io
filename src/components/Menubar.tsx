@@ -55,7 +55,11 @@ export function Menubar() {
 		<div className="flex flex-row space-x-0.5 m-2">
 			<DropdownMenu>
 				<DropdownMenuTrigger asChild>
-					<Button variant="outline" className="focus:bg-neutral-100 dark:focus:bg-neutral-800 dark:focus:text-neutral-50 focus-visible:outline-none focus-visible:ring-transparent dark:focus-visible:ring-transparent focus-visible:ring-offset-transparent">
+					<Button
+						variant="outline"
+						aria-label="Open theme selection menu"
+						className="focus:bg-neutral-100 dark:focus:bg-neutral-800 dark:focus:text-neutral-50 focus-visible:outline-none focus-visible:ring-transparent dark:focus-visible:ring-transparent focus-visible:ring-offset-transparent"
+					>
 						<SunMoonIcon/>
 					</Button>
 				</DropdownMenuTrigger>
@@ -77,7 +81,11 @@ export function Menubar() {
 			</DropdownMenu>
 			<DropdownMenu>
 				<DropdownMenuTrigger asChild>
-					<Button variant="outline" className="focus:bg-neutral-100 dark:focus:bg-neutral-800 dark:focus:text-neutral-50 focus-visible:outline-none focus-visible:ring-transparent dark:focus-visible:ring-transparent focus-visible:ring-offset-transparent">
+					<Button
+						variant="outline"
+						aria-label="Open language selection menu" /* TODO: I18n */
+						className="focus:bg-neutral-100 dark:focus:bg-neutral-800 dark:focus:text-neutral-50 focus-visible:outline-none focus-visible:ring-transparent dark:focus-visible:ring-transparent focus-visible:ring-offset-transparent"
+					>
 						<GlobeIcon/>
 					</Button>
 				</DropdownMenuTrigger>
