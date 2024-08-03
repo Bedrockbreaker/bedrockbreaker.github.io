@@ -52,7 +52,7 @@ export function Footer() {
 				</div>
 				<div className="flex flex-row justify-between">
 					<p>
-						&copy; {new Date().getFullYear()}. Bedrockbreaker.
+						&copy; {new Date().getFullYear()} Bedrockbreaker.
 						Licensed under{" "}
 						<Link
 							to="https://github.com/Bedrockbreaker/bedrockbreaker.github.io/blob/main/LICENSE"
