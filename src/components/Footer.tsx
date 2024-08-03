@@ -14,7 +14,7 @@ export function Footer() {
 		className="mt-24 text-sm bg-neutral-200 dark:bg-neutral-950 shadow-lg"
 	>
 		<Divider className="bg-accentblue dark:bg-accentred"/>
-		<div className="flex flex-row justify-center">
+		<div className="flex justify-center">
 			<div className="flex flex-col p-6 gap-6 max-w-5xl flex-grow">
 				<div className="flex flex-row justify-between">
 					<Link to="/">About</Link>
