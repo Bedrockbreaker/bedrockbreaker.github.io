@@ -1,16 +1,15 @@
-import { Elevation } from "./Elevation";
-import { useResetFocusOnRouteChange } from "../hooks/useResetFocusOnRouteChange";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuTrigger } from "./ui/DropdownMenu";
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, NavigationMenuViewport } from "./ui/NavigationMenu";
-import { Button } from "./ui/Button";
 import { GlobeIcon, SunMoonIcon } from "lucide-react";
 
-// const hoverClass = "transition-colors px-4 py-1 rounded hover:bg-gray-600 dark:hover:text-white";
-
-declare function rerenderTheme(): void;
+import { Elevation } from "./Elevation";
+import { useTheme } from "../hooks/useTheme";
+import { useResetFocusOnRouteChange } from "../hooks/useResetFocusOnRouteChange";
+import { Button } from "./ui/Button";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuTrigger } from "./ui/DropdownMenu";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, NavigationMenuViewport } from "./ui/NavigationMenu";
 
 export function Menubar() {
 	useResetFocusOnRouteChange();
+	const { setTheme } = useTheme();
 
 	return <Elevation
 		className="sticky top-0 flex flex-row items-center h-14 w-full bg-bglight dark:bg-bgdark"
@@ -62,10 +61,7 @@ export function Menubar() {
 				</DropdownMenuTrigger>
 				<DropdownMenuContent>
 					<DropdownMenuRadioGroup onValueChange={value => {
-						if (value !== "system") localStorage.theme = value;
-						else localStorage.removeItem("theme");
-
-						rerenderTheme();
+						setTheme(value as "light" | "dark" | "system");
 					}}>
 						<DropdownMenuRadioItem value="light">
 							Light

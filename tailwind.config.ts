@@ -36,6 +36,8 @@ export default {
 				bgdark: "#262626",
 				textlight: "#000000",
 				textdark: "#FFFFFF",
+				accentblue: "#0078D4",
+				accentred: "#670E0E",
 			}
 		}
 	},

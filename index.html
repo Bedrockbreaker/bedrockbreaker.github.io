@@ -7,20 +7,21 @@
 		<title>Jenson Searle</title>
 		<script>
 			// Avoid "Flash of Unstyled Content"
-			const query = window.matchMedia("(prefers-color-scheme: dark)");
 			function rerenderTheme() {
 				if (
 					localStorage.theme === "dark"
-					|| (!("theme" in localStorage) && query.matches)
+					|| (
+						!("theme" in localStorage)
+						&& window.matchMedia("(prefers-color-scheme: dark)")
+							.matches
+					)
 				) {
 					document.documentElement.classList.add("dark");
 				} else {
 					document.documentElement.classList.remove("dark");
 				}
 			}
-
 			rerenderTheme();
-			query.addEventListener("change", event => rerenderTheme());
 		</script>
 		<meta property="og:title" content="Jenson Searle - About"/>
 		<meta property="og:type" content="profile"/>

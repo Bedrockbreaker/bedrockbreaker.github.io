@@ -4,7 +4,7 @@
 
 @layer base {
 	body {
-		@apply bg-bglight text-textlight
+		@apply bg-bglight text-textlight transition-colors
 	}
 
 	.dark body {

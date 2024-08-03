@@ -2,8 +2,9 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 
-import { AboutPage } from "./pages/About.tsx";
 import { App } from "./components/App.tsx";
+import { ThemeProvider } from "./hooks/useTheme.tsx";
+import { AboutPage } from "./pages/About.tsx";
 import { BoardsPage } from "./pages/Boards.tsx";
 import { BoardsGDPage } from "./pages/BoardsGD.tsx";
 import { BoardsGPEPage } from "./pages/BoardsGPE.tsx";
@@ -51,6 +52,8 @@ const router = createHashRouter([
 
 createRoot(document.getElementById("root")!).render(
 	<StrictMode>
-		<RouterProvider router={router}/>
+		<ThemeProvider>
+			<RouterProvider router={router}/>
+		</ThemeProvider>
 	</StrictMode>
 );
