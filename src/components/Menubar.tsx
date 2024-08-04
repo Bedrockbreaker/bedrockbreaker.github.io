@@ -12,7 +12,7 @@ export function Menubar() {
 	const { setTheme } = useTheme();
 
 	return <Elevation
-		className="sticky top-0 flex flex-row items-center h-14 w-full mb-8 bg-bglight dark:bg-bgdark"
+		className="sticky top-0 flex flex-row items-center h-14 w-full mb-8 z-10 bg-bglight dark:bg-bgdark"
 	>
 		<NavigationMenu className="m-2">
 			<NavigationMenuList>
