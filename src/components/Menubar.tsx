@@ -31,12 +31,17 @@ export function Menubar() {
 					<NavigationMenuContent>
 						<ul className="grid gap-1 grid-cols-[1fr] p-2">
 							<li>
-								<NavigationMenuLink to="/boards/game-programming">
+								<NavigationMenuLink
+									to="/boards/game-programming"
+								>
 									Game Programming
 								</NavigationMenuLink>
 							</li>
 							<li>
-								<NavigationMenuLink to="/boards/game-design" className="w-full">
+								<NavigationMenuLink
+									to="/boards/game-design"
+									className="w-full"
+								>
 									Game Design
 								</NavigationMenuLink>
 							</li>
