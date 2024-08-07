@@ -12,4 +12,5 @@ Built with:
 - Tailwind
 - shadcn/UI
 - Lucide React
+- Embla Carousel
 - GitHub Pages (obviously)
