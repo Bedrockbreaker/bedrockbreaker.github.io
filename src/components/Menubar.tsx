@@ -2,13 +2,13 @@ import { LanguagesIcon, SunMoonIcon } from "lucide-react";
 
 import { Elevation } from "./Elevation";
 import { useTheme } from "../hooks/useTheme";
-import { useResetFocusOnRouteChange } from "../hooks/useResetFocusOnRouteChange";
+import { useResetPageOnRouteChange } from "../hooks/useResetFocusOnRouteChange";
 import { Button } from "./ui/Button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuTrigger } from "./ui/DropdownMenu";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, NavigationMenuViewport } from "./ui/NavigationMenu";
 
 export function Menubar() {
-	useResetFocusOnRouteChange();
+	useResetPageOnRouteChange();
 	const { setTheme } = useTheme();
 
 	return <Elevation
