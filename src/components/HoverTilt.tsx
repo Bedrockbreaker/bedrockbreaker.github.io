@@ -2,7 +2,7 @@ import { useCallback, useRef } from "react";
 
 import { useAccessibility } from "../hooks/useAccessibility";
 
-export function HoverTilt({inverseIntensity = 50, className = "", children}:
+export function HoverTilt({inverseIntensity = 30, className = "", children}:
 	{
 		inverseIntensity?: number,
 		className?: string,
@@ -18,8 +18,8 @@ export function HoverTilt({inverseIntensity = 50, className = "", children}:
 		if (!transformRef.current || !rectRef.current) return;
 		
 		const rect = rectRef.current.getBoundingClientRect();
-		const degX = -(mouseY - rect.y - rect.height / 2) / inverseIntensity / rect.height * (visualViewport?.height ?? 1);
-		const degY = (mouseX - rect.x - rect.width / 2) / inverseIntensity / rect.width * (visualViewport?.width ?? 1);
+		const degX = -(mouseY - rect.y - rect.height / 2) * inverseIntensity / rect.height;
+		const degY = (mouseX - rect.x - rect.width / 2) * inverseIntensity / rect.width;
 
 		transformRef.current.style.transform = `perspective(1000px) rotateX(${degX}deg) rotateY(${degY}deg)`;
 	}, []);
