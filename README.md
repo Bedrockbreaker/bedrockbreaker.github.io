@@ -1,4 +1,4 @@
-# bedrockbreaker.github.io
+# [bedrockbreaker.github.io](https://bedrockbreaker.github.io)
 
 ---
 
