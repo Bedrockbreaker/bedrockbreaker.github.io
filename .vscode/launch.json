@@ -28,7 +28,12 @@
 			"name": "Launch Browser",
 			"request": "launch",
 			"type": "chrome",
-			"runtimeExecutable": "C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe",
+			"windows": {
+				"runtimeExecutable": "C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe",
+			},
+			"linux": {
+				"runtimeExecutable": "/opt/brave.com/brave/brave"
+			},
 			"url": "http://localhost:5173",
 			"webRoot": "${workspaceFolder}/"
 		}
