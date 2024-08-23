@@ -29,7 +29,8 @@ export function BoardsGPEPage() {
 				</ProjectTile>
 				<ProjectTile project={"yggdrasil"} orientation="right-dominant"/>
 				<ProjectTile project={"graduatedcylinders"} orientation="left-dominant"/>
-				<ProjectTile project={"cardbot"} orientation="right-dominant"/>
+				<ProjectTile project={"unoplusplus"} orientation="right-dominant"/>
+				<ProjectTile project={"cardbot"} orientation="left-dominant"/>
 			</div>
 		</div>
 	</div>;

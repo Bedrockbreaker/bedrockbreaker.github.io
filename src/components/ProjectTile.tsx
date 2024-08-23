@@ -152,6 +152,14 @@ export const projects = {
 		sourceUrl: "https://github.com/bedrockbreaker/Graduated-Cylinders",
 		isFeatured: true
 	}),
+	unoplusplus: new Project({
+		imgSrc: "projects/unoplusplus.png",
+		imgAlt: "Uno++",
+		imgSize: [560, 560],
+		title: "Uno++",
+		tags: ["Game", "C++", "2D", "Multiplayer"],
+		sourceUrl: "https://github.com/bedrockbreaker/unoplusplus"
+	}),
 	cardbot: new Project({
 		imgSrc: "placeholder-square.png",
 		imgAlt: "A white chess queen",
