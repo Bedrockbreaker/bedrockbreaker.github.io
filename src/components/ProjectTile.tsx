@@ -3,6 +3,8 @@ import { Text } from "./Text";
 import { Badge } from "./ui/Badge";
 import { HoverTilt } from "./HoverTilt";
 
+// TODO: support separate dark/light mode images
+
 interface ProjectTileProps {
 	project: Project | keyof typeof projects;
 	orientation?: "left-dominant" | "right-dominant";

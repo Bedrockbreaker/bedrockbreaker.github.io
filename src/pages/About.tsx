@@ -47,8 +47,9 @@ export function AboutPage() {
 						</HoverTilt>
 					</div>
 				</div>
-
 				<Carousel
+					// TODO: add pause, next, prev buttons
+					// TODO: add carousel dots
 					opts={{loop: true}}
 					setApi={setCarouselApi}
 					className="flex-grow"
