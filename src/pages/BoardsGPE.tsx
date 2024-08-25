@@ -13,11 +13,7 @@ export function BoardsGPEPage() {
 				<br/>
 				You'll only find my degree requirements and how I've fulfilled them on this page. Pretty boring stuff, ya' know?
 			</Text>
-			<Carousel
-					// TODO: add next, prev buttons
-					// TODO: add carousel dots
-					className="mt-6"
-				>
+			<Carousel className="mt-6">
 					<CarouselContent>
 						<CarouselItem>
 							<Text variant="h2" className="mt-10 text-center border-accentblue dark:border-accentred">
