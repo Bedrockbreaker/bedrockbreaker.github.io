@@ -141,9 +141,10 @@ export function BoardsGPEPage() {
 									A custom AI controller, custom behavior tasks, and custom behavior decorators (precondition checks) were created to support the behavior tree.
 								</Text>
 							</ProjectTile>
-							<ProjectTile project="yggdrasil" orientation="right-dominant"/>
-							<ProjectTile project="unoplusplus" orientation="left-dominant"/>
-							<ProjectTile project="cardbot" orientation="right-dominant"/>
+							<ProjectTile project="portfolio" orientation="right-dominant"/>
+							<ProjectTile project="yggdrasil" orientation="left-dominant"/>
+							<ProjectTile project="unoplusplus" orientation="right-dominant"/>
+							<ProjectTile project="cardbot" orientation="left-dominant"/>
 						</div>
 					</CarouselItem>
 					<CarouselItem>

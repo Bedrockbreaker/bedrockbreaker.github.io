@@ -132,6 +132,16 @@ export const projects = {
 		sourceUrl: "https://github.com/bedrockbreaker/Yggdrasil-Chess-Engine",
 		isFeatured: true
 	}),
+	portfolio: new Project({
+		imgSrc: "profile.png",
+		imgAlt: "My profile picture",
+		imgSize: [32, 32],
+		imgIsPixelated: true,
+		title: "This Website",
+		tags: ["Website", "Portfolio", "TypeScript", "React"],
+		url: "https://bedrockbreaker.github.io/",
+		sourceUrl: "https://github.com/bedrockbreaker/bedrockbreaker.github.io"
+	}),
 	ganymede: new Project({
 		imgSrc: "projects/ganymede.png",
 		imgAlt: "A person in a futurustic suit firing a gun with a flag on their head in a sci-fi valley",
