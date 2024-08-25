@@ -250,6 +250,52 @@ const CarouselNext = forwardRef<
 })
 CarouselNext.displayName = "CarouselNext"
 
+const CarouselDots = forwardRef<
+	HTMLDivElement,
+	ComponentProps<typeof Button>
+>(({className, variant = "outline", size = "icon", ...props}, ref) => {
+	const {api} = useCarousel();
+	const [slideCount, setSlideCount] = useState(0);
+	const [currentSlide, setCurrentSlide] = useState(0);
+
+	useEffect(() => {
+		if (!api) return;
+
+		setSlideCount(api.scrollSnapList().length);
+		setCurrentSlide(api.selectedScrollSnap());
+
+		api.on("select", () => {
+			setCurrentSlide(api.selectedScrollSnap());
+		});
+	}, [api]);
+
+	return <div
+		ref={ref}
+		className={cn(
+			"flex-row items-center absolute right-1/2 translate-x-1/2",
+			className
+		)}
+	>
+		{Array.from({length: slideCount}).map((_item, index) => {
+			return <Button
+				key={index}
+				variant={variant}
+				size={size}
+				className={cn(
+					"h-3 w-3 rounded-full",
+					// TODO: don't just copy Button styles
+					index === currentSlide
+						? "bg-neutral-900 text-neutral-50 hover:bg-neutral-900/90 dark:bg-neutral-50 dark:text-neutral-900 dark:hover:bg-neutral-50/90"
+						: "hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50"
+				)}
+				onClick={() => api?.scrollTo(index)}
+				{...props}
+			/>;
+		})}
+	</div>
+})
+CarouselDots.displayName = "CarouselDot";
+
 export {
 	type CarouselApi,
 	Carousel,
@@ -257,4 +303,5 @@ export {
 	CarouselItem,
 	CarouselPrevious,
 	CarouselNext,
+	CarouselDots
 }

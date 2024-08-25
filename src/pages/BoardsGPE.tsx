@@ -1,4 +1,4 @@
-import { Carousel, CarouselContent, CarouselItem } from "../components/ui/Carousel";
+import { Carousel, CarouselContent, CarouselDots, CarouselItem, CarouselNext, CarouselPrevious } from "../components/ui/Carousel";
 import { ProjectTile } from "../components/ProjectTile";
 import { Text } from "../components/Text";
 
@@ -16,6 +16,7 @@ export function BoardsGPEPage() {
 			<Carousel
 					// TODO: add next, prev buttons
 					// TODO: add carousel dots
+					className="mt-6"
 				>
 					<CarouselContent>
 						<CarouselItem>
@@ -66,6 +67,9 @@ export function BoardsGPEPage() {
 							</Text>
 						</CarouselItem>
 					</CarouselContent>
+					<CarouselPrevious className="top-10"/>
+					<CarouselNext className="top-10"/>
+					<CarouselDots className="-top-6"/>
 				</Carousel>
 		</div>
 	</div>;
