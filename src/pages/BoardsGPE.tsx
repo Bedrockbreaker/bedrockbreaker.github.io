@@ -1,3 +1,5 @@
+import AutoHeight from "embla-carousel-auto-height"
+
 import { Carousel, CarouselContent, CarouselDots, CarouselItem, CarouselNext, CarouselPrevious } from "../components/ui/Carousel";
 import { ProjectTile } from "../components/ProjectTile";
 import { Text } from "../components/Text";
@@ -13,8 +15,13 @@ export function BoardsGPEPage() {
 				<br/>
 				You'll only find my degree requirements and how I've fulfilled them on this page. Pretty boring stuff, ya' know?
 			</Text>
-			<Carousel className="mt-6">
-				<CarouselContent>
+			<Carousel
+				className="mt-6"
+				plugins={[AutoHeight()]}
+			>
+				<CarouselContent
+					className="flex items-start transition-[height] duration-1000 ease-out"
+				>
 					<CarouselItem>
 						<Text variant="h2" className="mt-10 text-center border-accentblue dark:border-accentred">
 							1. Implement multiple completed games, including 3D games, using common tools, languages, and software for web, console, PC, or mobile platforms.
