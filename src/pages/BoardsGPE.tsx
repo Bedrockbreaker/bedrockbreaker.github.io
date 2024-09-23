@@ -67,8 +67,9 @@ export function BoardsGPEPage() {
 									Players can then return to the main menu to either quit or play again.
 								</Text>
 							</ProjectTile>
-							<ProjectTile project="unoplusplus" orientation="right-dominant"/>
-							<ProjectTile project="cardbot" orientation="left-dominant"/>
+							<ProjectTile project="oldmanwhiskers" orientation="right-dominant"/>
+							<ProjectTile project="unoplusplus" orientation="left-dominant"/>
+							<ProjectTile project="cardbot" orientation="right-dominant"/>
 						</div>
 					</CarouselItem>
 					<CarouselItem>
@@ -92,8 +93,9 @@ export function BoardsGPEPage() {
 									These spells and status effects are designed with OOP in mind, creating a heiarchy of branching "sub-types" that concrete implementations can inherit from.
 								</Text>
 							</ProjectTile>
-							<ProjectTile project="yggdrasil" orientation="right-dominant"/>
-							<ProjectTile project="graduatedcylinders" orientation="left-dominant"/>
+							<ProjectTile project="oldmanwhiskers" orientation="right-dominant"/>
+							<ProjectTile project="yggdrasil" orientation="left-dominant"/>
+							<ProjectTile project="graduatedcylinders" orientation="right-dominant"/>
 						</div>
 					</CarouselItem>
 					<CarouselItem>
@@ -162,6 +164,7 @@ export function BoardsGPEPage() {
 							className="flex flex-col gap-6 mt-10"
 						>
 							<ProjectTile project="graduatedcylinders" orientation="left-dominant"/>
+							<ProjectTile project="oldmanwhiskers" orientation="right-dominant"/>
 						</div>
 					</CarouselItem>
 				</CarouselContent>

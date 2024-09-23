@@ -132,6 +132,16 @@ export const projects = {
 		sourceUrl: "https://github.com/bedrockbreaker/Yggdrasil-Chess-Engine",
 		isFeatured: true
 	}),
+	oldmanwhiskers: new Project({
+		imgSrc: "projects/oldmanwhiskers.png",
+		imgAlt: "An old man with a beard and his four cats",
+		imgSize: [1765, 1765],
+		title: "Old Man Whiskers",
+		tags: ["Game", "PC", "UE5", "Blueprint", "3D", "Game Jam"],
+		url: "https://bedrockbreaker.itch.io/old-man-whiskers",
+		sourceUrl: "https://bitbucket.org/documentedbackups/gamejam/src/main/",
+		isFeatured: true
+	}),
 	portfolio: new Project({
 		imgSrc: "profile.png",
 		imgAlt: "My profile picture",
