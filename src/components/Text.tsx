@@ -23,6 +23,7 @@ export function Text({variant, className, children}: {
 	className?: string,
 	to: string,
 	isExternal?: boolean,
+	download?: string,
 	children: React.ReactNode
 }): React.ReactElement
 export function Text({variant, className, children}: {
@@ -30,11 +31,12 @@ export function Text({variant, className, children}: {
 	className?: string,
 	children: React.ReactNode
 }): React.ReactElement
-export function Text({variant = "p", className = "", to = "", isExternal = false, children}: {
+export function Text({variant = "p", className = "", to = "", isExternal = false, download = "", children}: {
 	variant?: TextVariant,
 	className?: string,
 	to?: string,
 	isExternal?: boolean,
+	download?: string,
 	children: React.ReactNode
 }) {
 	switch(variant) {
@@ -49,7 +51,9 @@ export function Text({variant = "p", className = "", to = "", isExternal = false
 		case "p":
 			return <p className={`${variantClasses.p} ${className}`}>{children}</p>
 		case "a":
-			return <Link to={to} target={isExternal ? "_blank" : "_self"} className={`${variantClasses.a} ${className}`}>{children}</Link>
+			return download == ""
+				? <Link to={to} target={isExternal ? "_blank" : "_self"} className={`${variantClasses.a} ${className}`}>{children}</Link>
+				: <Link to={to} download={download} target={isExternal ? "_blank" : "_self"} className={`${variantClasses.a} ${className}`}>{children}</Link>
 		case "blockquote":
 			return <blockquote className={`${variantClasses.blockquote} ${className}`}>{children}</blockquote>
 		case "code":

@@ -26,7 +26,7 @@ export function AboutPage() {
 	}, [prefersReducedMotion, carouselApi]);
 
 	return <div className="flex justify-center">
-		<div className="flex flex-col p-6 max-w-5xl flex-grow">
+		<div className="flex flex-col p-6 max-w-7xl flex-grow overflow-x-hidden">
 			<div className="flex flex-row gap-6">
 				<div className="min-w-max text-center">
 					<Text variant="h1">
@@ -66,7 +66,16 @@ export function AboutPage() {
 				</Carousel>
 			</div>
 			<Text>
-				This is the about page. Site under construction.
+				I'm a game programmer and designer based in the US,
+				currently working as a fullstack developer at{" "}
+				<Text variant="a" to="https://www.communitylifehelp.org/" isExternal>Community Life Help</Text>.
+				<br/>
+				Though, I'd love to someday live and work in Japan.
+				<br/>
+				Contact me at{" "}
+				<Text variant="a" to="mailto:searlejenson@gmail.com">searlejenson@gmail.com</Text>.
+				<br/>
+				Note: Site under construction.
 			</Text>
 		</div>
 	</div>;

@@ -15,11 +15,12 @@ export function Footer() {
 	>
 		<Divider className="bg-accentblue dark:bg-accentred"/>
 		<div className="flex justify-center">
-			<div className="flex flex-col p-6 gap-6 max-w-5xl flex-grow">
+			<div className="flex flex-col p-6 gap-6 max-w-7xl flex-grow">
 				<div className="flex flex-row justify-between">
 					<Link to="/">About</Link>
-					<Link to="/projects">Projects</Link>
-					<Link to="/boards">School</Link>
+					<Link to="/projects">Portfolio</Link>
+					<Link to="/boards/game-programming">Game Programming</Link>
+					<Link to="/boards/game-design">Game Design</Link>
 					<Link to="/resume">Résumé</Link>
 				</div>
 				<Divider className="bg-neutral-300"/>

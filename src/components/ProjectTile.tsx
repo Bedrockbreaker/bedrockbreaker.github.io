@@ -126,7 +126,7 @@ export const projects = {
 		tags: ["Game", "PC", "Godot", "C#", "2D", "Multiplayer"],
 		description: () => <>
 			<Text>
-				Roguelike fantasy chess.
+				Roguelike fantasy chess. Chess engine which supports as many variations of chess as possible.
 			</Text>
 		</>,
 		sourceUrl: "https://github.com/bedrockbreaker/Yggdrasil-Chess-Engine",
@@ -137,6 +137,11 @@ export const projects = {
 		imgAlt: "An old man with a beard and his four cats",
 		imgSize: [1765, 1765],
 		title: "Old Man Whiskers",
+		description: () => <>
+			<Text>
+				Old Man Whiskers is a small game jam where Mr. Whiskers tries to keep his cats happy.
+			</Text>
+		</>,
 		tags: ["Game", "PC", "UE5", "Blueprint", "3D", "Game Jam"],
 		url: "https://bedrockbreaker.itch.io/old-man-whiskers",
 		sourceUrl: "https://bitbucket.org/documentedbackups/gamejam/src/main/",
@@ -148,6 +153,11 @@ export const projects = {
 		imgSize: [32, 32],
 		imgIsPixelated: true,
 		title: "This Website",
+		description: () => <>
+			<Text>
+				It's what you're viewing right now!
+			</Text>
+		</>,
 		tags: ["Website", "Portfolio", "TypeScript", "React"],
 		url: "https://bedrockbreaker.github.io/",
 		sourceUrl: "https://github.com/bedrockbreaker/bedrockbreaker.github.io"
@@ -157,6 +167,11 @@ export const projects = {
 		imgAlt: "A person in a futurustic suit firing a gun with a flag on their head in a sci-fi valley",
 		imgSize: [766, 766],
 		title: "Ganymede",
+		description: () => <>
+			<Text>
+				Capture the enemy flag in this magic-infused techno world.
+			</Text>
+		</>,
 		tags: ["Game", "PC", "UE5", "Blueprint", "3D", "Multiplayer"],
 		url: "https://bedrockbreaker.itch.io/ganymede",
 		sourceUrl: "https://gitlab.com/bedrockbreaker1/Ganymede",
@@ -168,6 +183,11 @@ export const projects = {
 		imgSize: [256, 256],
 		title: "Graduated Cylinders",
 		tags: ["Mod", "PC", "Minecraft", "Java"],
+		description: () => <>
+			<Text>
+				Graduated Cylinders is a Minecraft mod.
+			</Text>
+		</>,
 		url: "https://www.curseforge.com/minecraft/mc-mods/graduated-cylinders",
 		sourceUrl: "https://github.com/bedrockbreaker/Graduated-Cylinders",
 		isFeatured: true
@@ -177,6 +197,11 @@ export const projects = {
 		imgAlt: "Uno++",
 		imgSize: [560, 560],
 		title: "Uno++",
+		description: () => <>
+			<Text>
+				Uno++ is a C++ implementation of the classic rules of Uno.
+			</Text>
+		</>,
 		tags: ["Game", "C++", "2D", "Multiplayer"],
 		sourceUrl: "https://github.com/bedrockbreaker/unoplusplus"
 	}),
@@ -185,8 +210,25 @@ export const projects = {
 		imgAlt: "A white chess queen",
 		imgSize: [32, 32],
 		imgIsPixelated: true,
-		title: "Discord Card Bot",
+		title: "Card Bot",
+		description: () => <>
+			<Text>
+				Card Bot is a Discord bot that allows you to play card games with your friends.
+			</Text>
+		</>,
 		tags: ["Game", "NodeJS", "JavaScript","2D", "Multiplayer"],
 		sourceUrl: "https://github.com/bedrockbreaker/unobot"
+	}),
+	kingsinheritance: new Project({
+		imgSrc: "projects/kingsinheritance.png",
+		imgAlt: "Stylized text which reads \"King's Inheritance\"",
+		imgSize: [690, 690],
+		title: "King's Inheritance",
+		description: () => <>
+			<Text>
+				King's Inheritance is a competitive, elimination-style board game.
+			</Text>
+		</>,
+		tags: ["Board Game", "Competitive", "Team"]
 	})
 };

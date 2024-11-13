@@ -33,6 +33,10 @@ const router = createHashRouter([
 				element: <BoardsPage/>,
 				children: [
 					{
+						index: true,
+						element: <ErrorPage/>
+					},
+					{
 						path:"/boards/game-programming",
 						element: <BoardsGPEPage/>
 					},

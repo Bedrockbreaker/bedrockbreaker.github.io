@@ -23,7 +23,7 @@ export function Menubar() {
 				</NavigationMenuItem>
 				<NavigationMenuItem>
 					<NavigationMenuLink to="/projects">
-						Projects
+						Portfolio
 					</NavigationMenuLink>
 				</NavigationMenuItem>
 				<NavigationMenuItem>

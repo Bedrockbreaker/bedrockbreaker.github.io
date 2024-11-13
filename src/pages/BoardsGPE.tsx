@@ -6,7 +6,7 @@ import { Text } from "../components/Text";
 
 export function BoardsGPEPage() {
 	return <div className="flex justify-center">
-		<div className="flex flex-col max-w-5xl flex-grow">
+		<div className="flex flex-col max-w-7xl flex-grow">
 			<Text variant="h1" className="text-center">
 				Game Programming
 			</Text>

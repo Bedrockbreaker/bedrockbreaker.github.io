@@ -1,0 +1,66 @@
+# Jenson Searle
+Game Programmer & Designer
+
+---
+
+searlejenson@gmail.com
+(520) 560-2123
+https://linkedin.com/in/jenson-searle
+https://bedrockbreaker.github.io
+
+---
+
+## Skills
+
+- C#: 6 Years
+- C++: 1 Year
+- Java: 6 Years
+- Unity & Unreal: 6 Years
+- Source control: 7 Years
+- Japanese: JLPT N3 (intermediate)
+
+---
+
+## Shipped Projects
+
+Graduated Cylinders (Nov. 2022 - Actively Maintained)
+- 27,000+ downloads
+- Game modification for Minecraft, written in Java
+- Open Source (MIT)
+- Programmer, Designer
+
+Old Man Whiskers (Sept. 2024)
+- 48 hour game jam, 2 developers
+- Awarded Best Art, Most Technically Innovative, and Best Use of Theme
+- Built with Unreal Engine
+- Programmer, Designer
+
+---
+
+## Professional Experience
+
+Full Stack Developer - Community Life Help (Nov. 2022 - Present)
+- Integrated PostgreSQL database spanning 30+ systems and automations
+- Developed automations to reduce manual labor by 10x
+- Improved working capacity to handle 10000+ clients
+- Collaborated with stakeholders to update software with evolving requirements
+- Synthesized continuous integration tasks to keep 99.99% uptime of vital servers
+- Programmed automated build, test, and deployment (CI/CD) tasks
+
+Customer Service Team Lead - Church of Jesus Christ of Latter-day Saints (Nov. 2022 - Jan. 2024)
+- Focused team efforts to ensure >95% user satisfaction  
+- Validated quality of team monthly, reducing errors to less than 2%  
+- Recommended coworkers for leadership positions, increasing team capacity 2x  
+- Resolved 25+ support tickets daily for a dynamic web app  
+- Consistently ranked in top 5% in quality of responses among coworkers
+
+---
+
+## Education
+
+University of Advancing Technology (Feb. 2024 - Dec. 2025)
+- Bachelor of Science in Computer Science
+- Bachelor of Arts in Interactive Media Design
+
+American Leadership Academy High School
+- Valedictorian (4.7 GPA)
