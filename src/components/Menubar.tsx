@@ -84,11 +84,12 @@ export function Menubar() {
 					</DropdownMenuRadioGroup>
 				</DropdownMenuContent>
 			</DropdownMenu>
-			<DropdownMenu>
+			{/* TODO: i18n */}
+			{/* <DropdownMenu>
 				<DropdownMenuTrigger asChild>
 					<Button
 						variant="outline"
-						aria-label="Open language selection menu" /* TODO: I18n */
+						aria-label="Open language selection menu"
 						className="focus:bg-neutral-100 dark:focus:bg-neutral-800 dark:focus:text-neutral-50 focus-visible:outline-none focus-visible:ring-transparent dark:focus-visible:ring-transparent focus-visible:ring-offset-transparent"
 					>
 						<LanguagesIcon/>
@@ -104,7 +105,7 @@ export function Menubar() {
 						</DropdownMenuRadioItem>
 					</DropdownMenuRadioGroup>
 				</DropdownMenuContent>
-			</DropdownMenu>
+			</DropdownMenu> */}
 		</div>
 	</Elevation>
 }
