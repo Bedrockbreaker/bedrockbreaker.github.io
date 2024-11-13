@@ -1,4 +1,4 @@
-import { LanguagesIcon, SunMoonIcon } from "lucide-react";
+import { /* LanguagesIcon, */ SunMoonIcon } from "lucide-react";
 
 import { Elevation } from "./Elevation";
 import { useTheme } from "../hooks/useTheme";
