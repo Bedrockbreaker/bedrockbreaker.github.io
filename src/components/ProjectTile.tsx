@@ -207,7 +207,7 @@ export const projects = {
 	}),
 	cardbot: new Project({
 		imgSrc: "placeholder-square.png",
-		imgAlt: "A white chess queen",
+		imgAlt: "A white chess pawn",
 		imgSize: [32, 32],
 		imgIsPixelated: true,
 		title: "Card Bot",
