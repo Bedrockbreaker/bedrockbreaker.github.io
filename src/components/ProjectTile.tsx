@@ -74,6 +74,30 @@ export function ProjectTile({
 	</div>
 }
 
+interface ProjectListProps {
+	projects: (Project | keyof typeof projects)[];
+	startLeft?: boolean;
+}
+
+export function ProjectList({
+	projects,
+	startLeft = true
+}: ProjectListProps) {
+	return <div
+		className="flex flex-col gap-6 mt-10"
+	>
+		{projects.map((project, i) => <ProjectTile
+			key={i}
+			project={project}
+			orientation={
+				((i % 2 + (startLeft ? 0 : 1)) === 0)
+					? "left-dominant"
+					: "right-dominant"
+			}
+		/>)}
+	</div>;
+}
+
 interface ProjectDetails {
 	imgSrc: string;
 	imgAlt: string;
