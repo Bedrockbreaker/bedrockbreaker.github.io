@@ -230,5 +230,49 @@ export const projects = {
 			</Text>
 		</>,
 		tags: ["Board Game", "Competitive", "Team"]
+	}),
+	silentnight: new Project({
+		imgSrc: "projects/silentnightdeadlynight.png",
+		imgAlt: "The Boogeyman",
+		imgSize: [780, 780],
+		title: "Silent Night, Deadly Night",
+		description: () => <>
+			<Text>
+				Silent Night, Deadly Night is a hidden role, social deduction board game.
+			</Text>
+		</>,
+		tags: ["Board Game", "Competitive", "Team"],
+		isFeatured: true
+	}),
+	tankgame: new Project({
+		imgSrc: "projects/tankgame.png",
+		imgAlt: "Two tanks fighting each other",
+		imgSize: [541, 541],
+		title: "戦車ゲーム (Tank Game)",
+		description: () => <>
+			<Text>
+				戦車ゲーム (Tank Game) is a local multiplayer game, similar to Atari's COMBAT.
+			</Text>
+		</>,
+		tags: ["Game", "PC", "Unity", "C#", "3D", "Multiplayer"],
+		sourceUrl: "https://github.com/bedrockbreaker/TankGame"
+	}),
+	partypooper: new Project({
+		imgSrc: "placeholder-square.png",
+		imgAlt: "A white chess pawn",
+		imgSize: [32, 32],
+		imgIsPixelated: true,
+		title: "Party Pooper",
+		description: () => <>
+			<Text>
+				Party Pooper is a modding utility for{" "}
+				<Text variant="a" to="https://char64.itch.io/partyproject" isExternal>
+					Party Project
+				</Text>.
+			</Text>
+		</>,
+		tags: ["Mod", "PC", "NodeJS", "TypeScript"],
+		sourceUrl: "https://github.com/bedrockbreaker/PartyPooper",
+		url: "https://github.com/bedrockbreaker/PartyPooper/releases/latest/"
 	})
 };
