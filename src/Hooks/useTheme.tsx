@@ -1,6 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
 
-declare function RenderTheme(doTransition?: boolean): void; // Leaked from <script> in index.html
 export type Theme = "light" | "dark";
 
 const query = window.matchMedia("(prefers-color-scheme: dark)");
@@ -14,23 +13,28 @@ const ThemeContext = createContext<{
 export function ThemeProvider({children}: { children: React.ReactNode }) {
 	const [theme, setThemeValue] = useState<Theme>(defaultTheme);
 
+	const setTheme = useCallback((newTheme: Theme | "system") => {
+		let enableDarkMode = false;
+
+		if (newTheme !== "system") {
+			localStorage.theme = newTheme;
+			setThemeValue(newTheme);
+			enableDarkMode = newTheme === "dark";
+		} else {
+			localStorage.removeItem("theme");
+			setThemeValue(query.matches ? "dark" : "light");
+			enableDarkMode = query.matches;
+		}
+
+		document.documentElement.classList.toggle("dark", enableDarkMode);
+	}, [setThemeValue]);
+
 	useEffect(() => {
 		const onThemeChange = () => setTheme(localStorage.theme ?? "system");
 		query.addEventListener("change", onThemeChange);
 
 		return () => query.removeEventListener("change", onThemeChange);
 	}, []);
-
-	const setTheme = useCallback((newTheme: Theme | "system") => {
-		if (newTheme !== "system") {
-			localStorage.theme = newTheme;
-			setThemeValue(newTheme);
-		} else {
-			localStorage.removeItem("theme");
-			setThemeValue(query.matches ? "dark" : "light");
-		}
-		RenderTheme(true);
-	}, [setThemeValue]);
 
 	return <ThemeContext.Provider value={{theme, setTheme}}>
 		{children}
