@@ -20,6 +20,9 @@
 	--radius-lg: var(--radius);
 	--radius-xl: calc(var(--radius) + 4px);
 
+	/* Drop shadow */
+	--drop-shadow-heavy: var(--heavy-shadow);
+
 	/* Custom colors */
 	--background-color-mid: var(--background-mid);
 	--background-color-dark: var(--background-dark);
@@ -58,6 +61,8 @@
 :root {
 	--radius: 0.625rem;
 
+	--heavy-shadow: 0px 10px 8px oklch(0 0 0 / .35);
+
 	--background-mid: oklch(1 0 0); /* #FFFFFF */
 	--background-dark: oklch(.92 0 0); /* #E5E5E5 */
 	--background-darker: oklch(.86 0 0); /* #E5E5E5 */
@@ -89,6 +94,8 @@
 }
 
 .dark {
+	--heavy-shadow: 0px 10px 8px oklch(0 0 0 / 1);
+
 	--background-mid: oklch(.27 0 0); /* #262626 */
 	--background-dark: oklch(.2 0 0); /* #171717 */
 	--background-darker: oklch(.14 0 0); /* #0A0A0A */
