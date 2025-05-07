@@ -81,8 +81,7 @@ export function About() {
 				I've worked across a broad tech stack -- from fullstack web development to custom game tools
 				-- and am always eager to learn new things. My experience spans Unreal Engine,
 				Unity, C++, C#, and TypeScript. I also maintain a few open-source projects,
-				including a popular Minecraft mod with {" "}
-				{(Math.floor(52000 / 1000) * 1000).toLocaleString()}+ downloads.
+				including a popular Minecraft mod with 50,000+ downloads.
 			</Text>
 			<Text>
 				Currently, I'm working on a few projects, including a large, narrative-driven
