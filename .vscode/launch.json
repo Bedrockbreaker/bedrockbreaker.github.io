@@ -1,0 +1,61 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Launch Vite Dev",
+			"request": "launch",
+			"runtimeArgs": ["run-script", "dev"],
+			"runtimeExecutable": "npm",
+			"skipFiles": ["<node_internals>/**"],
+			"type": "node",
+			"console": "integratedTerminal",
+			"internalConsoleOptions": "neverOpen"
+		},
+		{
+			"name": "Launch Vite Dev --host",
+			"request": "launch",
+			"runtimeArgs": ["run-script", "dev-host"],
+			"runtimeExecutable": "npm",
+			"skipFiles": ["<node_internals>/**"],
+			"type": "node",
+			"console": "integratedTerminal",
+			"internalConsoleOptions": "neverOpen"
+		},
+		{
+			"name": "Launch Browser",
+			"request": "launch",
+			"type": "chrome",
+			"windows": {
+				"runtimeExecutable": "C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe",
+			},
+			"linux": {
+				"runtimeExecutable": "/opt/brave.com/brave/brave"
+			},
+			"url": "http://localhost:5173",
+			"webRoot": "${workspaceFolder}/"
+		}
+	],
+	"compounds": [
+		{
+			"name": "Debug",
+			"configurations": ["Launch Vite Dev", "Launch Browser"],
+			"presentation": {
+				"hidden": false,
+				"group": "",
+				"order": 1
+			}
+		},
+		{
+			"name": "Debug --host",
+			"configurations": ["Launch Vite Dev --host", "Launch Browser"],
+			"presentation": {
+				"hidden": false,
+				"group": "",
+				"order": 1
+			}
+		},
+	]
+}

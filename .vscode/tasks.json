@@ -1,0 +1,41 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "build",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$tsc"
+			],
+			"label": "Build"
+		},
+		{
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"deploy",
+				"--",
+				"-m",
+				"${input:commitMessage}"
+			],
+			"problemMatcher": [
+				"$tsc"
+			],
+			"label": "Publish",
+			"detail": "npm run deploy"
+		}
+	],
+	"inputs": [
+		{
+			"id": "commitMessage",
+			"type": "promptString",
+			"description": "Enter a commit message for this build",
+			"default": "Update"
+		}
+	]
+}
