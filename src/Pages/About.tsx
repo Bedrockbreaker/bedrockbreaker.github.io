@@ -7,6 +7,7 @@ import { Link } from "~/Components/Link";
 import { Text } from "~/Components/Text";
 import { ThemedImage } from "~/Components/ThemedImg";
 import { useAccessibility } from "~/Hooks/useAccessibility";
+import { Projects } from "~/Util/ProjectData";
 
 import HomepageLogo_ThemeDark from "~/Assets/Misc/HomepageLogo_ThemeDark.png";
 import HomepageLogo_ThemeLight from "~/Assets/Misc/HomepageLogo_ThemeLight.png";
@@ -55,7 +56,7 @@ export function About() {
 				>
 					<CarouselContent>
 						<CarouselItem>
-							<Text>Test</Text>
+							<Text>{Projects.test.GetDescription()}</Text>
 						</CarouselItem>
 						<CarouselItem>
 							<Text>Test 2</Text>
