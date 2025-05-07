@@ -3,9 +3,9 @@ import { createRoot } from "react-dom/client";
 import { createHashRouter, Outlet, RouterProvider } from "react-router";
 
 import { ThemeProvider } from "./Hooks/useTheme";
+import { About } from "./Pages/About";
 import { App } from "~/Pages/App.tsx";
 import { ErrorBoundary } from "./Pages/ErrorBoundary";
-import { TypographyDemo } from "./Pages/TypographyDemo";
 
 import "~/index.css";
 
@@ -14,7 +14,7 @@ const router = createHashRouter([{
 	element: <App><Outlet/></App>,
 	errorElement: <ErrorBoundary/>,
 	children: [
-		{index: true, element: <TypographyDemo/>}
+		{index: true, element: <About/>}
 	]
 }]);
 
