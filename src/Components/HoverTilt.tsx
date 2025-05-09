@@ -17,7 +17,8 @@ interface HoverTiltProps extends React.HTMLAttributes<HTMLDivElement> {
 		gammaMin: number;
 		/** -90 = facing left, 0 = facing user, 90 = facing right */
 		gammaMax: number;
-	}
+	};
+	disableShadow?: boolean;
 }
 
 export function HoverTilt({
@@ -26,6 +27,7 @@ export function HoverTilt({
 	allowDeviceRotation = true,
 	// 89 to avoid gimbal lock
 	deviceRotationExtents = {betaMin: 45, betaMax: 89, gammaMin: -30, gammaMax: 30},
+	disableShadow = false,
 	className = "",
 	children,
 	...props
@@ -124,8 +126,8 @@ export function HoverTilt({
 		data-has-rotation={hasRotation}
 		className={
 			"motion-safe:data-[has-rotation=true]:scale-105 "
-			+ "motion-safe:data-[has-rotation=true]:drop-shadow-heavy transition-all duration-300 "
-			+ className
+			+ (disableShadow ? "" : "motion-safe:data-[has-rotation=true]:drop-shadow-heavy ")
+			+ "transition-all duration-300 " + className
 		}
 		onMouseMove={handleMouseMove}
 		onMouseLeave={handleMouseLeave}

@@ -9,7 +9,7 @@ const variantClasses = {
 	lead: "text-xl text-dark not-first:mt-6",
 	large: "text-lg font-semibold",
 	small: "text-sm font-medium leading-none",
-	muted: "text-sm text-dark"
+	muted: "text-sm text-dark leading-snug"
 };
 
 export type TextVariant = keyof typeof variantClasses;

@@ -1,6 +1,7 @@
 import { Button } from "~/Components/Button";
 import { Divider } from "~/Components/Divider";
 import { Link } from "~/Components/Link";
+import { LI, UL } from "~/Components/List";
 import { Text } from "~/Components/Text";
 
 export function TypographyDemo() {
@@ -36,11 +37,11 @@ export function TypographyDemo() {
 			a distributed font blockchain that could not be kerned or corrupted.
 		</Text>
 		<Text variant="h4">The Laws of Balance</Text>
-		<ul className="my-6 ml-6 list-disc [&>li]:mt-2">
-			<li>All headers must scale predictably across breakpoints.</li>
-			<li>All code shall be written in a legible monospace font.</li>
-			<li>All blockquotes must carry attribution and intent.</li>
-		</ul>
+		<UL className="my-6 ml-6 list-disc [&>li]:mt-2">
+			<LI>All headers must scale predictably across breakpoints.</LI>
+			<LI>All code shall be written in a legible monospace font.</LI>
+			<LI>All blockquotes must carry attribution and intent.</LI>
+		</UL>
 		<Text>
 			The new order introduced syntactic equality across colonies.
 			Even long-forgotten variants like <Text variant="code">display: grid</Text>{" "}

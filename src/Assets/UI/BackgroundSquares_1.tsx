@@ -1,0 +1,30 @@
+export function BackgroundSquares_1(props: React.SVGProps<SVGSVGElement>) {
+	return <svg width="100%" height="100%" fill="none" stroke="currentColor" strokeWidth="8" {...props}>
+		<defs>
+			<pattern id="BackgroundSquares_1" x="0" y="0" width="1920" height="1080" patternUnits="userSpaceOnUse">
+				<rect width="100" height="100" x="894" y="719" rx="8" ry="8"/>
+				<rect width="100" height="100" x="1619" y="70" rx="8" ry="8"/>
+				<rect width="100" height="100" x="1915" y="822" rx="8" ry="8"/>
+				<rect width="100" height="100" x="-6" y="822" rx="8" ry="8"/>
+				<rect width="100" height="100" x="630" y="226" rx="8" ry="8"/>
+				<rect width="100" height="100" x="1311" y="815" rx="8" ry="8"/>
+				<rect width="100" height="100" x="1231" y="324" rx="8" ry="8"/>
+				<rect width="100" height="100" x="237" y="213" rx="8" ry="8"/>
+				<rect width="100" height="100" x="1843" y="370" rx="8" ry="8"/>
+				<rect width="100" height="100" x="-77" y="370" rx="8" ry="8"/>
+				<rect width="100" height="100" x="485" y="735" rx="8" ry="8"/>
+				<rect width="100" height="100" x="1544" y="557" rx="8" ry="8"/>
+				<rect width="100" height="100" x="462" y="1078" rx="8" ry="8"/>
+				<rect width="100" height="100" x="462" y="-2" rx="8" ry="8"/>
+				<rect width="100" height="100" x="985" y="35" rx="8" ry="8"/>
+				<rect width="100" height="100" x="1045" y="519" rx="8" ry="8"/>
+				<rect width="100" height="100" x="230" y="525" rx="8" ry="8"/>
+				<rect width="100" height="100" x="146" y="1012" rx="8" ry="8"/>
+				<rect width="100" height="100" x="146" y="-68" rx="8" ry="8"/>
+				<rect width="100" height="100" x="747" y="943" rx="8" ry="8"/>
+				<rect width="100" height="100" x="541" y="496" rx="8" ry="8"/>
+			</pattern>
+		</defs>
+		<rect width="100%" height="100%" fill="url(#BackgroundSquares_1)" stroke="transparent"/>
+	</svg>;
+}

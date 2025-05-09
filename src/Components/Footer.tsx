@@ -46,12 +46,12 @@ export function Footer() {
 				</div>
 				<div className="flex flex-col gap-6 md:flex-row md:justify-between">
 					<Text>
-						&copy; 2024-{new Date().getFullYear()} Bedrockbreaker. Licensed under{" "}
+						&copy; 2024-{new Date().getFullYear()} Bedrockbreaker.{" "}
 						<Link
 							href="https://github.com/Bedrockbreaker/bedrockbreaker.github.io/blob/main/LICENSE"
 							hasExternalIcon={false}
 						>
-							MIT.
+							MIT License.
 						</Link>
 					</Text>
 					<Link href="https://github.com/Bedrockbreaker/bedrockbreaker.github.io">
