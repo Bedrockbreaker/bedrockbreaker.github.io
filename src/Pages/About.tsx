@@ -115,27 +115,39 @@ export function About() {
 					with runtime safety.
 				</LI>
 			</UL>
-			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
-				<Card borderStyle="1">
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center mt-12">
+				<Card
+					borderStyle="1"
+					className="motion-safe:hover:-translate-y-1 motion-safe:focus-within:-translate-y-1"
+				>
 					<Text variant="h4">Explore</Text>
 					<Text>View my latest projects</Text>
 					<Button kind="outline" asChild className="mt-6">
 						<Link href="/projects">Portfolio</Link>
 					</Button>
 				</Card>
-				<Card borderStyle="5">
+				<Card
+					borderStyle="5"
+					className="motion-safe:hover:-translate-y-1 motion-safe:focus-within:-translate-y-1"
+				>
 					<Text variant="h4">Discover</Text>
-					<Text>See my experiences and qualifications</Text>
+					<Text>See my experience and credentials</Text>
 					<Button kind="outline" asChild className="mt-6">
 						<Link href="/resume">Résumé</Link>
 					</Button>
 				</Card>
-				<Card borderStyle="3" className="md:max-lg:col-span-2">
+				<Card
+					borderStyle="3"
+					className={
+						"md:max-lg:col-span-2 "
+						+ "motion-safe:hover:-translate-y-1 motion-safe:focus-within:-translate-y-1"
+					}
+				>
 					<Text variant="h4">Connect</Text>
 					<Text>Get in touch via email</Text>
 					<Button kind="outline" asChild className="mt-6">
 						<Link href="mailto:searlejenson@gmail.com" hasExternalIcon={false}>
-							searlejenson@gmail.com
+							Email me
 						</Link>
 					</Button>
 				</Card>

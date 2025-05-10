@@ -1,7 +1,7 @@
 import { CreateVariantsConfig, VariantProps } from "~/Util/ClassVariants";
 
 const GetClasses = CreateVariantsConfig(
-	"flex flex-col items-center grow bg-dark rounded-md border p-6 pt-0 shadow-md",
+	"flex flex-col items-center grow bg-dark rounded-md border p-6 pt-0 shadow-md transition-all",
 	{
 		variants: {
 			borderStyle: {
