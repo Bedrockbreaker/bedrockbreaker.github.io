@@ -40,7 +40,7 @@ export function ProjectCard({project}: {project: Project | keyof typeof Projects
 					? <Button
 						kind="outline"
 						asChild
-						aria-label="View project homepage"
+						aria-label={"View project homepage for " + project.title}
 					>
 						<Link href={project.homepage}>View Project</Link>
 					</Button>
@@ -50,7 +50,7 @@ export function ProjectCard({project}: {project: Project | keyof typeof Projects
 					? <Button
 						kind="outline"
 						asChild
-						aria-label="View project source"
+						aria-label={"View project source code for " + project.title}
 					>
 						<Link href={project.sourceUrl}>View Source</Link>
 					</Button>
