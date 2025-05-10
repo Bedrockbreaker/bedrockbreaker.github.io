@@ -24,7 +24,7 @@ export function About() {
 
 		carouselApi.reInit({}, [
 			Autoplay({
-				active: true,
+				active: false,
 				delay: 7000,
 				stopOnInteraction: false,
 				stopOnFocusIn: true,
@@ -35,10 +35,12 @@ export function About() {
 	}, [carouselApi, prefersReducedMotion]);
 
 	return <div className="flex flex-col p-6 max-w-7xl mx-auto grow overflow-x-hidden">
-		<div className="flex flex-row gap-6 -mt-6">
-			<div className="min-w-max text-center pt-6">
-				<Text variant="h1">Jenson Searle</Text>
-				<Text variant="h3">Tools & Gameplay Programmer</Text>
+		<div className="flex flex-row flex-wrap gap-6 justify-center -mt-6">
+			<div className="flex flex-col md:max-xl:flex-row sm:min-w-max text-center pt-6">
+				<div className="my-auto">
+					<Text variant="h1">Jenson Searle</Text>
+					<Text variant="h3">Tools & Gameplay Programmer</Text>
+				</div>
 				<div className="flex justify-center mt-6">
 					<HoverTilt>
 						<ThemedImage
@@ -53,7 +55,7 @@ export function About() {
 			<Carousel
 				opts={{loop: true}}
 				setApi={setCarouselApi}
-				className="grow max-w-[832px]"
+				className="grow max-w-full big:max-w-[832px]"
 			>
 				<CarouselContent>
 					<CarouselItem><ProjectCard project="pushr4k"/></CarouselItem>
@@ -66,7 +68,7 @@ export function About() {
 		<Text variant="lead" className="text-center">
 			Any sufficiently advanced technology is indistinguishable from magic.
 		</Text>
-		<Text variant="muted" className="text-right mr-6">- Arthur C. Clarke</Text>
+		<Text variant="muted" className="text-right mr-6 mt-2">- Arthur C. Clarke</Text>
 		<Divider/>
 		<article className="mt-6">
 			<Text variant="h4" className="-mb-6">About Me</Text>

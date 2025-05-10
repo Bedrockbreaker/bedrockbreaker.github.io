@@ -20,6 +20,10 @@
 	--radius-lg: var(--radius);
 	--radius-xl: calc(var(--radius) + 4px);
 
+	/* Breakpoints */
+	--breakpoint-smd: 45.375rem;
+	--breakpoint-big: 56rem;
+
 	/* Drop shadow */
 	--drop-shadow-heavy: var(--heavy-shadow);
 

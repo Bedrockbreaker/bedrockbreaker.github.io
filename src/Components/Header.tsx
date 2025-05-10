@@ -1,4 +1,4 @@
-import { /* LanguagesIcon, */ SunMoonIcon } from "lucide-react";
+import { /* LanguagesIcon, */ MenuIcon, SunMoonIcon } from "lucide-react";
 
 import { Button } from "./Button";
 import {
@@ -9,6 +9,7 @@ import {
 	DropdownMenuTrigger
 } from "./DropdownMenu";
 import { Elevation } from "./Elevation";
+import { Link } from "./Link";
 import { useResetPageOnRouteChange } from "~/Hooks/useResetScrollOnRouteChange";
 import { useScrollTrigger } from "~/Hooks/useScrollTrigger";
 import { Theme, useTheme } from "~/Hooks/useTheme";
@@ -18,6 +19,7 @@ import {
 	NavigationMenuLink,
 	NavigationMenuList
 } from "./NavigationMenu";
+import { Sheet, SheetContent, SheetTrigger } from "./Sheet";
 import { Text } from "./Text";
 
 export function Header() {
@@ -27,12 +29,12 @@ export function Header() {
 
 	return <Elevation
 		className={
-			"sticky top-0 flex flex-row items-center h-14 w-full mb-8 z-10 border-b "
+			"fixed top-0 flex flex-row items-center h-14 w-full mb-8 z-10 border-b "
 			+ (isElevated ? "bg-darker border-b-accent" : "bg-mid border-b-mid")
 		}
 	>
 		<div className="flex flex-row p-6 max-w-7xl mx-auto grow overflow-x-hidden">
-			<NavigationMenu className="m-2">
+			<NavigationMenu className="hidden md:flex m-2">
 				<NavigationMenuList>
 					<NavigationMenuItem>
 						<NavigationMenuLink href="/" hasUnderline={false}>
@@ -50,10 +52,10 @@ export function Header() {
 						</NavigationMenuLink>
 					</NavigationMenuItem>
 				</NavigationMenuList>
-				<Text variant="muted" className="ml-6">Note: Site under construction.</Text>
+				<Text variant="muted" className="ml-6 text-nowrap">Note: Site under construction.</Text>
 			</NavigationMenu>
 			<div className="grow"/>
-			<div className="flex flex-row space-x-0.5 m-2">
+			<div className="flex flex-row space-x-1 m-2">
 				<DropdownMenu>
 					<DropdownMenuTrigger asChild>
 						<Button
@@ -86,6 +88,27 @@ export function Header() {
 						</DropdownMenuRadioGroup>
 					</DropdownMenuContent>
 				</DropdownMenu> */}
+				<Sheet>
+					<SheetTrigger asChild className="md:hidden">
+						<Button
+							kind={isElevated ? "ghost" : "outline"}
+							aria-label="Open navigation menu"
+							className={isElevated ? "border" : ""}
+						>
+							<MenuIcon/>
+						</Button>
+					</SheetTrigger>
+					<SheetContent side="left">
+						<div className="flex flex-col gap-6 p-6 mt-6">
+							<Button asChild><Link href="/">About</Link></Button>
+							<Button asChild><Link href="/portfolio">Portfolio</Link></Button>
+							<Button asChild><Link href="/resume">Résumé</Link></Button>
+							<Text variant="muted" className="text-nowrap">
+								Note: Site under construction.
+							</Text>
+						</div>
+					</SheetContent>
+				</Sheet>
 			</div>
 		</div>
 	</Elevation>;

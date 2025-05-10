@@ -9,12 +9,18 @@ import { Projects } from "~/Util/ProjectData";
 export function ProjectCard({project}: {project: Project | keyof typeof Projects}) {
 	if (typeof project === "string") project = Projects[project];
 
-	return <article className="flex flex-row rounded-md border shadow-md p-6 gap-6 mt-6 bg-dark">
-		<div className="w-1/3 flex items-center justify-center">
+	return <article
+		className={
+			"flex flex-col smd:flex-row items-center rounded-md border shadow-md p-6 "
+				+ "gap-6 mt-6 bg-dark transition-colors"
+		}
+	>
+		<Text variant="h4" className="smd:hidden">{project.title}</Text>
+		<div className="w-full max-w-64 sm:max-w-none sm:w-1/2 big:w-1/3 flex items-center justify-center">
 			<HoverTilt>{project.GetImage()}</HoverTilt>
 		</div>
-		<div className="w-2/3 flex flex-col gap-6">
-			<Text variant="h4">{project.title}</Text>
+		<div className="w-full smd:w-1/2 big:w-2/3 flex flex-col gap-6">
+			<Text variant="h4" className="hidden smd:block">{project.title}</Text>
 			<div className="flex flex-row flex-wrap gap-1">
 				{project.tags.map(tag => {
 					return <HoverTilt
@@ -29,7 +35,7 @@ export function ProjectCard({project}: {project: Project | keyof typeof Projects
 				})}
 			</div>
 			{project.GetDescription()}
-			<div className="flex mt-auto gap-1">
+			<div className="flex flex-col min-[386px]:flex-row mt-auto gap-1">
 				{project.homepage
 					? <Button
 						kind="outline"
