@@ -1,6 +1,8 @@
 import Autoplay from "embla-carousel-autoplay";
 import { useEffect, useState } from "react";
 
+import { Button } from "~/Components/Button";
+import { Card } from "~/Components/Card";
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "~/Components/Carousel";
 import { Divider } from "~/Components/Divider";
 import { HoverTilt } from "~/Components/HoverTilt";
@@ -13,7 +15,6 @@ import { useAccessibility } from "~/Hooks/useAccessibility";
 
 import HomepageLogo_ThemeDark from "~/Assets/UI/HomepageLogo_ThemeDark.png";
 import HomepageLogo_ThemeLight from "~/Assets/UI/HomepageLogo_ThemeLight.png";
-import { Button } from "~/Components/Button";
 
 export function About() {
 	const { prefersReducedMotion } = useAccessibility();
@@ -24,7 +25,7 @@ export function About() {
 
 		carouselApi.reInit({}, [
 			Autoplay({
-				active: false,
+				active: true,
 				delay: 7000,
 				stopOnInteraction: false,
 				stopOnFocusIn: true,
@@ -114,26 +115,31 @@ export function About() {
 					with runtime safety.
 				</LI>
 			</UL>
-			<Text variant="h4" className="mt-12 -mb-6">Contact</Text>
-			<Text>
-				Contact me directly at: <Button
-					kind="outline"
-					asChild
-					aria-label="Email me"
-				>
-					<Link
-						href="mailto:searlejenson@gmail.com"
-						hasExternalIcon={false}
-						hasUnderline={false}
-					>
-						searlejenson@gmail.com
-					</Link>
-				</Button>
-			</Text>
-			<Text>
-				Explore my <Link href="/portfolio">portfolio</Link> to see examples of my work in
-				action.
-			</Text>
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
+				<Card borderStyle="1">
+					<Text variant="h4">Explore</Text>
+					<Text>View my latest projects</Text>
+					<Button kind="outline" asChild className="mt-6">
+						<Link href="/projects">Portfolio</Link>
+					</Button>
+				</Card>
+				<Card borderStyle="5">
+					<Text variant="h4">Discover</Text>
+					<Text>See my experiences and qualifications</Text>
+					<Button kind="outline" asChild className="mt-6">
+						<Link href="/resume">Résumé</Link>
+					</Button>
+				</Card>
+				<Card borderStyle="3" className="md:max-lg:col-span-2">
+					<Text variant="h4">Connect</Text>
+					<Text>Get in touch via email</Text>
+					<Button kind="outline" asChild className="mt-6">
+						<Link href="mailto:searlejenson@gmail.com" hasExternalIcon={false}>
+							searlejenson@gmail.com
+						</Link>
+					</Button>
+				</Card>
+			</div>
 		</article>
 	</div>;
 }
