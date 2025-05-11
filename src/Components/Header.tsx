@@ -19,7 +19,7 @@ import {
 	NavigationMenuLink,
 	NavigationMenuList
 } from "./NavigationMenu";
-import { Sheet, SheetContent, SheetTrigger } from "./Sheet";
+import { Sheet, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from "./Sheet";
 import { Text } from "./Text";
 
 export function Header() {
@@ -60,6 +60,7 @@ export function Header() {
 					<DropdownMenuTrigger asChild>
 						<Button
 							kind={isElevated ? "ghost" : "outline"}
+							size="icon"
 							aria-label="Open theme selection menu"
 							className={isElevated ? "border" : ""}
 						>
@@ -92,6 +93,7 @@ export function Header() {
 					<SheetTrigger asChild className="md:hidden">
 						<Button
 							kind={isElevated ? "ghost" : "outline"}
+							size="icon"
 							aria-label="Open navigation menu"
 							className={isElevated ? "border" : ""}
 						>
@@ -99,6 +101,8 @@ export function Header() {
 						</Button>
 					</SheetTrigger>
 					<SheetContent side="left">
+						<SheetTitle className="sr-only">Navigation</SheetTitle>
+						<SheetDescription className="sr-only">Navigation</SheetDescription>
 						<div className="flex flex-col gap-6 p-6 mt-6">
 							<Button asChild><Link href="/">About</Link></Button>
 							<Button asChild><Link href="/portfolio">Portfolio</Link></Button>

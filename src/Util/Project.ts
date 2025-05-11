@@ -127,7 +127,6 @@ interface ProjectOptions {
 	homepage?: string;
 	sourceUrl?: string;
 	tags?: Tag[];
-	isFeatured?: boolean;
 }
 
 export class Project {
@@ -137,7 +136,6 @@ export class Project {
 	readonly homepage?: string;
 	readonly sourceUrl?: string;
 	readonly tags: Tag[];
-	readonly isFeatured: boolean;
 
 	constructor({
 		title,
@@ -145,8 +143,7 @@ export class Project {
 		image,
 		homepage,
 		sourceUrl,
-		tags,
-		isFeatured
+		tags
 	}: ProjectOptions) {
 		this.title = title;
 		this.GetDescription = description ?? (() => undefined);
@@ -154,6 +151,5 @@ export class Project {
 		this.homepage = homepage;
 		this.sourceUrl = sourceUrl;
 		this.tags = tags ?? [];
-		this.isFeatured = isFeatured ?? false;
 	}
 }

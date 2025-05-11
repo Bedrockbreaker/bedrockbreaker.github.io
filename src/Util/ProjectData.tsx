@@ -96,8 +96,7 @@ export const Projects = {
 			"2-4 Team Members",
 			"Programmer",
 			"Designer"
-		],
-		isFeatured: true
+		]
 	}),
 	portfolio: new Project({
 		title: "Portfolio",
@@ -157,8 +156,7 @@ export const Projects = {
 			"Programmer",
 			"Designer",
 			"Work in Progress"
-		],
-		isFeatured: true
+		]
 	}),
 	graduatedcylinders: new Project({
 		title: "Graduated Cylinders",
@@ -187,8 +185,7 @@ export const Projects = {
 			"Programmer",
 			"Designer",
 			"Open Source"
-		],
-		isFeatured: true
+		]
 	}),
 	tcresearchsolver: new Project({
 		title: "TC Research Solver",
@@ -255,8 +252,7 @@ export const Projects = {
 			"2-4 Weeks",
 			"5-14 Team Members",
 			"Designer"
-		],
-		isFeatured: true
+		]
 	}),
 	tankgame: new Project({
 		title: "戦車ゲーム (Tank Game)",
@@ -339,8 +335,7 @@ export const Projects = {
 			"Programmer",
 			"Designer",
 			"Artist"
-		],
-		isFeatured: true
+		]
 	}),
 	quiethours: new Project({
 		title: "Quiet Hours",

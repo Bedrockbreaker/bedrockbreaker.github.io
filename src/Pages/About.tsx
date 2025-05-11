@@ -3,7 +3,16 @@ import { useEffect, useState } from "react";
 
 import { Button } from "~/Components/Button";
 import { Card } from "~/Components/Card";
-import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "~/Components/Carousel";
+import {
+	Carousel,
+	type CarouselApi,
+	CarouselContent,
+	CarouselDot,
+	CarouselItem,
+	CarouselNext,
+	CarouselPause,
+	CarouselPrevious
+} from "~/Components/Carousel";
 import { Divider } from "~/Components/Divider";
 import { HoverTilt } from "~/Components/HoverTilt";
 import { Link } from "~/Components/Link";
@@ -27,9 +36,16 @@ export function About() {
 			Autoplay({
 				active: true,
 				delay: 7000,
-				stopOnInteraction: false,
-				stopOnFocusIn: true,
-				stopOnMouseEnter: true,
+				// TODO: file bug report with embla
+				// When the carousel is stopped and the user hovers/focuses on it,
+				// autoplay starts up again after mouse leave/defocus.
+				// However, this seems currently intentional:
+				// (see https://www.embla-carousel.com/plugins/autoplay/#stoponinteraction)
+				// This feels unintuive though. Not expected behavior to me, at least.
+				//
+				// stopOnInteraction: false,
+				// stopOnFocusIn: true,
+				// stopOnMouseEnter: true,
 				jump: prefersReducedMotion === "reduce"
 			})
 		]);
@@ -56,14 +72,24 @@ export function About() {
 			<Carousel
 				opts={{loop: true}}
 				setApi={setCarouselApi}
-				className="grow max-w-full big:max-w-[832px]"
+				className="grow flex flex-col max-w-full big:max-w-[832px]"
 			>
 				<CarouselContent>
-					<CarouselItem><ProjectCard project="pushr4k"/></CarouselItem>
-					<CarouselItem><ProjectCard project="yggdrasil"/></CarouselItem>
 					<CarouselItem><ProjectCard project="ganymede"/></CarouselItem>
 					<CarouselItem><ProjectCard project="graduatedcylinders"/></CarouselItem>
+					<CarouselItem><ProjectCard project="pushr4k"/></CarouselItem>
+					<CarouselItem><ProjectCard project="quiethours"/></CarouselItem>
+					<CarouselItem><ProjectCard project="cardbot"/></CarouselItem>
 				</CarouselContent>
+				<div className="flex flex-row mt-1 gap-1 items-center">
+					<CarouselPrevious/>
+					<CarouselNext/>
+					<CarouselPause/>
+					<div className="grow"/>
+					{carouselApi?.scrollSnapList().map((_, index) => {
+						return <CarouselDot key={index} snapIndex={index}/>;
+					})}
+				</div>
 			</Carousel>
 		</div>
 		<Text variant="lead" className="text-center">
