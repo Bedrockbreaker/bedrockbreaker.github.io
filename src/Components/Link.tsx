@@ -2,7 +2,7 @@ import { ExternalLinkIcon } from "lucide-react";
 import { useMemo } from "react";
 import { Link as RouterLink, type LinkProps as RouterLinkProps } from "react-router";
 
-export interface LinkProps extends Omit<RouterLinkProps, "to"> {
+export interface LinkProps extends Omit<RouterLinkProps, "to" | "download"> {
 	href: string;
 	hasUnderline?: boolean;
 	isExternal?: boolean;

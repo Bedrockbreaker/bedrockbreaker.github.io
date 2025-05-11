@@ -1,0 +1,67 @@
+﻿Jenson Searle
+Tools & Gameplay Programmer
+
+----------------
+
+searlejenson@gmail.com
+(520) 560-2123
+https://linkedin.com/in/jenson-searle
+https://bedrockbreaker.github.io
+
+----------------
+
+Skills
+* C++: 2 Years
+* C#: 6 Years
+* Java: 6 Years
+* Unity & Unreal: 6 Years
+* Source control: 7 Years
+* Japanese: Everyday conversation
+
+----------------
+
+Shipped Projects
+
+Graduated Cylinders
+(Nov. 2022 - Actively Maintained)
+* 40,000+ downloads
+* Game modification for Minecraft, written in Java
+* Open Source (MIT)
+* Programmer, Designer
+
+Old Man Whiskers
+(Sept. 2024)
+* 48 hour game jam, 2 developers
+* Awarded Best Art, Most Technically Innovative, and Best Use of Theme
+* Built with Unreal Engine
+* Programmer, Designer
+
+----------------
+
+Professional Experience
+
+Game Programming Tutor - University of Advancing Technology
+(Feb. 2024 - Current)
+* Aided understanding of common game programming structures and algorithms.
+* Taught how to use Unity, Unreal Engine, and Godot to all skill levels.
+
+Full Stack Developer - Community Life Help
+(Nov. 2022 - Dec. 2024)
+* Integrated PostgreSQL database spanning 30+ systems and automations
+* Developed automations to reduce manual labor by 10x
+* Improved working capacity to handle 10000+ clients
+* Collaborated with stakeholders to update software with evolving requirements
+* Synthesized continuous integration tasks to keep 99.99% uptime of vital servers
+* Programmed automated build, test, and deployment (CI/CD) tasks
+
+----------------
+
+Education
+
+University of Advancing Technology
+(Feb. 2024 - Dec. 2025)
+* Bachelor of Science in Computer Science
+* Bachelor of Arts in Interactive Media Design
+
+American Leadership Academy High School
+* Valedictorian - 4.7 GPA
