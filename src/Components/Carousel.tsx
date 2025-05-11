@@ -348,7 +348,7 @@ export function CarouselDot({
 		kind={kind}
 		size={size}
 		className={
-			"size-4 rounded-full border-2 border-[var(--foreground-mid)] "
+			"size-4 rounded-full border-2 border-[var(--foreground-mid)]/50 "
 			+ "data-[selected=true]:bg-[var(--foreground-mid)] "
 			+ "hover:data-[selected=true]:bg-[var(--foreground-mid)] "
 			+ "hover:not-data-[selected=true]:bg-[var(--foreground-mid)] " + className
