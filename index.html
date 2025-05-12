@@ -3,43 +3,60 @@
 	<head>
 		<meta charset="UTF-8"/>
 		<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<script>
-			// Avoid "Flash of Unstyled Content"
-			function rerenderTheme() {
-				if (
-					localStorage.theme === "dark"
-					|| (
-						!("theme" in localStorage)
-						&& window.matchMedia("(prefers-color-scheme: dark)")
-							.matches
-					)
-				) {
-					document.documentElement.classList.add("dark");
-				} else {
-					document.documentElement.classList.remove("dark");
-				}
-			}
-			rerenderTheme();
-		</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 		<title>Jenson Searle</title>
-		<meta property="og:title" content="Jenson Searle - About"/>
+
+		<!-- Open Graph / Facebook -->
+		<meta name="title" property="og:title" content="Jenson Searle - About"/>
+		<meta
+			name="description"
+			property="og:description"
+			name="description"
+			content="Tools &amp; Gameplay Programmer."
+		/>
 		<meta property="og:type" content="profile"/>
 		<meta property="og:type" content="profile:first_name:Jenson"/>
 		<meta property="og:type" content="profile:last_name:Searle"/>
 		<meta property="og:type" content="profile:username:Bedrockbreaker"/>
 		<meta property="og:url" content="https://bedrockbreaker.github.io"/>
-		<meta property="og:image" content="https://bedrockbreaker.github.io/placeholder.png"/>
-		<meta property="og:image:width" content="1280"/>
-		<meta property="og:image:height" content="320"/>
-		<meta property="og:image:alt" content="A placeholder image containing a green dragon, a white chess pawn, and the word Yggdrasil"/>
-		<meta name="description" content="Game Programmer &amp; Designer | Fullstack Developer."/>
-		<meta property="og:description" content="Game Programmer &amp; Designer | Fullstack Developer."/>
+		<meta property="og:site_name" content="Jenson Searle - About"/>
+		<meta property="og:image" content="https://bedrockbreaker.github.io/yggdrasil.png"/>
+		<meta property="og:image:width" content="640"/>
+		<meta property="og:image:height" content="640"/>
+		<meta property="og:image:alt" content="A pixel art green dragon wrapped around a white chess pawn."/>
 		<!-- <meta property="og:locale:alternate" content="jp_JP"/> -->
-		<script type="module" crossorigin src="/assets/index-D-iHDklg.js"></script>
-		<link rel="stylesheet" crossorigin href="/assets/index-CthOVrAU.css">
+
+		<!-- Google -->
+		<meta name="google-site-verification" content="F4ivEIbhauTCim_meOefgDbjSQxWvjTFeXV-1nM5yAs" />
+
+		<!-- LinkedIn -->
+		<meta name="author" property="article:author" content="Jenson Searle"/>
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image"/>
+
+		<!-- Discord -->
+		<meta name="theme-color" content="#660E0E"/>
+
+		<script>
+			// Avoid "Flash of Unstyled Content."
+			(function RenderTheme() {
+				const html = document.documentElement;
+				const theme = localStorage.theme;
+				const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+				if (theme === "dark" || (theme === undefined && prefersDark)) {
+					html.classList.add("dark");
+				}
+			})();
+
+			// Don't transition on page load, but allow it to transition on theme change.
+			window.addEventListener("load", () => document.body.classList.add("transition-colors"));
+		</script>
+		<script type="module" crossorigin src="/assets/index-ClJ7dwdL.js"></script>
+		<link rel="stylesheet" crossorigin href="/assets/index--TSnGS31.css">
 	</head>
-	<body class="h-full bg-bglight text-textlight transition-colors dark:bg-bgdark dark:text-textdark">
+	<body class="h-full bg-mid text-mid">
 		<div id="root" class="h-full"></div>
 	</body>
 </html>
