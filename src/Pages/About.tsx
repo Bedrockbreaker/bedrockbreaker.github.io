@@ -53,7 +53,7 @@ export function About() {
 
 	return <div className="flex flex-col p-6 max-w-7xl mx-auto grow overflow-x-hidden">
 		<div className="flex flex-row flex-wrap gap-6 justify-center -mt-6">
-			<div className="flex flex-col md:max-xl:flex-row sm:min-w-max text-center pt-6">
+			<div className="flex flex-col md:max-xl:flex-row sm:max-xl:min-w-full xl:min-w-max text-center pt-6 justify-center">
 				<div className="my-auto">
 					<Text variant="h1">Jenson Searle</Text>
 					<Text variant="h3">Tools & Gameplay Programmer</Text>
@@ -72,7 +72,7 @@ export function About() {
 			<Carousel
 				opts={{loop: true}}
 				setApi={setCarouselApi}
-				className="grow flex flex-col max-w-full big:max-w-[832px]"
+				className="grow flex flex-col max-w-full big:max-w-[832px] mt-6"
 			>
 				<CarouselContent>
 					<CarouselItem><ProjectCard project="ganymede"/></CarouselItem>
@@ -149,7 +149,7 @@ export function About() {
 					<Text variant="h4">Explore</Text>
 					<Text>View my latest projects</Text>
 					<Button kind="outline" asChild className="mt-6">
-						<Link href="/projects">Portfolio</Link>
+						<Link href="/portfolio">Portfolio</Link>
 					</Button>
 				</Card>
 				<Card

@@ -1,7 +1,7 @@
 import { Plugin } from "vite";
 
 const GITHUB_REPO = "bedrockbreaker/bedrockbreaker.github.io";
-const BRANCH = "gh-pages";
+const BRANCH = "main";
 const FILES = ["Resume.pdf"] as const;
 
 export type CommitDatesResult = {

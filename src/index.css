@@ -22,6 +22,8 @@
 
 	/* Breakpoints */
 	--breakpoint-smd: 45.375rem;
+	--container-smd: 42rem;
+	--breakpoint-big: 56rem;
 	--breakpoint-big: 56rem;
 
 	/* Drop shadow */
