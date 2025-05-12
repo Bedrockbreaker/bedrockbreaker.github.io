@@ -13,7 +13,7 @@ import "~/index.css";
 const router = createHashRouter([{
 	path: "/",
 	element: <App><Outlet/></App>,
-	errorElement: <ErrorBoundary/>,
+	errorElement: <App><ErrorBoundary/></App>,
 	children: [
 		{index: true, element: <About/>},
 		{path: "/resume", element: <Resume/>}
