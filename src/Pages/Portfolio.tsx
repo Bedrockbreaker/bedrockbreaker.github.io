@@ -10,6 +10,7 @@ export function Portfolio() {
 			programming as well as systems design.
 		</Text>
 		<Divider/>
+		{/* TODO: add filter bar for tags */}
 		<div className="mt-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
 			<ProjectCard project="ganymede"/>
 			<ProjectCard project="graduatedcylinders"/>
