@@ -8,9 +8,9 @@ import { Divider } from "~/Components/Divider";
 import { Link } from "~/Components/Link";
 import { Text } from "~/Components/Text";
 
-const resumeLastUpdated = commitDates["Resume.pdf"] === undefined
+const resumeLastUpdated = commitDates["public/Resume.pdf"] === undefined
 	? undefined
-	: new Date(commitDates["Resume.pdf"]).toLocaleDateString();
+	: new Date(commitDates["public/Resume.pdf"]).toLocaleDateString();
 
 export function Resume() {
 	return <div className="flex flex-col p-6 max-w-7xl mx-auto grow overflow-x-hidden">
