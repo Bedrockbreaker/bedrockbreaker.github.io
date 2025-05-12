@@ -31,6 +31,10 @@ export function CommitDates(): Plugin {
 						}
 					});
 
+					if (!response.ok) {
+						throw new Error(`Non-2XX response for ${file}: ${response.statusText}`);
+					}
+
 					const data = await response.json() as any;
 					results[file] = data?.[0]?.commit?.committer?.date;
 				} catch (error) {
