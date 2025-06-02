@@ -29,7 +29,7 @@ export function Resume() {
 				<Text variant="h4" className="flex flex-row gap-1">PDF <FileImage/></Text>
 				<Text>Download the print-friendly version</Text>
 				<div className="flex flex-row flex-wrap gap-6 justify-center">
-					<Button kind="outline" asChild className="mt-6">
+					<Button kind="outline" asChild className="mt-6 max-md:hidden">
 						<Link
 							href="https://bedrockbreaker.github.io/Resume.pdf"
 							hasExternalIcon={false}
@@ -76,7 +76,7 @@ export function Resume() {
 				<Text variant="h4" className="flex flex-row gap-1">TXT <FileText/></Text>
 				<Text>Plain text version for maximum portability</Text>
 				<div className="flex flex-row flex-wrap gap-6 justify-center">
-					<Button kind="outline" asChild className="mt-6">
+					<Button kind="outline" asChild className="mt-6 max-md:hidden">
 						<Link
 							href="https://bedrockbreaker.github.io/Resume.txt"
 							hasExternalIcon={false}
