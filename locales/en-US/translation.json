@@ -1,0 +1,81 @@
+{
+	"component": {
+		"sheet": {
+			"close": "Close"
+		}
+	},
+	"header": {
+		"about": "About",
+		"portfolio": "Portfolio",
+		"resume": "Résumé",
+		"notice": "Note: Site under construction.",
+		"theme": {
+			"aria-label": "Open theme selection menu",
+			"light": "Light",
+			"dark": "Dark",
+			"system": "System"
+		},
+		"language": {
+			"aria-label": "Open language selection menu"
+		},
+		"navigation": {
+			"aria-label": "Open navigation menu",
+			"description": "Navigation"
+		}
+	},
+	"footer": {
+		"about": "About",
+		"portfolio": "Portfolio",
+		"resume": "Résumé",
+		"follow-me": "Follow me:",
+		"socials": {
+			"github": "GitHub",
+			"github-alt": "GitHub Logo",
+			"linkedin": "LinkedIn",
+			"linkedin-alt": "LinkedIn Logo"
+		},
+		"copyright": "© 2024-{{year}} Bedrockbreaker. <3>MIT License.</3>",
+		"view-source": "View Source"
+	},
+	"about": {
+		"title": "Jenson Searle",
+		"subtitle": "Tools & Gameplay Programmer",
+		"hero-alt": "A pixel art green dragon wrapped around a white chess pawn.",
+		"quote": "Any sufficiently advanced technology is indistinguishable from magic.",
+		"quote-author": "- Arthur C. Clarke",
+		"about-me": {
+			"header": "About Me",
+			"paragraphs": [
+				"I'm a game developer with a background spanning both engineering and design. I specialize in tools development and gameplay systems, with a strong focus on cross-disciplinary collaboration.",
+				"My work spans from full-stack web applications to internal game development tooling. I've contributed to projects using Unreal Engine, Unity, and custom engines, working primarily in C++, C#, and TypeScript. I also maintain open-source tools and have authored a Minecraft mod with over 50,000 downloads.",
+				"I'm also seeking opportunities to join a Japanese game studio where I can contribute to system- and narrative-driven gameplay experiences as a team. My Japanese proficiency is about at an N4-N3 level, and is climbing higher every day. Long-term, I wish to become a Japanese citizen."
+			]
+		},
+		"current-projects": {
+			"header": "Current Projects",
+			"paragraphs": [
+				"I'm developing several long-term systems projects focused on narrative, interoperability, and extensibility, including:",
+				"A systemic narrative-driven action-adventure game, supporting state-dependent puzzle logic and save / load progression systems, designed to decouple narrative structure from level scripting -- enabling non-linear storytelling and reusable narrative modules.",
+				"A multi-part media tool for managing music libraries in <1>Jellyfin</1>, solving the problem of fragmented personal music libraries by allowing users to aggregate multiple metadata sources and build playlists from them.",
+				"A modding framework for the chaotic multiplayer party game <1>Party Project</1>, allowing users to create and share custom boards, events, and minigames with runtime safety."
+			]
+		},
+		"cards": [
+			{
+				"header": "Explore",
+				"description": "View my latest projects",
+				"call-to-action": "Portfolio"
+			},
+			{
+				"header": "Discover",
+				"description": "See my experience and credentials",
+				"call-to-action": "Résumé"
+			},
+			{
+				"header": "Connect",
+				"description": "Get in touch via email",
+				"call-to-action": "Email me"
+			}
+		]
+	}
+}
