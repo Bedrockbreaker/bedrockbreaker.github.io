@@ -38,7 +38,7 @@ export function Link({
 		+ `${isExternal && hasExternalIcon ? "inline-flex items-center space-x-1" : ""} ${className}`;
 
 	return <RouterLink
-		to={{pathname: href, search}}
+		to={search === "" ? href : {pathname: href, search}}
 		target={isExternal ? "_blank" : "_self"}
 		className={linkClassName}
 		{...(downloadFileName !== "" ? {download: downloadFileName} : undefined)}
