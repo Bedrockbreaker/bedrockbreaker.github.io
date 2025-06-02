@@ -1,0 +1,148 @@
+{
+	"component": {
+		"carousel": {
+			"provider-roledescription": "carousel",
+			"item-roledescription": "slide",
+			"previous-slide": "Previous slide",
+			"next-slide": "Next slide",
+			"pause": "Pause autoplay",
+			"play": "Start autoplay",
+			"scroll-to-slide": "Scroll to slide {{index}}"
+		},
+		"project-card": {
+			"view-tags": "View projects tagged with {{tag}}",
+			"view-homepage": "View Project",
+			"view-homepage-aria-label": "View project homepage for {{project}}",
+			"view-source": "View Source",
+			"view-source-aria-label": "View project source code for {{project}}",
+			"no-image-alt": "No Image"
+		},
+		"sheet": {
+			"close": "Close"
+		}
+	},
+	"error": {
+		"unexpected-error": "Unexpected Error",
+		"route-fallback": "Something went wrong.",
+		"internal": "An unexpected error occurred. Please try again later.",
+		"return-homepage": "Return to homepage"
+	},
+	"header": {
+		"about": "About",
+		"portfolio": "Portfolio",
+		"resume": "Résumé",
+		"notice": "Note: Site under construction.",
+		"theme": {
+			"aria-label": "Open theme selection menu",
+			"light": "Light",
+			"dark": "Dark",
+			"system": "System"
+		},
+		"language": {
+			"aria-label": "Open language selection menu"
+		},
+		"navigation": {
+			"aria-label": "Open navigation menu",
+			"description": "Navigation"
+		}
+	},
+	"footer": {
+		"about": "About",
+		"portfolio": "Portfolio",
+		"resume": "Résumé",
+		"follow-me": "Follow me:",
+		"socials": {
+			"github": "GitHub",
+			"github-alt": "GitHub Logo",
+			"linkedin": "LinkedIn",
+			"linkedin-alt": "LinkedIn Logo"
+		},
+		"copyright": "© 2024-{{year}} Bedrockbreaker. <3>MIT License.</3>",
+		"view-source": "View Source"
+	},
+	"about": {
+		"title": "Jenson Searle",
+		"subtitle": "Tools & Gameplay Programmer",
+		"hero-alt": "A pixel art green dragon wrapped around a white chess pawn.",
+		"quote": "Any sufficiently advanced technology is indistinguishable from magic.",
+		"quote-author": "- Arthur C. Clarke",
+		"about-me": {
+			"header": "About Me",
+			"paragraphs": [
+				"I'm a game developer with a background spanning both engineering and design. I specialize in tools development and gameplay systems, with a strong focus on cross-disciplinary collaboration.",
+				"My work spans from full-stack web applications to internal game development tooling. I've contributed to projects using Unreal Engine, Unity, and custom engines, working primarily in C++, C#, and TypeScript. I also maintain open-source tools and have authored a Minecraft mod with over 50,000 downloads.",
+				"I'm also seeking opportunities to join a Japanese game studio where I can contribute to system- and narrative-driven gameplay experiences as a team. My Japanese proficiency is about at an N4-N3 level, and is climbing higher every day. Long-term, I wish to become a Japanese citizen."
+			]
+		},
+		"current-projects": {
+			"header": "Current Projects",
+			"paragraphs": [
+				"I'm developing several long-term systems projects focused on narrative, interoperability, and extensibility, including:",
+				"A systemic narrative-driven action-adventure game, supporting state-dependent puzzle logic and save / load progression systems, designed to decouple narrative structure from level scripting -- enabling non-linear storytelling and reusable narrative modules.",
+				"A multi-part media tool for managing music libraries in <1>Jellyfin</1>, solving the problem of fragmented personal music libraries by allowing users to aggregate multiple metadata sources and build playlists from them.",
+				"A modding framework for the chaotic multiplayer party game <1>Party Project</1>, allowing users to create and share custom boards, events, and minigames with runtime safety."
+			]
+		},
+		"cards": [
+			{
+				"header": "Explore",
+				"description": "View my latest projects",
+				"call-to-action": "Portfolio"
+			},
+			{
+				"header": "Discover",
+				"description": "See my experience and credentials",
+				"call-to-action": "Résumé"
+			},
+			{
+				"header": "Connect",
+				"description": "Get in touch via email",
+				"call-to-action": "Email me"
+			}
+		]
+	},
+	"portfolio": {
+		"header": "Portfolio",
+		"subtitle": "A curated collection of technical and creative projects across gameplay and tools programming as well as systems design.",
+		"filter-header": "Filter by tag:",
+		"tag-match-all": "Match all tags",
+		"tag-match-any": "Match any tag",
+		"tags-clear": "Clear all tags",
+		"enable-tag": "Filter by {{tag}}",
+		"disable-tag": "Unfilter by {{tag}}"
+	},
+	"resume": {
+		"header": "Résumé",
+		"subtitle": "Download or view my résumé in multiple formats",
+		"timestamp": "Last updated: {{timestamp}}",
+		"cards": [
+			{
+				"header": "PDF",
+				"description": "Download the print-friendly version",
+				"view": "View",
+				"download": "Download"
+			},
+			{
+				"header": "DOCX",
+				"description": "For editable use in Microsoft Word, etc.",
+				"view": "View",
+				"download": "Download"
+			},
+			{
+				"header": "TXT",
+				"description": "Plain text version for maximum portability",
+				"view": "View",
+				"download": "Download"
+			}
+		]
+	},
+	"tags": {
+
+	},
+	"project": {
+		"test": {
+			"title": "Test Project, Please Ignore",
+			"description": "Did you ever stop to think that eventually there's a point where your name gets mentioned for the very last time. Well, here it is: I'm going to kill you, Chell. Why do I hate you so much? You ever wonder that? I'm brilliant. I'm not bragging. It's an objective fact. I'm the most massive collection of wisdom and raw computational power that's ever existed. And I hate you. It can't be for no reason. You must deserve it. You're angry. I know it. \"She tested me too hard. She's unfair.\" Boo hoo. I don't suppose you ever stopped whining long enough to reflect on your own shortcomings, though, did you? You never considered that maybe I tested you to give the endless hours of your pointless existence some structure and meaning. Maybe to help you concentrate, so just maybe you'd think of something more worthwhile to do with your sorry life."
+		}
+	}
+}

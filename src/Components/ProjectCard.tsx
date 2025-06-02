@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import { Badge } from "./Badge";
 import { Button } from "./Button";
 import { HoverTilt } from "./HoverTilt";
@@ -8,6 +10,7 @@ import { Projects } from "~/Util/ProjectData";
 
 export function ProjectCard({project}: {project: Project | keyof typeof Projects}) {
 	if (typeof project === "string") project = Projects[project];
+	const { t } = useTranslation();
 
 	return <div className="@container">
 		<article
@@ -36,7 +39,7 @@ export function ProjectCard({project}: {project: Project | keyof typeof Projects
 							<Link
 								href={"/portfolio"}
 								search={"?tags=" + encodeURIComponent(tag)}
-								aria-label={"View projects tagged with " + tag}
+								aria-label={t("component.project-card.view-tags", { tag })}
 							>
 								<Badge kind={GetCategoryFromTag(tag).badgeKind}>{tag}</Badge>
 							</Link>
@@ -49,9 +52,12 @@ export function ProjectCard({project}: {project: Project | keyof typeof Projects
 						? <Button
 							kind="outline"
 							asChild
-							aria-label={"View project homepage for " + project.title}
+							aria-label={t(
+								"component.project-card.view-homepage-aria-label",
+								{ project: project.title }
+							)}
 						>
-							<Link href={project.homepage}>View Project</Link>
+							<Link href={project.homepage}>{t("component.project-card.view-homepage")}</Link>
 						</Button>
 						: undefined
 					}
@@ -59,9 +65,12 @@ export function ProjectCard({project}: {project: Project | keyof typeof Projects
 						? <Button
 							kind="outline"
 							asChild
-							aria-label={"View project source code for " + project.title}
+							aria-label={t(
+								"component.project-card.view-source-aria-label",
+								{ project: project.title }
+							)}
 						>
-							<Link href={project.sourceUrl}>View Source</Link>
+							<Link href={project.sourceUrl}>{t("component.project-card.view-source")}</Link>
 						</Button>
 						: undefined
 					}

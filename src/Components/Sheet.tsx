@@ -17,6 +17,8 @@ import {
 	Title,
 	Trigger
 } from "@radix-ui/react-dialog";
+import { useTranslation } from "react-i18next";
+
 import { CreateVariantsConfig, VariantProps } from "~/Util/ClassVariants";
 
 export function Sheet(props: DialogProps) {
@@ -82,6 +84,8 @@ export function SheetContent({
 	className = "",
 	children, ...props
 }: SheetContentProps) {
+	const { t } = useTranslation();
+
 	return <SheetPortal>
 		<SheetOverlay/>
 		<Content
@@ -99,7 +103,7 @@ export function SheetContent({
 				}
 			>
 				<XIcon className="size-4"/>
-				<span className="sr-only">Close</span>
+				<span className="sr-only">{t("component.sheet.close")}</span>
 			</Close>
 		</Content>
 	</SheetPortal>;

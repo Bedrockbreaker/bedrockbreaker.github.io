@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, Pause, Play } from "lucide-react";
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
 
 import { Button, type ButtonProps } from "./Button";
+import { Trans, useTranslation } from "react-i18next";
 
 export type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
@@ -52,6 +53,8 @@ export function Carousel({
 	children,
 	...props
 }: CarouselComponentProps) {
+	const { t } = useTranslation();
+
 	const [carouselRef, api] = useEmblaCarousel(
 		{
 			...opts,
@@ -190,7 +193,7 @@ export function Carousel({
 			onKeyDownCapture={handleKeyDown}
 			className={"relative " + className}
 			role="region"
-			aria-roledescription="carousel"
+			aria-roledescription={t("component.carousel.provider-roledescription")}
 			data-slot="carousel"
 			{...props}
 		>
@@ -222,11 +225,12 @@ export function CarouselContent({
 }
 
 export function CarouselItem({ className = "", ...props }: React.HTMLAttributes<HTMLDivElement>) {
+	const { t } = useTranslation();
 	const { orientation } = useCarousel();
 
 	return <div
 		role="group"
-		aria-roledescription="slide"
+		aria-roledescription={t("component.carousel.item-roledescription")}
 		data-slot="carousel-item"
 		className={
 			"min-w-0 shrink-0 grow-0 basis-full "
@@ -243,6 +247,7 @@ export function CarouselPrevious({
 	className = "",
 	...props
 }: ButtonProps) {
+	const { t } = useTranslation();
 	const { orientation, scrollPrev, canScrollPrev, stopAutoplay } = useCarousel();
 
 	return <Button
@@ -262,7 +267,7 @@ export function CarouselPrevious({
 		{...props}
 	>
 		<ArrowLeft/>
-		<span className="sr-only">Previous slide</span>
+		<span className="sr-only">{t("component.carousel.previous-slide")}</span>
 	</Button>;
 }
 
@@ -272,6 +277,7 @@ export function CarouselNext({
 	className = "",
 	...props
 }: ButtonProps) {
+	const { t } = useTranslation();
 	const { orientation, scrollNext, canScrollNext, stopAutoplay } = useCarousel();
 
 	return <Button
@@ -291,7 +297,7 @@ export function CarouselNext({
 		{...props}
 	>
 		<ArrowRight/>
-		<span className="sr-only">Next slide</span>
+		<span className="sr-only">{t("component.carousel.next-slide")}</span>
 	</Button>;
 }
 
@@ -301,6 +307,7 @@ export function CarouselPause({
 	className = "",
 	...props
 }: ButtonProps) {
+	const { t } = useTranslation();
 	const { api, isAutoplayEnabled, toggleAutoplay } = useCarousel();
 
 	return <Button
@@ -313,7 +320,9 @@ export function CarouselPause({
 		{...props}
 	>
 		{isAutoplayEnabled ? <Pause/> : <Play/>}
-		<span className="sr-only">Next slide</span>
+		<span className="sr-only">
+			{t(isAutoplayEnabled ? "component.carousel.pause" : "component.carousel.play")}
+		</span>
 	</Button>;
 }
 
@@ -360,6 +369,10 @@ export function CarouselDot({
 		}}
 		{...props}
 	>
-		<span className="sr-only">Scroll to slide {snapIndex + 1}</span>
+		<span className="sr-only">
+			<Trans i18nKey="component.carousel.scroll-to-slide">
+				text {{index: snapIndex + 1}}
+			</Trans>
+		</span>
 	</Button>;
 }

@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { createHashRouter, Outlet, RouterProvider } from "react-router";
 
 import { ThemeProvider } from "./Hooks/useTheme";
+import "./Util/i18n";
 import { About } from "./Pages/About";
 import { App } from "./Pages/App.tsx";
 import { ErrorBoundary } from "./Pages/ErrorBoundary";

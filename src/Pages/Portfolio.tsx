@@ -1,5 +1,6 @@
 import { ListMinus, ListPlus, Trash2 } from "lucide-react";
 import { useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router";
 
 import { Badge } from "~/Components/Badge";
@@ -12,6 +13,8 @@ import { AllTags, GetCategoryFromTag, Tag } from "~/Util/Project";
 import { Projects } from "~/Util/ProjectData";
 
 export function Portfolio() {
+	const { t } = useTranslation();
+
 	// Doesn't really need to be a state variable, but ¯\_(ツ)_/¯
 	const [projects] = useState<(keyof typeof Projects)[]>([
 		"ganymede",
@@ -84,19 +87,23 @@ export function Portfolio() {
 	}, [projects, activeTags]);
 
 	return <div className="flex flex-col p-6 max-w-7xl mx-auto grow overflow-x-hidden">
-		<Text variant="h1" className="mx-auto text-center">Portfolio</Text>
+		<Text variant="h1" className="mx-auto text-center">{t("portfolio.header")}</Text>
 		<Text variant="lead" className="mx-auto text-center">
-			A curated collection of technical and creative projects across gameplay and tools
-			programming as well as systems design.
+			{t("portfolio.subtitle")}
 		</Text>
 		<Divider/>
 		<div className="mt-6 bg-dark rounded p-6">
 			<div className="flex flex-row gap-1">
-			<Text variant="large" className="inline">Filter by tag:</Text>
+			<Text variant="large" className="inline">{t("portfolio.filter-header")}</Text>
 			<div className="grow"/>
 			<Button
 				kind="outline"
 				size="icon"
+				aria-label={
+					matchMode === "all"
+						? t("portfolio.tag-match-any")
+						: t("portfolio.tag-match-all")
+				}
 				onClick={() => {
 					if (matchMode === "all") {
 						searchParams.delete("mode");
@@ -112,6 +119,7 @@ export function Portfolio() {
 				? <Button
 					kind="outline"
 					size="icon"
+					aria-label={t("portfolio.tags-clear")}
 					onClick={() => {
 						searchParams.delete("tags");
 						setSearchParams(searchParams);
@@ -136,6 +144,11 @@ export function Portfolio() {
 							kind={GetCategoryFromTag(tag).badgeKind}
 							className={"cursor-pointer relative"}
 							onClick={() => ToggleTag(tag)}
+							aria-label={
+								isActive
+									? t("portfolio.disable-tag", { tag })
+									: t("portfolio.enable-tag", { tag })
+							}
 						>
 							{tag}
 							<div

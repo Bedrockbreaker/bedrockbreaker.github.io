@@ -1,5 +1,6 @@
 import Autoplay from "embla-carousel-autoplay";
 import { useEffect, useState } from "react";
+import { Trans, useTranslation } from "react-i18next";
 
 import { Button } from "~/Components/Button";
 import { Card } from "~/Components/Card";
@@ -26,6 +27,7 @@ import HomepageLogo_ThemeDark from "~/Assets/UI/HomepageLogo_ThemeDark.png";
 import HomepageLogo_ThemeLight from "~/Assets/UI/HomepageLogo_ThemeLight.png";
 
 export function About() {
+	const { t } = useTranslation();
 	const { prefersReducedMotion } = useAccessibility();
 	const [carouselApi, setCarouselApi] = useState<CarouselApi>();
 
@@ -55,14 +57,14 @@ export function About() {
 		<div className="flex flex-row flex-wrap gap-6 justify-center -mt-6">
 			<div className="flex flex-col md:max-xl:flex-row sm:max-xl:min-w-full xl:min-w-max text-center pt-6 justify-center">
 				<div className="my-auto">
-					<Text variant="h1">Jenson Searle</Text>
-					<Text variant="h3">Tools & Gameplay Programmer</Text>
+					<Text variant="h1">{t("about.title")}</Text>
+					<Text variant="h3">{t("about.subtitle")}</Text>
 				</div>
 				<div className="flex justify-center mt-6">
 					<HoverTilt>
 						<ThemedImage
 							sources={{light: HomepageLogo_ThemeLight, dark: HomepageLogo_ThemeDark}}
-							alt="A pixel art green dragon wrapped around a chess pawn."
+							alt={t("about.hero-alt")}
 							width={256}
 							height={256}
 						/>
@@ -92,53 +94,27 @@ export function About() {
 				</div>
 			</Carousel>
 		</div>
-		<Text variant="lead" className="text-center">
-			Any sufficiently advanced technology is indistinguishable from magic.
-		</Text>
-		<Text variant="muted" className="text-right mr-6 mt-2">- Arthur C. Clarke</Text>
+		<Text variant="lead" className="text-center">{t("about.quote")}</Text>
+		<Text variant="muted" className="text-right mr-6 mt-2">{t("about.quote-author")}</Text>
 		<Divider/>
 		<article className="mt-6">
-			<Text variant="h4" className="-mb-6">About Me</Text>
-			<Text className="-mt-6">
-				I'm a game developer with a background spanning both engineering and design.
-				I specialize in tools development and gameplay systems, with a strong focus on
-				cross-disciplinary collaboration.
-			</Text>
-			<Text>
-				My work spans from full-stack web applications to internal game development tooling.
-				I've contributed to projects using Unreal Engine, Unity, and custom engines,
-				working primarily in C++, C#, and TypeScript. I also maintain open-source tools and
-				have authored a Minecraft mod with over 50,000 downloads.
-			</Text>
-			<Text>
-				I'm also seeking opportunities to join a Japanese game studio where I can contribute
-				to system- and narrative-driven gameplay experiences as a team. My Japanese
-				proficiency is about at an N4-N3 level, and is climbing higher every day. Long-term,
-				I wish to become a Japanese citizen.
-			</Text>
-			<Text variant="h4" className="mt-12 -mb-6">Current Projects</Text>
-			<Text>
-				I'm developing several long-term systems projects focused on narrative,
-				interoperability, and extensibility, including:
-			</Text>
+			<Text variant="h4" className="-mb-6">{t("about.about-me.header")}</Text>
+			<Text className="-mt-6">{t("about.about-me.paragraphs.0")}</Text>
+			<Text>{t("about.about-me.paragraphs.1")}</Text>
+			<Text>{t("about.about-me.paragraphs.2")}</Text>
+			<Text variant="h4" className="mt-12 -mb-6">{t("about.current-projects.header")}</Text>
+			<Text>{t("about.current-projects.paragraphs.0")}</Text>
 			<UL>
+				<LI>{t("about.current-projects.paragraphs.1")}</LI>
 				<LI>
-					A systemic narrative-driven action-adventure game, supporting
-					state-dependent puzzle logic and save / load progression systems, designed
-					to decouple narrative structure from level scripting -- enabling non-linear
-					storytelling and reusable narrative modules.
+					<Trans i18nKey="about.current-projects.paragraphs.2">
+						text <Link href="https://jellyfin.org/">text</Link> text
+					</Trans>
 				</LI>
 				<LI>
-					A multi-part media tool for managing music libraries in{" "}
-					<Link href="https://jellyfin.org/">Jellyfin</Link>, solving the problem of
-					fragmented personal music libraries by allowing users to aggregate multiple
-					metadata sources and build playlists from them.
-				</LI>
-				<LI>
-					A modding framework for the chaotic multiplayer party game{" "}
-					<Link href="https://char64.itch.io/partyproject">Party Project</Link>,
-					allowing users to create and share custom boards, events, and minigames
-					with runtime safety.
+					<Trans i18nKey="about.current-projects.paragraphs.3">
+						text <Link href="https://char64.itch.io/partyproject">text</Link> text
+					</Trans>
 				</LI>
 			</UL>
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center mt-12">
@@ -146,20 +122,20 @@ export function About() {
 					borderStyle="1"
 					className="motion-safe:hover:-translate-y-1 motion-safe:focus-within:-translate-y-1"
 				>
-					<Text variant="h4">Explore</Text>
-					<Text>View my latest projects</Text>
+					<Text variant="h4">{t("about.cards.0.header")}</Text>
+					<Text>{t("about.cards.0.description")}</Text>
 					<Button kind="outline" asChild className="mt-6">
-						<Link href="/portfolio">Portfolio</Link>
+						<Link href="/portfolio">{t("about.cards.0.call-to-action")}</Link>
 					</Button>
 				</Card>
 				<Card
 					borderStyle="5"
 					className="motion-safe:hover:-translate-y-1 motion-safe:focus-within:-translate-y-1"
 				>
-					<Text variant="h4">Discover</Text>
-					<Text>See my experience and credentials</Text>
+					<Text variant="h4">{t("about.cards.1.header")}</Text>
+					<Text>{t("about.cards.1.description")}</Text>
 					<Button kind="outline" asChild className="mt-6">
-						<Link href="/resume">Résumé</Link>
+						<Link href="/resume">{t("about.cards.1.call-to-action")}</Link>
 					</Button>
 				</Card>
 				<Card
@@ -169,11 +145,11 @@ export function About() {
 						+ "motion-safe:hover:-translate-y-1 motion-safe:focus-within:-translate-y-1"
 					}
 				>
-					<Text variant="h4">Connect</Text>
-					<Text>Get in touch via email</Text>
+					<Text variant="h4">{t("about.cards.2.header")}</Text>
+					<Text>{t("about.cards.2.description")}</Text>
 					<Button kind="outline" asChild className="mt-6">
 						<Link href="mailto:searlejenson@gmail.com" hasExternalIcon={false}>
-							Email me
+							{t("about.cards.2.call-to-action")}
 						</Link>
 					</Button>
 				</Card>
