@@ -4,6 +4,7 @@ import { Link as RouterLink, type LinkProps as RouterLinkProps } from "react-rou
 
 export interface LinkProps extends Omit<RouterLinkProps, "to" | "download"> {
 	href: string;
+	search?: string;
 	hasUnderline?: boolean;
 	isExternal?: boolean;
 	hasExternalIcon?: boolean;
@@ -12,6 +13,7 @@ export interface LinkProps extends Omit<RouterLinkProps, "to" | "download"> {
 
 export function Link({
 	href,
+	search = "",
 	hasUnderline = true,
 	isExternal,
 	hasExternalIcon,
@@ -36,7 +38,7 @@ export function Link({
 		+ `${isExternal && hasExternalIcon ? "inline-flex items-center space-x-1" : ""} ${className}`;
 
 	return <RouterLink
-		to={href}
+		to={{pathname: href, search}}
 		target={isExternal ? "_blank" : "_self"}
 		className={linkClassName}
 		{...(downloadFileName !== "" ? {download: downloadFileName} : undefined)}

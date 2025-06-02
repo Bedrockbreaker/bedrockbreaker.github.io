@@ -33,7 +33,13 @@ export function ProjectCard({project}: {project: Project | keyof typeof Projects
 							disableShadow // Disable the default shadow, apply a different one
 							className="hover:drop-shadow-md select-none"
 						>
-							<Badge kind={GetCategoryFromTag(tag).badgeKind}>{tag}</Badge>
+							<Link
+								href={"/portfolio"}
+								search={"?tags=" + encodeURIComponent(tag)}
+								aria-label={"View projects tagged with " + tag}
+							>
+								<Badge kind={GetCategoryFromTag(tag).badgeKind}>{tag}</Badge>
+							</Link>
 						</HoverTilt>;
 					})}
 				</div>
