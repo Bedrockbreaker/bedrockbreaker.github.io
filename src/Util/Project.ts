@@ -2,110 +2,110 @@ export const tagCategories = {
 	type: {
 		badgeKind: "color1",
 		tags: [
-			"Game",
-			"Mod",
-			"Tool",
-			"Documentation",
-			"Portfolio"
+			"game",
+			"mod",
+			"tool",
+			"documentation",
+			"portfolio"
 		]
 	},
 	role: {
 		badgeKind: "color2",
 		tags: [
-			"Programmer",
-			"Designer",
-			"Artist"
+			"programmer",
+			"designer",
+			"artist"
 		]
 	},
 	focus: {
 		badgeKind: "color3",
 		tags: [
-			"Core Mechanics",
-			"Combat Design",
-			"AI & Behavior",
-			"Animation Systems",
-			"Input Systems",
-			"Multiplayer Logic",
-			"Pathfinding",
-			"Physics Systems",
-			"Modding Tools",
-			"Rendering Pipeline",
-			"UI/UX Tooling",
-			"Editor Extensions",
-			"Devtools",
-			"Save/Load Systems",
-			"Serialization",
-			"Data-Driven Design",
-			"Narrative Systems",
-			"Level Scripting",
-			"Game Economy",
-			"Procedural Generation",
-			"Accessibility Design",
-			"UX/Interaction Design",
-			"Asset Pipelines",
-			"Multithreading",
-			"Performance Optimization",
-			"Cross-Mod Compatibility",
-			"Build Tooling",
-			"Dynamic Loading"
+			"core-mechanics",
+			"combat-design",
+			"ai-behavior",
+			"animation-systems",
+			"input-systems",
+			"multiplayer-logic",
+			"pathfinding",
+			"physics-systems",
+			"modding-tools",
+			"rendering-pipeline",
+			"ui-ux-tooling",
+			"editor-extensions",
+			"devtools",
+			"save-load-systems",
+			"serialization",
+			"data-driven-design",
+			"narrative-systems",
+			"level-scripting",
+			"game-economy",
+			"procedural-generation",
+			"accessibility-design",
+			"ux-interaction-design",
+			"asset-pipelines",
+			"multithreading",
+			"performance-optimization",
+			"cross-mod-compatibility",
+			"build-tooling",
+			"dynamic-loading"
 		]
 	},
 	teamSize: {
 		badgeKind: "color4",
 		tags: [
-			"Solo Developer",
-			"2-4 Team Members",
-			"5-14 Team Members",
-			"15+ Team Members"
+			"solo-developer",
+			"2-4-team-members",
+			"5-14-team-members",
+			"15-team-members"
 		]
 	},
 	time: {
 		badgeKind: "color5",
 		tags: [
-			"48 Hours",
-			"1-2 Weeks",
-			"2-4 Weeks",
-			"1-3 Months",
-			"3+ Months"
+			"48-hours",
+			"1-2-weeks",
+			"2-4-weeks",
+			"1-3-months",
+			"3-months"
 		]
 	},
 	engine: {
 		badgeKind: "color6",
 		tags: [
-			"Unreal Engine",
-			"Unity",
-			"Godot",
-			"Minecraft",
-			"NodeJS",
-			"Board Game",
-			"Construct"
+			"unreal-engine",
+			"unity",
+			"godot",
+			"minecraft",
+			"nodejs",
+			"board-game",
+			"construct"
 		]
 	},
 	platform: {
 		badgeKind: "color7",
 		tags: [
-			"PC",
-			"Console",
-			"Website",
-			"Discord"
+			"pc",
+			"console",
+			"website",
+			"discord"
 		]
 	},
 	lang: {
 		badgeKind: "color8",
 		tags: [
-			"C++",
-			"C#",
-			"Java",
-			"JavaScript",
-			"TypeScript",
-			"Blueprint"
+			"cpp",
+			"csharp",
+			"java",
+			"javascript",
+			"typescript",
+			"blueprint"
 		]
 	},
 	miscellaneous: {
 		badgeKind: "color9",
 		tags: [
-			"Work in Progress",
-			"Open Source"
+			"work-in-progress",
+			"open-source"
 		]
 	}
 } as const;

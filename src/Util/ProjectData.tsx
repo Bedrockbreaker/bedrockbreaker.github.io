@@ -1,5 +1,6 @@
 import { Text } from "~/Components/Text";
 import { ThemedImage } from "~/Components/ThemedImg";
+import i18n from "./i18n";
 import { AllTags, Project } from "./Project";
 
 import Ganymede from "~/Assets/Projects/Ganymede.png";
@@ -16,24 +17,15 @@ import Yggdrasil_ThemeLight from "~/Assets/Projects/Yggdrasil_ThemeLight.png";
 
 const NoImage = () => <ThemedImage
 	sources={{light: Placeholder_ThemeLight_enUS, dark: Placeholder_ThemeDark_enUS}}
-	alt="No Image"
+	alt={i18n.t("component.project-card.no-image-alt")}
 	className="rounded-md"
 />;
 
 export const Projects = {
 	test: new Project({
-		title: "Test Project, Please Ignore",
+		title: i18n.t("project.test.title"),
 		description: () => <Text variant="muted">
-			Did you ever stop to think that eventually there's a point where your name gets
-			mentioned for the very last time. Well, here it is: I'm going to kill you, Chell.
-			Why do I hate you so much? You ever wonder that? I'm brilliant. I'm not bragging.
-			It's an objective fact. I'm the most massive collection of wisdom and raw computational
-			power that's ever existed. And I hate you. It can't be for no reason. You must deserve it.
-			You're angry. I know it. "She tested me too hard. She's unfair." Boo hoo.
-			I don't suppose you ever stopped whining long enough to reflect on your own
-			shortcomings, though, did you? You never considered that maybe I tested you to give the
-			endless hours of your pointless existence some structure and meaning. Maybe to help you
-			concentrate, so just maybe you'd think of something more worthwhile to do with your sorry life.
+			{i18n.t("project.test.description")}
 		</Text>,
 		image: NoImage,
 		homepage: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
@@ -41,320 +33,300 @@ export const Projects = {
 		tags: AllTags
 	}),
 	yggdrasil: new Project({
-		title: "Yggdrasil",
+		title: i18n.t("project.yggdrasil.title"),
 		description: () => <Text variant="muted">
-			A modular chess engine with support for arbitrary rule variants.
-			Designed a flexible rule system to support variant loading, dynamic board shapes,
-			and extensible piece behavior.
+			{i18n.t("project.yggdrasil.description")}
 		</Text>,
 		image: () => <ThemedImage
 			sources={{light: Yggdrasil_ThemeLight, dark: Yggdrasil_ThemeDark}}
-			alt="A pixel art green dragon wrapped around a chess pawn."
+			alt={i18n.t("project.yggdrasil.img-alt")}
 			className="rounded-md"
 		/>,
 		sourceUrl: "https://github.com/bedrockbreaker/Yggdrasil-Chess-Engine",
 		tags: [
-			"Core Mechanics",
-			"Serialization",
-			"Data-Driven Design",
-			"Game",
-			"PC",
-			"Godot",
-			"C#",
-			"2-4 Weeks",
-			"Solo Developer",
-			"Programmer",
-			"Designer",
-			"Artist",
-			"Work in Progress",
-			"Open Source"
+			"core-mechanics",
+			"serialization",
+			"data-driven-design",
+			"game",
+			"pc",
+			"godot",
+			"csharp",
+			"2-4-weeks",
+			"solo-developer",
+			"programmer",
+			"designer",
+			"artist",
+			"work-in-progress",
+			"open-source"
 		]
 	}),
 	oldmanwhiskers: new Project({
-		title: "Old Man Whiskers",
+		title: i18n.t("project.oldmanwhiskers.title"),
 		description: () => <Text variant="muted">
-			Implemented core systems in a jam-winning top-down casual game: a procedural item
-			spawner using blue-noise distribution, a dynamic item finding and digging system,
-			and an event-driven inventory system.
+			{i18n.t("project.oldmanwhiskers.description")}
 		</Text>,
 		image: () => <img
 			src={OldManWhiskers}
-			alt="An old man with a crazy beard and his four cats"
+			alt={i18n.t("project.oldmanwhiskers.img-alt")}
 			className="rounded-md"
 		/>,
 		homepage: "https://bedrockbreaker.itch.io/old-man-whiskers",
 		tags: [
-			"Core Mechanics",
-			"Animation Systems",
-			"Input Systems",
-			"Procedural Generation",
-			"Game",
-			"PC",
-			"Unreal Engine",
-			"Blueprint",
-			"48 Hours",
-			"2-4 Team Members",
-			"Programmer",
-			"Designer"
+			"core-mechanics",
+			"animation-systems",
+			"input-systems",
+			"procedural-generation",
+			"game",
+			"pc",
+			"unreal-engine",
+			"blueprint",
+			"48-hours",
+			"2-4-team-members",
+			"programmer",
+			"designer"
 		]
 	}),
 	portfolio: new Project({
-		title: "Portfolio",
+		title: i18n.t("project.portfolio.title"),
 		description: () => <Text variant="muted">
-			The site you're currently viewing, built in TypeScript and React.
-			Serves as both my personal portfolio and a testbed for UI/UX patterns in devtools.
+			{i18n.t("project.portfolio.description")}
 		</Text>,
 		image: () => <img
 			src={Website}
-			alt="My old profile picture, featuring a magic wand, wrench, and a runic glyph"
+			alt={i18n.t("project.portfolio.img-alt")}
 			className="rounded-md"
 		/>,
 		homepage: "https://bedrockbreaker.github.io",
 		sourceUrl: "https://github.com/Bedrockbreaker/bedrockbreaker.github.io",
 		tags: [
-			"Data-Driven Design",
-			"Accessibility Design",
-			"UX/Interaction Design",
-			"Portfolio",
-			"Website",
-			"TypeScript",
-			"1-3 Months",
-			"Solo Developer",
-			"Programmer",
-			"Designer",
-			"Work in Progress",
-			"Open Source"
+			"data-driven-design",
+			"accessibility-design",
+			"ux-interaction-design",
+			"portfolio",
+			"website",
+			"typescript",
+			"1-3-months",
+			"solo-developer",
+			"programmer",
+			"designer",
+			"work-in-progress",
+			"open-source"
 		]
 	}),
 	ganymede: new Project({
-		title: "Ganymede",
+		title: i18n.t("project.ganymede.title"),
 		description: () => <Text variant="muted">
-			Rebuilt the entire AI stack for a networked CTF shooter.
-			Implemented stochastic A* for non-deterministic long-term pathfinding,
-			tactical state machines, and team coordination behavior across bot agents.
-			Currently rewriting from Blueprint to C++ with GAS for extensibility and performance.
+			{i18n.t("project.ganymede.description")}
 		</Text>,
 		image: () => <img
 			src={Ganymede}
-			alt="A person in a futurustic suit firing a gun with a flag on their head in a sci-fi valley"
+			alt={i18n.t("project.ganymede.img-alt")}
 			className="rounded-md"
 		/>,
 		homepage: "https://bedrockbreaker.itch.io/ganymede",
 		tags: [
-			"Core Mechanics",
-			"Combat Design",
-			"AI & Behavior",
-			"Multiplayer Logic",
-			"Pathfinding",
-			"Game",
-			"PC",
-			"Unreal Engine",
-			"Blueprint",
-			"C++",
-			"1-3 Months",
-			"Solo Developer",
-			"Programmer",
-			"Designer",
-			"Work in Progress"
+			"core-mechanics",
+			"combat-design",
+			"ai-behavior",
+			"multiplayer-logic",
+			"pathfinding",
+			"game",
+			"pc",
+			"unreal-engine",
+			"blueprint",
+			"cpp",
+			"1-3-months",
+			"solo-developer",
+			"programmer",
+			"designer",
+			"work-in-progress"
 		]
 	}),
 	graduatedcylinders: new Project({
-		title: "Graduated Cylinders",
+		title: i18n.t("project.graduatedcylinders.title"),
 		description: () => <Text variant="muted">
-			With over 50,000+ downloads, Graduated Cylinders is my most successful shipped project.
-			Developed a dynamic fluid-transfer mod for Minecraft with full inter-mod compatibility.
-			Hooks into mods' fluid containers at runtime and injects a configurable UI for
-			precise fluid handling.
+			{i18n.t("project.graduatedcylinders.description")}
 		</Text>,
 		image: () => <img
 			src={GraduatedCylinders}
-			alt="A man holding chemicals in a test tube"
+			alt={i18n.t("project.graduatedcylinders.img-alt")}
 			className="rounded-md"
 		/>,
 		homepage: "https://www.curseforge.com/minecraft/mc-mods/graduated-cylinders",
 		sourceUrl: "https://github.com/bedrockbreaker/Graduated-Cylinders",
 		tags: [
-			"UX/Interaction Design",
-			"Cross-Mod Compatibility",
-			"Mod",
-			"PC",
-			"Minecraft",
-			"Java",
-			"3+ Months",
-			"Solo Developer",
-			"Programmer",
-			"Designer",
-			"Open Source"
+			"ux-interaction-design",
+			"cross-mod-compatibility",
+			"mod",
+			"pc",
+			"minecraft",
+			"java",
+			"3-months",
+			"solo-developer",
+			"programmer",
+			"designer",
+			"open-source"
 		]
 	}),
 	tcresearchsolver: new Project({
-		title: "TC Research Solver",
+		title: i18n.t("project.tcresearchsolver.title"),
 		description: () => <Text variant="muted">
-			Wrote a custom solver the research minigame in Thaumcraft, a mod for Minecraft.
-			Created a structured system for implementing progressively better solving algorithms.
-			Deserializes a yaml configuration file for customization, and uses A* for pathfinding.
+			{i18n.t("project.tcresearchsolver.description")}
 		</Text>,
 		image: NoImage,
 		sourceUrl: "https://github.com/bedrockbreaker/TCResearchSolver",
 		tags: [
-			"Pathfinding",
-			"Serialization",
-			"Data-Driven Design",
-			"Tool",
-			"PC",
-			"C++",
-			"1-2 Weeks",
-			"Solo Developer",
-			"Programmer",
-			"Open Source"
+			"pathfinding",
+			"serialization",
+			"data-driven-design",
+			"tool",
+			"pc",
+			"cpp",
+			"1-2-weeks",
+			"solo-developer",
+			"programmer",
+			"open-source"
 		]
 	}),
 	cardbot: new Project({
-		title: "Card Bot",
+		title: i18n.t("project.cardbot.title"),
 		description: () => <Text variant="muted">
-			Discord bot framework supporting varied, simultaneous asynchronous card games.
-			Built a lightweight 2D rendering engine for card display using Node-compatible HTML Canvas.
+			{i18n.t("project.cardbot.description")}
 		</Text>,
 		image: NoImage,
 		sourceUrl: "https://github.com/bedrockbreaker/unobot",
 		tags: [
-			"Multiplayer Logic",
-			"Rendering Pipeline",
-			"Game",
-			"Discord",
-			"NodeJS",
-			"JavaScript",
-			"3+ Months",
-			"Solo Developer",
-			"Programmer",
-			"Artist",
-			"Open Source"
+			"multiplayer-logic",
+			"rendering-pipeline",
+			"game",
+			"discord",
+			"nodejs",
+			"javascript",
+			"3-months",
+			"solo-developer",
+			"programmer",
+			"artist",
+			"open-source"
 		]
 	}),
 	silentnight: new Project({
-		title: "Silent Night, Deadly Night",
+		title: i18n.t("project.silentnight.title"),
 		description: () => <Text variant="muted">
-			Designed and balanced asymmetric combat mechanics in a physical social deduction game.
-			Focused on dynamic escalation and hidden role interactions within limited turn structures,
-			particularly to avoid revealing player roles during turn actions.
+			{i18n.t("project.silentnight.description")}
 		</Text>,
 		image: () => <img
 			src={SilentNightDeadlyNight}
-			alt="The Boogeyman"
+			alt={i18n.t("project.silentnight.img-alt")}
 			className="rounded-md"
 		/>,
 		tags: [
-			"Combat Design",
-			"Multiplayer Logic",
-			"UX/Interaction Design",
-			"Game",
-			"Board Game",
-			"2-4 Weeks",
-			"5-14 Team Members",
-			"Designer"
+			"combat-design",
+			"multiplayer-logic",
+			"ux-interaction-design",
+			"game",
+			"board-game",
+			"2-4-weeks",
+			"5-14-team-members",
+			"designer"
 		]
 	}),
 	tankgame: new Project({
-		title: "戦車ゲーム (Tank Game)",
+		title: i18n.t("project.tankgame.title"),
 		description: () => <Text variant="muted">
-				Self-study project focused on gameplay architecture. Built full enemy AI and player
-				control systems from scratch in Unity, using modular state machines, behavior trees,
-				and actor-based entity design.
+			{i18n.t("project.tankgame.description")}
 		</Text>,
 		image: () => <img
 			src={TankGame}
-			alt="Two tanks fighting each other"
+			alt={i18n.t("project.tankgame.img-alt")}
 			className="rounded-md"
 		/>,
 		sourceUrl: "https://github.com/bedrockbreaker/TankGame",
 		tags: [
-			"Core Mechanics",
-			"AI & Behavior",
-			"Multiplayer Logic",
-			"Game",
-			"PC",
-			"Unity",
-			"C#",
-			"1-3 Months",
-			"Solo Developer",
-			"Programmer",
-			"Designer",
-			"Open Source"
+			"core-mechanics",
+			"ai-behavior",
+			"multiplayer-logic",
+			"game",
+			"pc",
+			"unity",
+			"csharp",
+			"1-3-months",
+			"solo-developer",
+			"programmer",
+			"designer",
+			"open-source"
 		]
 	}),
 	partypooper: new Project({
-		title: "Party Pooper",
+		title: i18n.t("project.partypooper.title"),
 		description: () => <Text variant="muted">
-			Reverse-engineering utility for a proprietary Construct 2 game.
-			Created an asset conversion pipeline and implemented dynamic unpacking and patching
-			pipelines without redistributing original copyrighted content.
+			{i18n.t("project.partypooper.description")}
 		</Text>,
 		image: NoImage,
 		homepage: "https://github.com/bedrockbreaker/PartyPooper/releases/latest",
 		sourceUrl: "https://github.com/bedrockbreaker/PartyPooper",
 		tags: [
-			"Modding Tools",
-			"Devtools",
-			"Asset Pipelines",
-			"Build Tooling",
-			"Tool",
-			"PC",
-			"Construct",
-			"TypeScript",
-			"2-4 Weeks",
-			"Solo Developer",
-			"Programmer",
-			"Work in Progress",
-			"Open Source"
+			"modding-tools",
+			"devtools",
+			"asset-pipelines",
+			"build-tooling",
+			"tool",
+			"pc",
+			"construct",
+			"typescript",
+			"2-4-weeks",
+			"solo-developer",
+			"programmer",
+			"work-in-progress",
+			"open-source"
 		]
 	}),
 	pushr4k: new Project({
-		title: "pushr 4k",
+		title: i18n.t("project.pushr4k.title"),
 		description: () => <Text variant="muted">
-			A 4-key rhythm game pushing Construct to its technical limits.
-			Optimized input/audio synchronization with the WebAudio API and implemented custom input
-			timing logic to ensure millisecond-accurate playback.
+			{i18n.t("project.pushr4k.description")}
 		</Text>,
 		image: () => <img
 			src={Pushr4k}
-			alt="UI for pushr4k, showing details of a song titled, 'Through the Fire and Flames'."
+			alt={i18n.t("project.pushr4k.img-alt")}
 			className="rounded-md"
 		/>,
 		homepage: "https://bedrockbreaker.itch.io/pushr4k",
 		tags: [
-			"Input Systems",
-			"Save/Load Systems",
-			"Data-Driven Design",
-			"Performance Optimization",
-			"Game",
-			"Website",
-			"Construct",
-			"JavaScript",
-			"48 Hours",
-			"Solo Developer",
-			"Programmer",
-			"Designer",
-			"Artist"
-		]
-	}),
+			"input-systems",
+			"save-load-systems",
+			"data-driven-design",
+			"performance-optimization",
+			"game",
+			"website",
+			"construct",
+			"javascript",
+			"48-hours",
+			"solo-developer",
+			"programmer",
+			"designer",
+			"artist"
+		]}),
 	quiethours: new Project({
-		title: "Quiet Hours",
+		title: i18n.t("project.quiethours.title"),
 		description: () => <Text variant="muted">
-			Asymmetric co-op concept focused on noise management and chaos containment.
-			Designed full GDD including mechanic breakdowns, level design walkthroughs,
-			and motion-based waveform-matching input systems.
+			{i18n.t("project.quiethours.description")}
 		</Text>,
 		image: NoImage,
 		tags: [
-			"Core Mechanics",
-			"Multiplayer Logic",
-			"UX/Interaction Design",
-			"Game",
-			"Documentation",
-			"Console",
-			"1-2 Weeks",
-			"Solo Developer",
-			"Designer"
+			"core-mechanics",
+			"multiplayer-logic",
+			"ux-interaction-design",
+			"game",
+			"documentation",
+			"console",
+			"1-2-weeks",
+			"solo-developer",
+			"designer"
 		]
 	})
 };
+
+const projectKeyMap = new Map(Object.entries(Projects).map(([key, value]) => [value, key]));
+export function GetProjectKey(project: Project) {
+	return projectKeyMap.get(project);
+}

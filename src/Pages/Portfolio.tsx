@@ -150,7 +150,7 @@ export function Portfolio() {
 									: t("portfolio.enable-tag", { tag })
 							}
 						>
-							{tag}
+							{t("tags." + tag)}
 							<div
 								className={
 									"absolute pointer-events-none top-0 left-0 w-full h-full "

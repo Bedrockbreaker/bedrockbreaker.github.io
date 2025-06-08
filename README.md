@@ -11,6 +11,7 @@ Built with:
 - Vite
 - Tailwind
 - shadcn/UI
+- react-i18next
 - Lucide
 - Embla Carousel
 - GitHub Pages

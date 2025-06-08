@@ -36,7 +36,7 @@ export function Header() {
 		}
 	>
 		<div className="flex flex-row p-6 max-w-7xl mx-auto grow overflow-x-hidden">
-			<NavigationMenu className="hidden md:flex m-2">
+			<NavigationMenu className="hidden md:flex m-2 text-nowrap">
 				<NavigationMenuList>
 					<NavigationMenuItem>
 						<NavigationMenuLink href="/" hasUnderline={false}>
@@ -54,7 +54,7 @@ export function Header() {
 						</NavigationMenuLink>
 					</NavigationMenuItem>
 				</NavigationMenuList>
-				<Text variant="muted" className="ml-6 text-nowrap">{t("header.notice")}</Text>
+				<Text variant="muted" className="ml-6">{t("header.notice")}</Text>
 			</NavigationMenu>
 			<div className="grow"/>
 			<div className="flex flex-row space-x-1 m-2">

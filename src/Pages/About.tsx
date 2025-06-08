@@ -99,9 +99,12 @@ export function About() {
 		<Divider/>
 		<article className="mt-6">
 			<Text variant="h4" className="-mb-6">{t("about.about-me.header")}</Text>
-			<Text className="-mt-6">{t("about.about-me.paragraphs.0")}</Text>
+			<Text>{t("about.about-me.paragraphs.0")}</Text>
 			<Text>{t("about.about-me.paragraphs.1")}</Text>
-			<Text>{t("about.about-me.paragraphs.2")}</Text>
+			<Text variant="h4" className="mt-12 -mb-6">{t("about.working-in-japan.header")}</Text>
+			<Text>{t("about.working-in-japan.paragraphs.0")}</Text>
+			<Text>{t("about.working-in-japan.paragraphs.1")}</Text>
+			<Text>{t("about.working-in-japan.paragraphs.2")}</Text>
 			<Text variant="h4" className="mt-12 -mb-6">{t("about.current-projects.header")}</Text>
 			<Text>{t("about.current-projects.paragraphs.0")}</Text>
 			<UL>
