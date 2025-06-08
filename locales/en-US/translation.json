@@ -1,8 +1,31 @@
 {
 	"component": {
+		"carousel": {
+			"provider-roledescription": "carousel",
+			"item-roledescription": "slide",
+			"previous-slide": "Previous slide",
+			"next-slide": "Next slide",
+			"pause": "Pause autoplay",
+			"play": "Start autoplay",
+			"scroll-to-slide": "Scroll to slide {{index}}"
+		},
+		"project-card": {
+			"view-tags": "View projects tagged with {{tag}}",
+			"view-homepage": "View Project",
+			"view-homepage-aria-label": "View project homepage for {{project}}",
+			"view-source": "View Source",
+			"view-source-aria-label": "View project source code for {{project}}",
+			"no-image-alt": "No Image"
+		},
 		"sheet": {
 			"close": "Close"
 		}
+	},
+	"error": {
+		"unexpected-error": "Unexpected Error",
+		"route-fallback": "Something went wrong.",
+		"internal": "An unexpected error occurred. Please try again later.",
+		"return-homepage": "Return to homepage"
 	},
 	"header": {
 		"about": "About",
@@ -40,15 +63,22 @@
 	"about": {
 		"title": "Jenson Searle",
 		"subtitle": "Tools & Gameplay Programmer",
-		"hero-alt": "A pixel art green dragon wrapped around a white chess pawn.",
+		"hero-alt": "A pixel art green dragon wrapped around a chess pawn.",
 		"quote": "Any sufficiently advanced technology is indistinguishable from magic.",
 		"quote-author": "- Arthur C. Clarke",
 		"about-me": {
 			"header": "About Me",
 			"paragraphs": [
 				"I'm a game developer with a background spanning both engineering and design. I specialize in tools development and gameplay systems, with a strong focus on cross-disciplinary collaboration.",
-				"My work spans from full-stack web applications to internal game development tooling. I've contributed to projects using Unreal Engine, Unity, and custom engines, working primarily in C++, C#, and TypeScript. I also maintain open-source tools and have authored a Minecraft mod with over 50,000 downloads.",
-				"I'm also seeking opportunities to join a Japanese game studio where I can contribute to system- and narrative-driven gameplay experiences as a team. My Japanese proficiency is about at an N4-N3 level, and is climbing higher every day. Long-term, I wish to become a Japanese citizen."
+				"My work spans from full-stack web applications to internal game development tooling. I've contributed to projects using Unreal Engine, Unity, and custom engines, working primarily in C++, C#, and TypeScript. I also maintain open-source tools and have authored a Minecraft mod with over 50,000 downloads."
+			]
+		},
+		"working-in-japan": {
+			"header": "Working in Japan",
+			"paragraphs": [
+				"Although I'm currently based in the US, I'm actively seeking opportunities at Japanese game studios. I'm drawn to the collaborative, quality-driven culture of Japanese development teams, where long-term vision, respect for craft, and strong team cohesion are highly valued.",
+				"My working style emphasizes careful listening, initiative balanced with humility, and an appreciation for cross-disciplinary collaboration -- traits I believe align well with Japanese team dynamics.",
+				"I'm currently studying Japanese (JLPT N4-N3 level) and improving steadily. In the long term, I hope to build a life and career in Japan, and am even considering pursuing Japanese citizenship."
 			]
 		},
 		"current-projects": {
@@ -77,5 +107,168 @@
 				"call-to-action": "Email me"
 			}
 		]
+	},
+	"portfolio": {
+		"header": "Portfolio",
+		"subtitle": "A curated collection of technical and creative projects across gameplay and tools programming as well as systems design.",
+		"filter-header": "Filter by tag:",
+		"tag-match-all": "Match all tags",
+		"tag-match-any": "Match any tag",
+		"tags-clear": "Clear all tags",
+		"enable-tag": "Filter by {{tag}}",
+		"disable-tag": "Unfilter by {{tag}}"
+	},
+	"resume": {
+		"header": "Résumé",
+		"subtitle": "Download or view my résumé in multiple formats",
+		"timestamp": "Last updated: {{timestamp}}",
+		"cards": [
+			{
+				"header": "PDF",
+				"description": "Download the print-friendly version",
+				"view": "View",
+				"download": "Download"
+			},
+			{
+				"header": "DOCX",
+				"description": "For editable use in Microsoft Word, etc.",
+				"view": "View",
+				"download": "Download"
+			},
+			{
+				"header": "TXT",
+				"description": "Plain text version for maximum portability",
+				"view": "View",
+				"download": "Download"
+			}
+		]
+	},
+	"tags": {
+		"game": "Game",
+		"mod": "Mod",
+		"tool": "Tool",
+		"documentation": "Documentation",
+		"portfolio": "Portfolio",
+		"programmer": "Programmer",
+		"designer": "Designer",
+		"artist": "Artist",
+		"core-mechanics": "Core Mechanics",
+		"combat-design": "Combat Design",
+		"ai-behavior": "AI & Behavior",
+		"animation-systems": "Animation Systems",
+		"input-systems": "Input Systems",
+		"multiplayer-logic": "Multiplayer Logic",
+		"pathfinding": "Pathfinding",
+		"physics-systems": "Physics Systems",
+		"modding-tools": "Modding Tools",
+		"rendering-pipeline": "Rendering Pipeline",
+		"ui-ux-toolinmg": "UI/UX Tooling",
+		"editor-extensions": "Editor Extensions",
+		"devtools": "Devtools",
+		"save-load-systems": "Save/Load Systems",
+		"serialization": "Serialization",
+		"data-driven-design": "Data-Driven Design",
+		"narrative-systems": "Narrative Systems",
+		"level-scripting": "Level Scripting",
+		"game-economy": "Game Economy",
+		"procedural-generation": "Procedural Generation",
+		"accessibility-design": "Accessibility Design",
+		"ux-interaction-design": "UX Interaction Design",
+		"asset-pipelines": "Asset Pipelines",
+		"multithreading": "Multithreading",
+		"performance-optimization": "Performance Optimization",
+		"cross-mod-compatibility": "Cross-Mod Compatibility",
+		"build-tooling": "Build Tooling",
+		"dynamic-loading": "Dynamic Loading",
+		"solo-developer": "Solo Developer",
+		"2-4-team-members": "2-4 Team Members",
+		"5-14-team-members": "5-14 Team Members",
+		"15-team-members": "15+ Team Members",
+		"48-hours": "48 Hours",
+		"1-2-weeks": "1-2 Weeks",
+		"2-4-weeks": "2-4 Weeks",
+		"1-3-months": "1-3 Months",
+		"3-months": "3+ Months",
+		"unreal-engine": "Unreal Engine",
+		"unity": "Unity",
+		"godot": "Godot",
+		"minecraft": "Minecraft",
+		"nodejs": "Node.js",
+		"board-game": "Board Game",
+		"construct": "Construct",
+		"pc": "PC",
+		"console": "Console",
+		"website": "Website",
+		"discord": "Discord",
+		"cpp": "C++",
+		"csharp": "C#",
+		"java": "Java",
+		"javascript": "JavaScript",
+		"typescript": "TypeScript",
+		"blueprint": "Blueprint",
+		"work-in-progress": "Work in Progress",
+		"open-source": "Open Source"
+	},
+	"project": {
+		"test": {
+			"title": "Test Project, Please Ignore",
+			"description": "Did you ever stop to think that eventually there's a point where your name gets mentioned for the very last time. Well, here it is: I'm going to kill you, Chell. Why do I hate you so much? You ever wonder that? I'm brilliant. I'm not bragging. It's an objective fact. I'm the most massive collection of wisdom and raw computational power that's ever existed. And I hate you. It can't be for no reason. You must deserve it. You're angry. I know it. \"She tested me too hard. She's unfair.\" Boo hoo. I don't suppose you ever stopped whining long enough to reflect on your own shortcomings, though, did you? You never considered that maybe I tested you to give the endless hours of your pointless existence some structure and meaning. Maybe to help you concentrate, so just maybe you'd think of something more worthwhile to do with your sorry life."
+		},
+		"yggdrasil": {
+			"title": "Yggdrasil",
+			"description": "A modular chess engine with support for arbitrary rule variants. Designed a flexible rule system to support variant loading, dynamic board shapes, and extensible piece behavior.",
+			"img-alt": "A pixel art green dragon wrapped around a chess pawn."
+		},
+		"oldmanwhiskers": {
+			"title": "Old Man Whiskers",
+			"description": "Implemented core systems in a jam-winning top-down casual game: a procedural item spawner using blue-noise distribution, a dynamic item finding and digging system, and an event-driven inventory system.",
+			"img-alt": "An old man with a crazy beard his four cats."
+		},
+		"portfolio": {
+			"title": "Portfolio",
+			"description": "The site you're currently viewing, built in TypeScript and React. Serves as both my personal portfolio and a testbed for UI/UX patterns in devtools.",
+			"img-alt": "My old profile picture, featuring a magic wand, wrench, and a runic glyph."
+		},
+		"ganymede": {
+			"title": "Ganymede",
+			"description": "Rebuilt the entire AI stack for a networked CTF shooter. Implemented stochastic A* for non-deterministic long-term pathfinding, tactical state machines, and team coordination behavior across bot agents. Currently rewriting from Blueprint to C++ with GAS for extensibility and performance.",
+			"img-alt": "A person in a futurustic suit firing a gun with a flag on their head in a sci-fi valley."
+		},
+		"graduatedcylinders": {
+			"title": "Graduated Cylinders",
+			"description": "With over 50,000+ downloads, Graduated Cylinders is my most successful shipped project. Developed a dynamic fluid-transfer mod for Minecraft with full inter-mod compatibility. Hooks into mods' fluid containers at runtime and injects a configurable UI for precise fluid handling.",
+			"img-alt": "A man holding chemicals in a test tube."
+		},
+		"tcresearchsolver": {
+			"title": "TC Research Solver",
+			"description": "Wrote a custom solver the research minigame in Thaumcraft, a mod for Minecraft. Created a structured system for implementing progressively better solving algorithms. Deserializes a yaml configuration file for customization, and uses A* for pathfinding."
+		},
+		"cardbot": {
+			"title": "Card Bot",
+			"description": "Discord bot framework supporting varied, simultaneous asynchronous card games. Built a lightweight 2D rendering engine for card display using Node-compatible HTML Canvas."
+		},
+		"silentnight": {
+			"title": "Silent Night, Deadly Night",
+			"description": "Designed and balanced asymmetric combat mechanics in a physical social deduction game. Focused on dynamic escalation and hidden role interactions within limited turn structures, particularly to avoid revealing player roles during turn actions.",
+			"img-alt": "The Boogeyman."
+		},
+		"tankgame": {
+			"title": "戦車ゲーム (Tank Game)",
+			"description": "Self-study project focused on gameplay architecture. Built full enemy AI and player control systems from scratch in Unity, using modular state machines, behavior trees, and actor-based entity design.",
+			"img-alt": "Two tanks fighting each other"
+		},
+		"partypooper": {
+			"title": "Party Pooper",
+			"description": "Reverse-engineering utility for a proprietary Construct 2 game. Created an asset conversion pipeline and implemented dynamic unpacking and patching pipelines without redistributing original copyrighted content."
+		},
+		"pushr4k": {
+			"title": "pushr 4k",
+			"description": "A 4-key rhythm game pushing Construct to its technical limits. Optimized input/audio synchronization with the WebAudio API and implemented custom input timing logic to ensure millisecond-accurate playback.",
+			"img-alt": "UI for pushr4k, showing details of a song titled, 'Through the Fire and Flames'."
+		},
+		"quiethours": {
+			"title": "Quiet Hours",
+			"description": "Asymmetric co-op concept focused on noise management and chaos containment. Designed full GDD including mechanic breakdowns, level design walkthroughs, and motion-based waveform-matching input systems."
+		}
 	}
 }

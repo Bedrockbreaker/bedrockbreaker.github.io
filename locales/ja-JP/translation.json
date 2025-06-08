@@ -1,3 +1,270 @@
 {
-
+	"component": {
+		"carousel": {
+			"provider-roledescription": "カルーセル",
+			"item-roledescription": "スライド",
+			"previous-slide": "前のスライド",
+			"next-slide": "次のスライド",
+			"pause": "自動再生を一時停止",
+			"play": "自動再生を開始",
+			"scroll-to-slide": "スライド{{index}}にスクロール"
+		},
+		"project-card": {
+			"view-tags": "{{tag}}のタグ付きプロジェクトを見る",
+			"view-homepage": "プロジェクトを見る",
+			"view-homepage-aria-label": "「{{project}}」のプロジェクトページを見る",
+			"view-source": "ソースを見る",
+			"view-source-aria-label": "「{{project}}」のソースコードを見る",
+			"no-image-alt": "画像なし"
+		},
+		"sheet": {
+			"close": "閉じる"
+		}
+	},
+	"error": {
+		"unexpected-error": "予期しないエラー",
+		"route-fallback": "問題が発生しました。",
+		"internal": "予期しないエラーが発生しました。しばらくしてから再試行してください。",
+		"return-homepage": "ホームページに戻る"
+	},
+	"header": {
+		"about": "概要",
+		"portfolio": "ポートフォリオ",
+		"resume": "履歴書",
+		"notice": "注記：サイトは現在制作中です。",
+		"theme": {
+			"aria-label": "テーマ選択メニューを開く",
+			"light": "ライト",
+			"dark": "ダーク",
+			"system": "システム"
+		},
+		"language": {
+			"aria-label": "言語選択メニューを開く"
+		},
+		"navigation": {
+			"aria-label": "ナビゲーションメニューを開く",
+			"descrption": "ナビゲーション"
+		}
+	},
+	"footer": {
+		"about": "概要",
+		"portfolio": "ポートフォリオ",
+		"resume": "履歴書",
+		"follow-me": "フォロー：",
+		"socials": {
+			"github": "GitHub",
+			"github-alt": "GitHubロゴ",
+			"linkedin": "LinkedIn",
+			"linkedin-alt": "LinkedInロゴ"
+		},
+		"copyright": "© 2024-{{year}} Bedrockbreaker。<3>MITライセンス。</3>",
+		"view-source": "ソースを見る"
+	},
+	"about": {
+		"title": "ジンソン・サール",
+		"subtitle": "ツール・ゲームシステムプログラマー",
+		"hero-alt": "チェスのポーンに巻きついたドット絵の緑のドラゴン。",
+		"quote": "十分に高度な科学技術は、魔法と見分けがつかない。",
+		"quote-author": "※アーサー・C・クラーク",
+		"about-me": {
+			"header": "自己紹介",
+			"paragraphs": [
+				"エンジニアリングとデザイン、両方の分野に経験を持つゲーム開発者です。ツール開発やゲームプレイシステムを専門とし、分野をまたいだ連携やチームワークを重視しています。",
+				"ウェブアプリケーションからゲーム開発ツールまで幅広く手掛けており、Unreal Engine、Unity、自作エンジンを用いたプロジェクトにC++、C#、TypeScriptで貢献してきました。オープンソースツールのメンテナンスや、ダウンロード数5万超のMinecraft Modの開発も行っています。"
+			]
+		},
+		"working-in-japan": {
+			"header": "文化的な適応と価値観",
+			"paragraphs": [
+				"日本で働いた経験はまだありませんが、日本のゲーム開発文化には強い敬意と共感を持っています。丁寧なものづくり、チーム全体で品質を追求する姿勢、そしてプレイヤー体験への真摯なこだわりは、自分の価値観と深く一致しています。",
+				"私自身、静かに傾聴し、他者の意図を汲みながら協力して進めるスタイルで働くことを大切にしています。指示待ちではなく、自発的に動きつつも、謙虚さとチーム全体の調和を意識しています。",
+				"異文化に対する敬意と学ぶ姿勢を持ち続けながら、日本の開発現場で信頼される一員として貢献できるよう努めています。長期的には、日本に根ざした生活を送りたいと考えており、その一環として日本国籍の取得も目指しています。"
+			]
+		},
+		"current-projects": {
+			"header": "現在のプロジェクト",
+			"paragraphs": [
+				"物語性・相互運用性・拡張性に焦点を当てた長期的なシステムプロジェクトを複数進行中です。例として：",
+				"状態依存型のパズルロジックやセーブ／ロード進行をサポートし、物語構造をレベルスクリプトから分離することで、非線形なストーリーテリングと再利用可能なナラティブモジュールを実現するアクションアドベンチャーゲーム。",
+				"<1>Jellyfin</1>と連携する、構成可能な音楽ライブラリ管理ツールです。複数のメタデータソースを統合し、そこからプレイリストを作成可能にすることで、断片化した個人音楽ライブラリの課題を解決します。",
+				"にぎやかなマルチプレイヤーパーティーゲーム「<1>Party Project</1>」向けのモッディングフレームワーク。ユーザーがカスタムボード、イベント、ミニゲームを作成・共有可能にし、実行時の安全性も確保します。"
+			]
+		},
+		"cards": [
+			{
+				"header": "探す",
+				"description": "最新プロジェクトを見る",
+				"call-to-action": "ポートフォリオ"
+			},
+			{
+				"header": "確認する",
+				"description": "経歴と資格を見る",
+				"call-to-action": "履歴書"
+			},
+			{
+				"header": "連絡する",
+				"description": "メールで連絡を取る",
+				"call-to-action": "メールする"
+			}
+		]
+	},
+	"portfolio": {
+		"header": "ポートフォリオ",
+		"subtitle": "ゲームプレイとツールプログラミング、そしてシステムデザインにわたる技術的かつ創造的なプロジェクトを厳選して紹介します。",
+		"filter-header": "タグで絞り込み：",
+		"tag-match-all": "すべてのタグに一致",
+		"tag-match-any": "いずれかのタグに一致",
+		"tags-clear": "すべてのタグをクリア",
+		"enable-tag": "{{tag}}で絞り込み",
+		"disable-tag": "{{tag}}の絞り込みを解除"
+	},
+	"resume": {
+		"header": "履歴書",
+		"subtitle": "履歴書を複数形式で閲覧またはダウンロードできます。",
+		"timestamp": "最終更新：{{timestamp}}",
+		"cards": [
+			{
+				"header": "PDF",
+				"description": "印刷向けのバージョンをダウンロード",
+				"view": "表示",
+				"download": "ダウンロード"
+			},
+			{
+				"header": "DOCX",
+				"description": "Microsoft Wordなどで編集可能な形式",
+				"view": "表示",
+				"download": "ダウンロード"
+			},
+			{
+				"header": "TXT",
+				"description": "最大限の互換性を持つプレーンテキスト形式",
+				"view": "表示",
+				"download": "ダウンロード"
+			}
+		]
+	},
+	"tags": {
+		"game": "ゲーム",
+		"mod": "Mod（改造）",
+		"tool": "ツール",
+		"documentation": "ドキュメント",
+		"portfolio": "ポートフォリオ",
+		"programmer": "プログラマー",
+		"designer": "デザイナー",
+		"artist": "アーティスト",
+		"core-mechanics": "コアメカニクス",
+		"combat-design": "戦闘デザイン",
+		"ai-behavior": "AIと挙動",
+		"animation-systems": "アニメーションシステム",
+		"input-systems": "入力システム",
+		"multiplayer-logic": "マルチプレイロジック",
+		"pathfinding": "経路探索",
+		"physics-systems": "物理システム",
+		"modding-tools": "Mod支援ツール",
+		"rendering-pipeline": "レンダリングパイプライン",
+		"ui-ux-toolinmg": "UI・UXツール開発",
+		"editor-extensions": "エディタ拡張",
+		"devtools": "開発ツール",
+		"save-load-systems": "セーブ・ロードシステム",
+		"serialization": "シリアライズ",
+		"data-driven-design": "データ駆動型設計",
+		"narrative-systems": "ナラティブシステム",
+		"level-scripting": "レベルスクリプト",
+		"game-economy": "ゲーム経済",
+		"procedural-generation": "プロシージャル生成",
+		"accessibility-design": "アクセシビリティ設計",
+		"ux-interaction-design": "UXインタラクション設計",
+		"asset-pipelines": "アセットパイプライン",
+		"multithreading": "マルチスレッド処理",
+		"performance-optimization": "パフォーマンス最適化",
+		"cross-mod-compatibility": "Mod間互換性",
+		"build-tooling": "ビルドツール",
+		"dynamic-loading": "動的読み込み",
+		"solo-developer": "個人開発",
+		"2-4-team-members": "2～4人チーム",
+		"5-14-team-members": "5～14人チーム",
+		"15-team-members": "15人以上のチーム",
+		"48-hours": "48時間",
+		"1-2-weeks": "1～2週間",
+		"2-4-weeks": "2～4週間",
+		"1-3-months": "1～3ヶ月",
+		"3-months": "3ヶ月以上",
+		"unreal-engine": "Unreal Engine",
+		"unity": "Unity",
+		"godot": "Godot",
+		"minecraft": "Minecraft",
+		"nodejs": "Node.js",
+		"board-game": "ボードゲーム",
+		"construct": "Construct",
+		"pc": "PC",
+		"console": "コンソール",
+		"website": "ウェブサイト",
+		"discord": "Discord",
+		"cpp": "C++",
+		"csharp": "C#",
+		"java": "Java",
+		"javascript": "JavaScript",
+		"typescript": "TypeScript",
+		"blueprint": "Blueprint",
+		"work-in-progress": "開発中",
+		"open-source": "オープンソース"
+	},
+	"project": {
+		"yggdrasil": {
+			"title": "ユグドラシル",
+			"description": "任意のルール変種に対応したモジュラー型チェスエンジン。ルールの読み込み、動的な盤面形状、拡張可能な駒の挙動を支える柔軟なルールシステムを設計。",
+			"img-alt": "チェスのポーンに巻きついたドット絵の緑のドラゴン。"
+		},
+		"oldmanwhiskers": {
+			"title": "ウィスカー爺さん",
+			"description": "ゲームジャム受賞作のトップダウン型カジュアルゲームでコアシステムを実装。ブルーノイズ分布を用いた手続き的アイテム生成、動的なアイテム探索／発掘システム、イベント駆動型インベントリシステムを構築。",
+			"img-alt": "もじゃもじゃのひげを生やした老人と4匹の猫。"
+		},
+		"portfolio": {
+			"title": "ポートフォリオ",
+			"description": "TypeScriptとReactで構築された本サイト。個人のポートフォリオであると同時に、開発ツールにおけるUI・UXパターンの検証用テストベッドとしても機能。",
+			"img-alt": "魔法の杖、レンチ、ルーン文字の描かれた古いプロフィール画像。"
+		},
+		"ganymede": {
+			"title": "ガニメデ",
+			"description": "ネットワーク対応CTFシューター用にAIスタック全体を再構築。非決定的な長期経路探索のための確率的A*、戦術状態マシン、複数ボット間のチーム連携行動を実装。現在、BlueprintからC++とGASへと書き換え中（拡張性とパフォーマンス向上のため）。",
+			"img-alt": "旗を頭に付けた未来的なスーツの人物が銃を撃っている、SF風の谷の風景。"
+		},
+		"graduatedcylinders": {
+			"title": "メスシリンダー",
+			"description": "5万回以上ダウンロードされた、最も成功した公開プロジェクト。Minecraft向けの動的流体移送Modを開発。他Modの流体コンテナに実行時フックし、流体を精密に扱えるUIを動的に挿入。",
+			"img-alt": "試験管に化学薬品を入れて持つ人物。"
+		},
+		"tcresearchsolver": {
+			"title": "TC研究ソルバー",
+			"description": "MinecraftのThaumcraft用研究ミニゲームのためのカスタムソルバーを実装。段階的に精度が向上するアルゴリズムを組み込むための構造的な設計。設定用のyamlファイルをデシリアライズし、経路探索にA*を使用。"
+		},
+		"cardbot": {
+			"title": "カードボット",
+			"description": "複数の非同期型カードゲームを同時に処理できるDiscordボットフレームワーク。Node互換のHTML Canvasを用いた軽量2Dレンダリングエンジンでカード表示を実装。"
+		},
+		"silentnight": {
+			"title": "サイレントナイト、デッドナイト",
+			"description": "物理カード形式のソーシャル・ディダクションゲームにおいて、非対称戦闘メカニクスを設計・調整。ターン制の中でプレイヤーの役割を明かさないよう注意しつつ、動的な緊張感の高まりと隠された役割の相互作用に焦点を当てた。",
+			"img-alt": "ブギーマン。"
+		},
+		"tankgame": {
+			"title": "戦車ゲーム",
+			"description": "自習用プロジェクトとして、ゲームプレイアーキテクチャに注力。Unityで敵AIやプレイヤー操作システムをゼロから構築。モジュラーな状態マシン、ビヘイビアツリー、アクター指向のエンティティ設計を採用。",
+			"img-alt": "2台の戦車が戦っている場面。"
+		},
+		"partypooper": {
+			"title": "パーティープーパー",
+			"description": "Construct 2製の専用ゲーム向けのリバースエンジニアリング用ユーティリティ。アセット変換パイプラインを作成し、オリジナルの著作物を再配布せずに動的なアンパックやパッチ処理を実装。"
+		},
+		"pushr4k": {
+			"title": "pushr 4k",
+			"description": "Constructの限界に挑んだ4キーのリズムゲーム。WebAudio APIによる入力と音声の同期を最適化し、ミリ秒単位の正確さを保証するため独自のタイミング処理ロジックを実装。",
+			"img-alt": "「Through the Fire and Flames」という曲の詳細が表示されたpushr 4kのUI。"
+		},
+		"quiethours": {
+			"title": "静かな時間",
+			"description": "ノイズ管理と混乱制御をテーマにした非対称型協力ゲームのコンセプト。GDD全体を作成し、メカニクスの詳細設計、レベルデザインの流れ、動作ベースの波形一致型入力システムを含む。"
+		}
+	}
 }
