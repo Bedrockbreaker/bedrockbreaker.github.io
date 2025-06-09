@@ -1,67 +1,71 @@
 ﻿Jenson Searle
 Tools & Gameplay Programmer
 
-----------------
+---
 
 searlejenson@gmail.com
 (520) 560-2123
 https://linkedin.com/in/jenson-searle
 https://bedrockbreaker.github.io
 
-----------------
-
-Skills
-* C++: 2 Years
-* C#: 6 Years
-* Java: 6 Years
-* Unity & Unreal: 6 Years
-* Source control: 7 Years
-* Japanese: Everyday conversation
-
-----------------
+---
 
 Shipped Projects
 
-Graduated Cylinders
-(Nov. 2022 - Actively Maintained)
-* 40,000+ downloads
-* Game modification for Minecraft, written in Java
-* Open Source (MIT)
-* Programmer, Designer
+Graduated Cylinders - Sole Developer
+Nov. 2022 - Actively Maintained (June 2025)
+* Minecraft mod developed in Java, adding a dynamic fluid-transfer system designed for full inter-mod compatibility -- modularity, safety, and visual clarity across mod ecosystems.
+* Hooks into mods' fluid containers at runtime and injects a configurable UI with custom rendering and network handling for precise fluid handling.
+* Actively iterated on the design in response to community usage patterns and bug reports.
+* 60,000+ downloads. MIT-licensed (open source).
 
-Old Man Whiskers
-(Sept. 2024)
-* 48 hour game jam, 2 developers
-* Awarded Best Art, Most Technically Innovative, and Best Use of Theme
-* Built with Unreal Engine
-* Programmer, Designer
+Old Man Whiskers - Programmer, Designer
+Sept. 2024
+* 48-hour Unreal Engine game jam (2-person team).
+* Collaborated on a procedural item spawning system using blue-noise distribution, an event-driven inventory system, and a digging mechanic using spatial queries.
+* Awarded Best Art, Best Technical Innovation, and Best Use of Theme.
 
-----------------
+---
 
 Professional Experience
 
 Game Programming Tutor - University of Advancing Technology
-(Feb. 2024 - Current)
-* Aided understanding of common game programming structures and algorithms.
-* Taught how to use Unity, Unreal Engine, and Godot to all skill levels.
+Feb. 2025 - Current
+* Guided students of all experience levels through core game development concepts in Unreal Engine, Unity, and Godot
+* Emphasized foundational systems thinking and practical implementation.
 
-Full Stack Developer - Community Life Help
-(Nov. 2022 - Dec. 2024)
-* Integrated PostgreSQL database spanning 30+ systems and automations
-* Developed automations to reduce manual labor by 10x
-* Improved working capacity to handle 10000+ clients
-* Collaborated with stakeholders to update software with evolving requirements
-* Synthesized continuous integration tasks to keep 99.99% uptime of vital servers
-* Programmed automated build, test, and deployment (CI/CD) tasks
+Conference Associate - Informa (GDC)
+Mar. 2025 - Mar. 2025
+* Ensured a smooth experience for thousands of conference attendees in a fast-paced environment through effective and clear facilitation skills.
 
-----------------
+Internal Tools Engineer (Full Stack) - Community Life Help
+Nov. 2022 - Dec. 2024
+* Migrated core business operations from spreadsheets to centralized PostgreSQL database, enabling reliable data management for thousands of clients, employees, and ads.
+* Built a suite of internal tools enabling non-technical staff to manage workflows independently, improving efficiency and cross-department collaboration.
+* Programmed automated CI/CD pipelines in GitHub Actions for 2 internal microservices, reducing deployment time by 70%, from 30 to 9 minutes.
+
+Mobile App QA & Support Lead (Volunteer) - Church of Jesus Christ of Latter-day Saints         
+Nov. 2022 - Jan. 2024
+* Supported mobile app product with millions of users as a team lead.
+* Diagnosed technical issues, debugged, and empathetically communicated with users.
+
+---
+
+Skills
+
+* C++ (2 Years)
+* C# (6 Years)
+* TypeScript (6 Years)
+* Unreal & Unity (3 Years)
+* Source control (7 Years)
+* Japanese N4 (studying for N3 before December)
+* English (Native)
+
+---
 
 Education
 
-University of Advancing Technology
-(Feb. 2024 - Dec. 2025)
+University of Advancing Technology (HLC-accredited, In-Person, USA)
+Feb. 2024 - Expected Dec. 2025
 * Bachelor of Science in Computer Science
 * Bachelor of Arts in Interactive Media Design
-
-American Leadership Academy High School
-* Valedictorian - 4.7 GPA
