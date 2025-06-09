@@ -25,7 +25,6 @@ i18n
 		ns: ["translation"],
 		defaultNS,
 		resources,
-		debug: true,
 		interpolation: {
 			escapeValue: false
 		}
