@@ -269,6 +269,11 @@
 		"quiethours": {
 			"title": "Quiet Hours",
 			"description": "Asymmetric co-op concept focused on noise management and chaos containment. Designed full GDD including mechanic breakdowns, level design walkthroughs, and motion-based waveform-matching input systems."
+		},
+		"memento": {
+			"title": "Memento",
+			"description": "Experimental narrative game where the save/load system is a core progression mechanic.",
+			"img-alt": "A Penrose triangle with corrupted plant overgrowth."
 		}
 	}
 }

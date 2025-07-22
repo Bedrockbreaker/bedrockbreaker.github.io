@@ -5,6 +5,7 @@ import { AllTags, Project } from "./Project";
 
 import Ganymede from "~/Assets/Projects/Ganymede.png";
 import GraduatedCylinders from "~/Assets/Projects/GraduatedCylinders.png";
+import Memento from "~/Assets/Projects/Memento.png";
 import OldManWhiskers from "~/Assets/Projects/OldManWhiskers.png";
 import Placeholder_ThemeDark_enUS from "~/Assets/Projects/Placeholder_ThemeDark_en-US.png";
 import Placeholder_ThemeLight_enUS from "~/Assets/Projects/Placeholder_ThemeLight_en-US.png";
@@ -321,6 +322,32 @@ export const Projects = {
 			"console",
 			"1-2-weeks",
 			"solo-developer",
+			"designer"
+		]
+	}),
+	memento: new Project({
+		title: i18n.t("project.memento.title"),
+		description: () => <Text variant="muted">
+			{i18n.t("project.memento.description")}
+		</Text>,
+		image: () => <img
+			src={Memento}
+			alt={i18n.t("project.memento.img-alt")}
+			className="rounded-md"
+		/>,
+		tags: [
+			"core-mechanics",
+			"devtools",
+			"save-load-systems",
+			"narrative-systems",
+			"ux-interaction-design",
+			"game",
+			"pc",
+			"unreal-engine",
+			"cpp",
+			"3-months",
+			"solo-developer",
+			"programmer",
 			"designer"
 		]
 	})
