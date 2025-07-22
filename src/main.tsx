@@ -6,14 +6,17 @@ import { ThemeProvider } from "./Hooks/useTheme";
 import "./Util/i18n";
 import { About } from "./Pages/About";
 import { App } from "./Pages/App.tsx";
+import { Boards } from "./Pages/Boards.tsx";
+import { BoardsGPE } from "./Pages/BoardsGPE.tsx";
+import { BoardsGAM } from "./Pages/BoardsGAM.tsx";
 import { ErrorBoundary } from "./Pages/ErrorBoundary";
 import { Portfolio } from "./Pages/Portfolio.tsx";
 import { Resume } from "./Pages/Resume";
+import { SIP } from "./Pages/SIP";
 
 import "~/index.css";
 
 // TODO: Individual project pages
-// TODO: Boards pages
 
 const router = createHashRouter([{
 	path: "/",
@@ -22,7 +25,12 @@ const router = createHashRouter([{
 	children: [
 		{index: true, element: <About/>},
 		{path: "/portfolio", element: <Portfolio/>},
-		{path: "/resume", element: <Resume/>}
+		{path: "/resume", element: <Resume/>},
+		{path: "/sip", element: <SIP/>},
+		{path: "/boards", element: <Boards/>, children: [
+			{path: "game-programming", element: <BoardsGPE/>},
+			{path: "game-design", element: <BoardsGAM/>}
+		]}
 	]
 }]);
 

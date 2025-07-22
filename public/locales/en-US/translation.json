@@ -143,6 +143,45 @@
 			}
 		]
 	},
+	"sip": {
+		"header": "Student Innovation Project: <1>Memento</1>",
+		"subtitle": "Narrative-Conscious Persistence Through Reframing Save/Load as a Mechanically Embedded, Systemically Causal, and Progression-Critical Player Action in Decision-Responsive Game Worlds",
+		"overview": {
+			"header": "High Concept",
+			"description": "Memento is a vertical slice of an experimental narrative game where save/load is not a menu function, but a core mechanic embedded in the story and world (called \"mementos\"). The navigates an emotionally reactive environment that remembers not just what the player did, but when they chose to revisit decision -- and why. The result is a systemic narrative experience that explores memory, regret, and agency through gameplay that bends time and causality."
+		},
+		"innovation": {
+			"header": "Innovation Claims",
+			"description": [
+				"I am recontextualizing save/load as an integrated game mechanic, embedded directly in the game’s narrative, systems, and progression structure. Saving is no longer an external player tool -- it is a meta-aware act with consequences.",
+				"I am developing a persistent world state system based on an acyclic graph of state nodes and transitions. This allows the game to track not just the current world state, but the entire sequence of prior decisions and their causal dependencies -- a marked improvement over linear save snapshots."
+			]
+		}
+	},
+	"boards": {
+		"gpe": {
+			"header": "Game Programming Degree Objectives",
+			"objectives": [
+				"Implement multiple completed games, including 3D games, using common tools, languages, and software for web, console, PC, or mobile platforms.",
+				"Design, develop, and implement the architecture and infrastructure needed to support a complete game project.",
+				"Implement and analyze fundamental data structures and algorithms associated with game applications supporting gameplay mechanics.",
+				"Use software development processes to analyze a project problem and to design, build, and test a corresponding software solution.",
+				"Demonstrate development skills using multiple programming langues, development environments, and platforms, including advanced and/or experimental topics in game programming.",
+				"Establish collaboration, mentorship, and professional leadership skills by working with other disciplines to deliver highly polished and completed projects."
+			]
+		},
+		"gam": {
+			"header": "Game Design Degree Objectives",
+			"objectives": [
+				"Prototype and complete original games for multiple platforms following the full game production pipeline.",
+				"Create and implement game elements, systems, and play mechanics using industry-standard tools, techniques, and production methods, including art or scripting/programming applications.",
+				"Demonstrate effective game design practices and techinques within the project scope and context, such as genre, style, platform, and audience.",
+				"Demonstrate the eability to evaluate game designs for a variety of gameplay mechanics, game applications, and game genres.",
+				"Effectively articulate game design elements and mechanics across disciplines utilizing written and verbal communication skills.",
+				"Establish collaboration, mentorship, and professional leadership skills by working with other disciplines to deliver highly polished and completed projects."
+			]
+		}
+	},
 	"tags": {
 		"game": "Game",
 		"mod": "Mod",
