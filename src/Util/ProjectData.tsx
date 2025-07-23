@@ -29,8 +29,8 @@ export const Projects = {
 			{i18n.t("project.test.description")}
 		</Text>,
 		image: NoImage,
-		homepage: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-		sourceUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+		homepage: {url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"},
+		source: {url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", icon: "external"},
 		tags: AllTags
 	}),
 	yggdrasil: new Project({
@@ -43,7 +43,7 @@ export const Projects = {
 			alt={i18n.t("project.yggdrasil.img-alt")}
 			className="rounded-md"
 		/>,
-		sourceUrl: "https://github.com/bedrockbreaker/Yggdrasil-Chess-Engine",
+		source: {url: "https://github.com/bedrockbreaker/Yggdrasil-Chess-Engine"},
 		tags: [
 			"core-mechanics",
 			"serialization",
@@ -71,7 +71,7 @@ export const Projects = {
 			alt={i18n.t("project.oldmanwhiskers.img-alt")}
 			className="rounded-md"
 		/>,
-		homepage: "https://bedrockbreaker.itch.io/old-man-whiskers",
+		homepage: {url: "https://bedrockbreaker.itch.io/old-man-whiskers", icon: "itchio"},
 		tags: [
 			"core-mechanics",
 			"animation-systems",
@@ -97,8 +97,8 @@ export const Projects = {
 			alt={i18n.t("project.portfolio.img-alt")}
 			className="rounded-md"
 		/>,
-		homepage: "https://bedrockbreaker.github.io",
-		sourceUrl: "https://github.com/Bedrockbreaker/bedrockbreaker.github.io",
+		homepage: {url: "https://bedrockbreaker.github.io", icon: "personal-website"},
+		source: {url: "https://github.com/Bedrockbreaker/bedrockbreaker.github.io"},
 		tags: [
 			"data-driven-design",
 			"accessibility-design",
@@ -124,7 +124,8 @@ export const Projects = {
 			alt={i18n.t("project.ganymede.img-alt")}
 			className="rounded-md"
 		/>,
-		homepage: "https://bedrockbreaker.itch.io/ganymede",
+		hasDetails: true,
+		homepage: {url: "https://bedrockbreaker.itch.io/ganymede", icon: "itchio"},
 		tags: [
 			"core-mechanics",
 			"combat-design",
@@ -153,8 +154,9 @@ export const Projects = {
 			alt={i18n.t("project.graduatedcylinders.img-alt")}
 			className="rounded-md"
 		/>,
-		homepage: "https://www.curseforge.com/minecraft/mc-mods/graduated-cylinders",
-		sourceUrl: "https://github.com/bedrockbreaker/Graduated-Cylinders",
+		hasDetails: true,
+		homepage: {url: "https://www.curseforge.com/minecraft/mc-mods/graduated-cylinders", icon: "curseforge"},
+		source: {url: "https://github.com/bedrockbreaker/Graduated-Cylinders"},
 		tags: [
 			"ux-interaction-design",
 			"cross-mod-compatibility",
@@ -175,7 +177,7 @@ export const Projects = {
 			{i18n.t("project.tcresearchsolver.description")}
 		</Text>,
 		image: NoImage,
-		sourceUrl: "https://github.com/bedrockbreaker/TCResearchSolver",
+		source: {url: "https://github.com/bedrockbreaker/TCResearchSolver"},
 		tags: [
 			"pathfinding",
 			"serialization",
@@ -195,7 +197,8 @@ export const Projects = {
 			{i18n.t("project.cardbot.description")}
 		</Text>,
 		image: NoImage,
-		sourceUrl: "https://github.com/bedrockbreaker/unobot",
+		hasDetails: true,
+		source: {url: "https://github.com/bedrockbreaker/unobot"},
 		tags: [
 			"multiplayer-logic",
 			"rendering-pipeline",
@@ -241,7 +244,7 @@ export const Projects = {
 			alt={i18n.t("project.tankgame.img-alt")}
 			className="rounded-md"
 		/>,
-		sourceUrl: "https://github.com/bedrockbreaker/TankGame",
+		source: {url: "https://github.com/bedrockbreaker/TankGame"},
 		tags: [
 			"core-mechanics",
 			"ai-behavior",
@@ -263,8 +266,8 @@ export const Projects = {
 			{i18n.t("project.partypooper.description")}
 		</Text>,
 		image: NoImage,
-		homepage: "https://github.com/bedrockbreaker/PartyPooper/releases/latest",
-		sourceUrl: "https://github.com/bedrockbreaker/PartyPooper",
+		homepage: {url: "https://github.com/bedrockbreaker/PartyPooper/releases/latest", icon: "github"},
+		source: {url: "https://github.com/bedrockbreaker/PartyPooper"},
 		tags: [
 			"modding-tools",
 			"devtools",
@@ -291,7 +294,8 @@ export const Projects = {
 			alt={i18n.t("project.pushr4k.img-alt")}
 			className="rounded-md"
 		/>,
-		homepage: "https://bedrockbreaker.itch.io/pushr4k",
+		hasDetails: true,
+		homepage: {url: "https://bedrockbreaker.itch.io/pushr4k", icon: "itchio"},
 		tags: [
 			"input-systems",
 			"save-load-systems",
@@ -335,6 +339,8 @@ export const Projects = {
 			alt={i18n.t("project.memento.img-alt")}
 			className="rounded-md"
 		/>,
+		hasDetails: true,
+		source: {url: "https://github.com/bedrockbreaker/Memento"},
 		tags: [
 			"core-mechanics",
 			"devtools",

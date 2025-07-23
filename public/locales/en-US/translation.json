@@ -11,14 +11,22 @@
 		},
 		"project-card": {
 			"view-tags": "View projects tagged with {{tag}}",
+			"view-details": "Details",
+			"view-details-aria-label": "View project details for {{project}}",
 			"view-homepage": "View Project",
 			"view-homepage-aria-label": "View project homepage for {{project}}",
-			"view-source": "View Source",
+			"view-source-github": "GitHub",
 			"view-source-aria-label": "View project source code for {{project}}",
 			"no-image-alt": "No Image"
 		},
 		"sheet": {
 			"close": "Close"
+		},
+		"icons": {
+			"github-alt":"GitHub Logo",
+			"itchio-alt": "itch.io Logo",
+			"linkedin-alt":"LinkedIn Logo",
+			"yggdrasil-alt": "Yggdrasil Logo"
 		}
 	},
 	"error": {

@@ -120,12 +120,20 @@ export function GetCategoryFromTag(tag: Tag) {
 	}) as typeof tagCategories[keyof typeof tagCategories];
 }
 
+export type UrlIcon = "external" | "github" | "curseforge" | "itchio" | "personal-website";
+
+interface UrlDetails {
+	url: string;
+	icon?: UrlIcon;
+}
+
 interface ProjectOptions {
 	title: string;
 	description?: () => React.ReactNode;
 	image?: () => React.ReactNode;
-	homepage?: string;
-	sourceUrl?: string;
+	hasDetails?: boolean;
+	homepage?: UrlDetails;
+	source?: UrlDetails;
 	tags?: Tag[];
 }
 
@@ -133,23 +141,32 @@ export class Project {
 	readonly title: string;
 	readonly GetDescription: () => React.ReactNode;
 	readonly GetImage: () => React.ReactNode;
-	readonly homepage?: string;
-	readonly sourceUrl?: string;
+	readonly hasDetails: boolean;
+	readonly homepage?: UrlDetails;
+	readonly source?: UrlDetails;
 	readonly tags: Tag[];
 
 	constructor({
 		title,
 		description,
 		image,
+		hasDetails,
 		homepage,
-		sourceUrl,
+		source,
 		tags
 	}: ProjectOptions) {
 		this.title = title;
 		this.GetDescription = description ?? (() => undefined);
 		this.GetImage = image ?? (() => undefined);
+		this.hasDetails = hasDetails ?? false;
 		this.homepage = homepage;
-		this.sourceUrl = sourceUrl;
+		if (this.homepage !== undefined && this.homepage.icon === undefined) {
+			this.homepage.icon = "external";
+		}
+		this.source = source;
+		if (this.source !== undefined && this.source.icon === undefined) {
+			this.source.icon = "github";
+		}
 		this.tags = tags ?? [];
 	}
 }

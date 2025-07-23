@@ -1,14 +1,9 @@
 import { Trans, useTranslation } from "react-i18next";
 
 import { Divider } from "./Divider";
+import { GitHub, LinkedIn } from "./Icons";
 import { Link } from "./Link";
 import { Text } from "./Text";
-import { ThemedImage } from "./ThemedImg";
-
-import Github_ThemeDark from "~/Assets/Socials/Github_ThemeDark.svg";
-import Github_ThemeLight from "~/Assets/Socials/Github_ThemeLight.svg";
-import Linkedin_ThemeDark from "~/Assets/Socials/Linkedin_ThemeDark.svg";
-import Linkedin_ThemeLight from "~/Assets/Socials/Linkedin_ThemeLight.svg";
 
 export function Footer() {
 	const { t } = useTranslation();
@@ -30,22 +25,14 @@ export function Footer() {
 						aria-label={t("footer.socials.github")}
 						hasExternalIcon={false}
 					>
-						<ThemedImage
-							sources={{light: Github_ThemeLight, dark: Github_ThemeDark}}
-							alt={t("footer.socials.github-alt")}
-							className="inline-block w-6 h-6"
-						/>
+						<GitHub/>
 					</Link>{" "}
 					<Link
 						href="https://www.linkedin.com/in/jenson-searle"
 						aria-label={t("footer.socials.linkedin")}
 						hasExternalIcon={false}
 					>
-						<ThemedImage
-							sources={{light: Linkedin_ThemeLight, dark: Linkedin_ThemeDark}}
-							alt={t("footer.socials.linkedin-alt")}
-							className="inline-block w-6 h-6"
-						/>
+						<LinkedIn/>
 					</Link>
 				</div>
 				<div className="flex flex-col gap-6 md:flex-row md:justify-between">

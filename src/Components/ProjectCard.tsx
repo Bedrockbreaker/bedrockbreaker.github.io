@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Badge } from "./Badge";
 import { Button } from "./Button";
 import { HoverTilt } from "./HoverTilt";
+import { GetSourceTranslationKey, GetUrlIcon } from "./Icons";
 import { Link } from "./Link";
 import { Text } from "./Text";
 import { GetCategoryFromTag, Project } from "~/Util/Project";
@@ -48,7 +49,21 @@ export function ProjectCard({project}: {project: Project | keyof typeof Projects
 				</div>
 				{project.GetDescription()}
 				<div className="flex flex-col @sm:flex-row mt-auto gap-1">
-					{project.homepage
+					{project.hasDetails
+						? <Button
+							kind="outline"
+							asChild
+							aria-label={t(
+								"component.project-card.view-details-aria-label",
+								{ project: t(`project.${GetProjectKey(project)}.title`) }
+							)}
+						>
+							<Link href={`/portfolio/${GetProjectKey(project)}`}>
+								{t("component.project-card.view-details")}
+							</Link>
+						</Button>
+						: undefined}
+					{project.homepage !== undefined
 						? <Button
 							kind="outline"
 							asChild
@@ -57,11 +72,14 @@ export function ProjectCard({project}: {project: Project | keyof typeof Projects
 								{ project: t(`project.${GetProjectKey(project)}.title`) }
 							)}
 						>
-							<Link href={project.homepage}>{t("component.project-card.view-homepage")}</Link>
+							<Link href={project.homepage.url} hasExternalIcon={false}>
+								{t("component.project-card.view-homepage")}
+								{GetUrlIcon(project.homepage.icon)}
+							</Link>
 						</Button>
 						: undefined
 					}
-					{project.sourceUrl
+					{project.source !== undefined
 						? <Button
 							kind="outline"
 							asChild
@@ -70,7 +88,10 @@ export function ProjectCard({project}: {project: Project | keyof typeof Projects
 								{ project: t(`project.${GetProjectKey(project)}.title`) }
 							)}
 						>
-							<Link href={project.sourceUrl}>{t("component.project-card.view-source")}</Link>
+							<Link href={project.source.url} hasExternalIcon={false}>
+								{t(GetSourceTranslationKey(project.source.icon))}
+								{GetUrlIcon(project.source.icon)}
+							</Link>
 						</Button>
 						: undefined
 					}
