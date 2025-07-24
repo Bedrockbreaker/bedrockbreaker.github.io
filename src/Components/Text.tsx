@@ -1,3 +1,6 @@
+import { ReactElement } from "react";
+import { useTranslation } from "react-i18next";
+
 const variantClasses = {
 	h1: "scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl",
 	h2: "mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0",
@@ -14,11 +17,25 @@ const variantClasses = {
 
 export type TextVariant = keyof typeof variantClasses;
 
-export function Text({variant = "p", className = "", children}: {
+export function Text({variant, className, children}: {
 	variant?: TextVariant,
 	className?: string,
 	children: React.ReactNode
+}): ReactElement
+export function Text({variant, t, className}: {
+	variant?: TextVariant,
+	t: string,
+	className?: string
+}): ReactElement
+export function Text({variant = "p", t: tKey, className = "", children}: {
+	variant?: TextVariant,
+	t?: string,
+	className?: string,
+	children?: React.ReactNode
 }) {
+	const { t } = useTranslation();
+	if (tKey !== undefined) children = t(tKey);
+
 	switch(variant) {
 		case "h1":
 			return <h1 className={`${variantClasses.h1} ${className}`}>{children}</h1>;

@@ -87,14 +87,14 @@ export function Portfolio() {
 	}, [projects, activeTags]);
 
 	return <div className="flex flex-col p-6 max-w-7xl mx-auto grow overflow-x-hidden">
-		<Text variant="h1" className="mx-auto text-center">{t("portfolio.header")}</Text>
+		<Text variant="h1" className="mx-auto text-center" t="portfolio.header"/>
 		<Text variant="lead" className="mx-auto text-center">
 			{t("portfolio.subtitle")}
 		</Text>
 		<Divider/>
 		<div className="mt-6 bg-dark rounded p-6">
 			<div className="flex flex-row gap-1">
-			<Text variant="large" className="inline">{t("portfolio.filter-header")}</Text>
+			<Text variant="large" className="inline" t="portfolio.filter-header"/>
 			<div className="grow"/>
 			<Button
 				kind="outline"

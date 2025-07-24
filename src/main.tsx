@@ -13,10 +13,13 @@ import { ErrorBoundary } from "./Pages/ErrorBoundary";
 import { Portfolio } from "./Pages/Portfolio.tsx";
 import { Resume } from "./Pages/Resume";
 import { SIP } from "./Pages/SIP";
+// import { CardBot } from "./Pages/Projects/cardbot.tsx";
+import { Ganymede } from "./Pages/Projects/ganymede.tsx";
+// import { GraduatedCylinders } from "./Pages/Projects/graduatedcylinders.tsx";
+// import { Memento } from "./Pages/Projects/memento.tsx";
+// import { Pushr4k } from "./Pages/Projects/pushr4k.tsx";
 
 import "~/index.css";
-
-// TODO: Individual project pages
 
 const router = createHashRouter([{
 	path: "/",
@@ -24,7 +27,10 @@ const router = createHashRouter([{
 	errorElement: <App><ErrorBoundary/></App>,
 	children: [
 		{index: true, element: <About/>},
-		{path: "/portfolio", element: <Portfolio/>},
+		{path: "/portfolio", children: [
+			{index: true, element: <Portfolio/>},
+			{path: "ganymede", element: <Ganymede/>}
+		]},
 		{path: "/resume", element: <Resume/>},
 		{path: "/sip", element: <SIP/>},
 		{path: "/boards", element: <Boards/>, children: [

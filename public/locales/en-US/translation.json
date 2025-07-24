@@ -279,7 +279,30 @@
 		"ganymede": {
 			"title": "Ganymede",
 			"description": "Rebuilt the entire AI stack for a networked CTF shooter. Implemented stochastic A* for non-deterministic long-term pathfinding, tactical state machines, and team coordination behavior across bot agents. Currently rewriting from Blueprint to C++ with GAS for extensibility and performance.",
-			"img-alt": "A person in a futurustic suit firing a gun with a flag on their head in a sci-fi valley."
+			"img-alt": "A person in a futurustic suit firing a gun with a flag on their head in a sci-fi valley.",
+			"overview": {
+				"header": "Overview",
+				"description": "<0>Ganymede</0> is a first-person \"spell shooter\" take on capture-the-flag, designed for networked multiplayer with AI-controlled bots. It explores alternatives to conventional FPS mechanics by de-emphasizing direct-damage gunplay and adding a suite of tactical \"spells\" that focus on positioning, timing, and battlefield control. Originally built using Blueprints, the game was later rewritten in C++ with the Gameplay Ability System (GAS) to support better networking, performance, and modularity."
+			},
+			"problem": {
+				"header": "The Challenge",
+				"description": [
+					"I set out to explore an FPS design space that emphasized tactics, battlefield control, and player expression over mechanical aiming skill. I wanted to reduce the reliance on direct-damage mechanics and instead focus on \"spells\" that offered situational utility, counterplay, and room for clever improvisation.",
+					"At the system level, I challenged myself to build an AI stack capable of navigating and cooperating in a CTF match -- managing roles, responding to threats, and acting with sufficient unpredictability to feel human. To support strategic diversity, I aimed to design modular spell loadouts, enabling unique playstyles that evoke the feel of a rag-tag squad with specialized roles and asymmetric powers."
+				]
+			},
+			"process": {
+				"header": "Development Process",
+				"description": "Early ideation visuals (sketches, diagrams, lists). Thought process and design evolution"
+			},
+			"solution": {
+				"header": "Solution",
+				"description": "Screenshots of gameplay. The final system, how it works, and what's unique. Show technical or design architecture that ties it all together."
+			},
+			"reflection": {
+				"header": "Reflection",
+				"description": "Postmortem reflection. What went well, what didn't, and lessons learned (specifically connect to future applications)."
+			}
 		},
 		"graduatedcylinders": {
 			"title": "Graduated Cylinders",

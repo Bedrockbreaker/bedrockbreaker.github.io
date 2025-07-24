@@ -17,8 +17,8 @@ export function Resume() {
 	const { t } = useTranslation();
 
 	return <div className="flex flex-col p-6 max-w-7xl mx-auto grow overflow-x-hidden">
-		<Text variant="h1" className="mx-auto">{t("resume.header")}</Text>
-		<Text variant="lead" className="mx-auto">{t("resume.subtitle")}</Text>
+		<Text variant="h1" className="mx-auto" t="resume.header"/>
+		<Text variant="lead" className="mx-auto" t="resume.subtitle"/>
 		<Divider/>
 		{resumeLastUpdated !== undefined
 			? <Text variant="blockquote">{t("resume.timestamp", {timestamp: resumeLastUpdated})}</Text>
@@ -30,7 +30,7 @@ export function Resume() {
 				className="motion-safe:hover:-translate-y-1 motion-safe:focus-within:-translate-y-1"
 			>
 				<Text variant="h4" className="flex flex-row gap-1">{t("resume.cards.0.header")} <FileImage/></Text>
-				<Text>{t("resume.cards.0.description")}</Text>
+				<Text t="resume.cards.0.description"/>
 				<div className="flex flex-row flex-wrap gap-6 justify-center">
 					<Button kind="outline" asChild className="mt-6 max-md:hidden">
 						<Link
@@ -56,7 +56,7 @@ export function Resume() {
 				className="motion-safe:hover:-translate-y-1 motion-safe:focus-within:-translate-y-1"
 			>
 				<Text variant="h4" className="flex flex-row gap-1">{t("resume.cards.1.header")} <FilePen/></Text>
-				<Text>{t("resume.cards.1.description")}</Text>
+				<Text t="resume.cards.1.description"/>
 				<div className="flex flex-row flex-wrap gap-6 justify-center">
 					<Button kind="outline" asChild className="mt-6">
 						<Link
@@ -77,7 +77,7 @@ export function Resume() {
 				}
 			>
 				<Text variant="h4" className="flex flex-row gap-1">{t("resume.cards.2.header")} <FileText/></Text>
-				<Text>{t("resume.cards.2.description")}</Text>
+				<Text t="resume.cards.2.description"/>
 				<div className="flex flex-row flex-wrap gap-6 justify-center">
 					<Button kind="outline" asChild className="mt-6 max-md:hidden">
 						<Link

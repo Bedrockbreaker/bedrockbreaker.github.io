@@ -1,13 +1,13 @@
 import { useTranslation } from "react-i18next";
 
-import { Badge } from "./Badge";
 import { Button } from "./Button";
 import { HoverTilt } from "./HoverTilt";
 import { GetSourceTranslationKey, GetUrlIcon } from "./Icons";
 import { Link } from "./Link";
 import { Text } from "./Text";
-import { GetCategoryFromTag, Project } from "~/Util/Project";
+import { Project } from "~/Util/Project";
 import { GetProjectKey, Projects } from "~/Util/ProjectData";
+import { BadgeList } from "./BadgeList";
 
 export function ProjectCard({project}: {project: Project | keyof typeof Projects}) {
 	if (typeof project === "string") project = Projects[project];
@@ -21,32 +21,22 @@ export function ProjectCard({project}: {project: Project | keyof typeof Projects
 			}
 		>
 			<div className="-mt-6">
-				<Text variant="h4" className="@smd:hidden">{t(`project.${GetProjectKey(project)}.title`)}</Text>
+				<Text
+					variant="h4"
+					t={`project.${GetProjectKey(project)}.title`}
+					className="@smd:hidden"
+				/>
 			</div>
 			<div className="w-full max-w-64 @smd:max-w-none @smd:w-1/3 flex items-center justify-center">
 				<HoverTilt>{project.GetImage()}</HoverTilt>
 			</div>
 			<div className="w-full @smd:w-2/3 flex flex-col gap-6 @smd:-mt-6">
-				<Text variant="h4" className="hidden @smd:block">{t(`project.${GetProjectKey(project)}.title`)}</Text>
-				<div className="flex flex-row flex-wrap gap-1">
-					{project.tags.map(tag => {
-						return <HoverTilt
-							key={tag}
-							allowDeviceRotation={false}
-							intensity={5}
-							disableShadow // Disable the default shadow, apply a different one
-							className="hover:drop-shadow-md select-none"
-						>
-							<Link
-								href={"/portfolio"}
-								search={"?tags=" + encodeURIComponent(tag)}
-								aria-label={t("component.project-card.view-tags", { tag: t("tags." + tag) })}
-							>
-								<Badge kind={GetCategoryFromTag(tag).badgeKind}>{t("tags." + tag)}</Badge>
-							</Link>
-						</HoverTilt>;
-					})}
-				</div>
+				<Text
+					variant="h4"
+					className="hidden @smd:block"
+					t={`project.${GetProjectKey(project)}.title`}
+				/>
+				<BadgeList project={project}/>
 				{project.GetDescription()}
 				<div className="flex flex-col @sm:flex-row mt-auto gap-1">
 					{project.hasDetails
@@ -62,7 +52,8 @@ export function ProjectCard({project}: {project: Project | keyof typeof Projects
 								{t("component.project-card.view-details")}
 							</Link>
 						</Button>
-						: undefined}
+						: undefined
+					}
 					{project.homepage !== undefined
 						? <Button
 							kind="outline"

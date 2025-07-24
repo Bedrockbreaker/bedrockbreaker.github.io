@@ -54,7 +54,7 @@ export function Header() {
 						</NavigationMenuLink>
 					</NavigationMenuItem>
 				</NavigationMenuList>
-				<Text variant="muted" className="ml-6">{t("header.notice")}</Text>
+				<Text variant="muted" className="ml-6" t="header.notice"/>
 			</NavigationMenu>
 			<div className="grow"/>
 			<div className="flex flex-row space-x-1 m-2">
@@ -114,7 +114,7 @@ export function Header() {
 							<Button asChild><Link href="/">{t("header.about")}</Link></Button>
 							<Button asChild><Link href="/portfolio">{t("header.portfolio")}</Link></Button>
 							<Button asChild><Link href="/resume">{t("header.resume")}</Link></Button>
-							<Text variant="muted" className="text-nowrap">{t("header.notice")}</Text>
+							<Text variant="muted" className="text-nowrap" t="header.notice"/>
 						</div>
 					</SheetContent>
 				</Sheet>
