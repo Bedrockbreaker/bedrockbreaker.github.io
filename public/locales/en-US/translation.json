@@ -293,15 +293,81 @@
 			},
 			"process": {
 				"header": "Development Process",
-				"description": "Early ideation visuals (sketches, diagrams, lists). Thought process and design evolution"
+				"prototypes": {
+					"header": "Early Concepts & Prototypes",
+					"description": "Early ideation visuals (sketches, diagrams, lists). Spell lists, level sketches, gameplay goals, bot logic, etc."
+				},
+				"iteration": {
+					"header": "Iteration & Refinement",
+					"why-ctf": {
+						"header": "Why CTF?",
+						"description": "Capture-the-flag offered a natural context for tactical play: guarding routes, laying traps, and flanking enemies; whereas a more traditional deathmatch felt too one-dimensional in contrast. CTF also provided a strong structural reason for bots to act as a team, with an evolving goal that responds to flags being taken and captured, rather than statically trying to just kill other players."
+					},
+					"spell-system": {
+						"header": "Spell System Design",
+						"description": [
+							"My first prototype was a slow-moving, heat-seeking projectile. Later ideas included movement tech spells (e.g. teleporting forwards a short distance) and utility spells such as a blinding land mine. Additional ideas included passive, aura-style spells (movement speed buffs, temporary invisibility) and enemy detection through walls. However, time constraints limited implementation to just a few of these.",
+							"The initial code architecture involved a single, generic spell class, with deep inheritance for specific spell types in Blueprint. At the time, designer-centric extensibility wasn't a consideration, but I later realized that the spell system could be used to support a wide range of spell loadouts, and I wanted to experiment with a more modular design approach.",
+							"In the C++ rewrite, I relied heavily on the Gameplay Ability System (GAS), and broke each spell into a \"delivery mechanism\" (projectile, aura, etc.) and an \"effect\" (e.g. teleport, heal, etc.). Data Assets could be used to define spell behavior, and the spell delivery system could be extended to support custom logic and networking. In the end, a designer could make a new spell fairly quickly without programmer involvement, and the spell system could be extended to support new delivery mechanisms and effects."
+						]
+					},
+					"ai-system": {
+						"header": "AI Evolution",
+						"description": "The game's AI was not deeply planned; it grew organically. In particular, it was my first foray into building a game AI system, and much of the early progress involved experimentation. Over time, I built a reactive behavior tree system paired with a graph-based navigation layer. At runtime, each bot responds to flag status and local threats. I also implemented a stochastic A* variant to make long-term pathfinding less deterministic and give the illusion of tactical coordination."
+					},
+					"blueprint-spiral": {
+						"header": "Blueprint Spiral",
+						"description": [
+							"The first version of the game was built entirely in Blueprint. This helped me iterate quickly, but as features accumulated -- especially with AI behaviors -- it became clear that the system was too brittle and opaque to scale. Debugging behaviors and spells became increasingly difficult, and the lack of poor initial architecture was starting to take its toll in maintenence effort and time.",
+							"I halted feature implementations, and started work on rewriting the game from scratch in C++ (version 2 of the game). This allowed me to build a more robust system architecture, but I overestimated the amount of time I needed to spend on the project, and I did not have enough time to fully implement all the features from the original Blueprint version."
+						]
+					}
+				}
 			},
-			"solution": {
-				"header": "Solution",
-				"description": "Screenshots of gameplay. The final system, how it works, and what's unique. Show technical or design architecture that ties it all together."
+			"final-result": {
+				"header": "Final Implementation",
+				"core-gameplay": {
+					"header": "Core Gameplay",
+					"description": ""
+				},
+				"ai-architecture": {
+					"header": "AI Architecture",
+					"description": ""
+				},
+				"tools": {
+					"header": "Tooling & Debug Systems",
+					"description": ""
+				},
+				"gallery": {
+					"header": "Gallery",
+					"technical-architecture": {
+						"header": "Technical Architecture Diagrams",
+						"description": ""
+					},
+					"screenshots": {
+						"header": "Screenshots, Gifs, & Videos",
+						"description": ""
+					}
+				}
 			},
 			"reflection": {
-				"header": "Reflection",
-				"description": "Postmortem reflection. What went well, what didn't, and lessons learned (specifically connect to future applications)."
+				"header": "Reflection & Lessons Learned",
+				"right": {
+					"header": "What Went Right",
+					"description": ""
+				},
+				"wrong": {
+					"header": "What Went Wrong",
+					"description": ""
+				},
+				"lessons": {
+					"header": "Lessons Learned",
+					"description": ""
+				}
+			},
+			"status": {
+				"header": "Status & Next Steps",
+				"description": "Current status and future plans."
 			}
 		},
 		"graduatedcylinders": {

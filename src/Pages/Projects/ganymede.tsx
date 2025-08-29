@@ -15,8 +15,9 @@ export function Ganymede() {
 
 	return <div className="flex flex-col p-6 max-w-7xl mx-auto grow overflow-x-hidden">
 		<Text variant="h1" className="mx-auto text-center -mb-6" t="project.ganymede.title"/>
+
 		<Text variant="h2" className="mb-6" t="project.ganymede.overview.header"/>
-		<div className="max-sm:flex max-sm:flex-col">
+		<div className="max-sm:flex max-sm:flex-col -mb-4">
 			<div className="float-right flex flex-col m-6">
 				<HoverTilt className="max-w-72 sm:w-72 mx-auto -mt-6">{Projects.ganymede.GetImage()}</HoverTilt>
 				<div className="flex flex-col items-center sm:justify-end mt-6 gap-1">
@@ -39,18 +40,53 @@ export function Ganymede() {
 			<BadgeList project={project}/>
 			<Text>
 				<Trans i18nKey="project.ganymede.overview.description">
-					<span className="italic inline">text</span> text
+					<span className="italic">text</span> text
 				</Trans>
 			</Text>
 		</div>
+
 		<Text variant="h2" t="project.ganymede.problem.header"/>
 		<Text t="project.ganymede.problem.description.0"/>
 		<Text t="project.ganymede.problem.description.1"/>
+
 		<Text variant="h2" t="project.ganymede.process.header"/>
-		<Text t="project.ganymede.process.description"/>
-		<Text variant="h2" t="project.ganymede.solution.header"/>
-		<Text t="project.ganymede.solution.description"/>
+		<Text variant="h3" t="project.ganymede.process.prototypes.header"/>
+		<Text t="project.ganymede.process.prototypes.description"/>
+		<Text variant="h3" t="project.ganymede.process.iteration.header"/>
+		<Text variant="h4" t="project.ganymede.process.iteration.why-ctf.header"/>
+		<Text t="project.ganymede.process.iteration.why-ctf.description"/>
+		<Text variant="h4" t="project.ganymede.process.iteration.spell-system.header"/>
+		<Text t="project.ganymede.process.iteration.spell-system.description.0"/>
+		<Text t="project.ganymede.process.iteration.spell-system.description.1"/>
+		<Text t="project.ganymede.process.iteration.spell-system.description.2"/>
+		<Text variant="h4" t="project.ganymede.process.iteration.ai-system.header"/>
+		<Text t="project.ganymede.process.iteration.ai-system.description"/>
+		<Text variant="h4" t="project.ganymede.process.iteration.blueprint-spiral.header"/>
+		<Text t="project.ganymede.process.iteration.blueprint-spiral.description.0"/>
+		<Text t="project.ganymede.process.iteration.blueprint-spiral.description.1"/>
+
+		<Text variant="h2" t="project.ganymede.final-result.header"/>
+		<Text variant="h3" t="project.ganymede.final-result.core-gameplay.header"/>
+		<Text t="project.ganymede.final-result.core-gameplay.description"/>
+		<Text variant="h3" t="project.ganymede.final-result.ai-architecture.header"/>
+		<Text t="project.ganymede.final-result.ai-architecture.description"/>
+		<Text variant="h3" t="project.ganymede.final-result.tools.header"/>
+		<Text t="project.ganymede.final-result.tools.description"/>
+		<Text variant="h3" t="project.ganymede.final-result.gallery.header"/>
+		<Text variant="h4" t="project.ganymede.final-result.gallery.technical-architecture.header"/>
+		<Text t="project.ganymede.final-result.gallery.technical-architecture.description"/>
+		<Text variant="h4" t="project.ganymede.final-result.gallery.screenshots.header"/>
+		<Text t="project.ganymede.final-result.gallery.screenshots.description"/>
+
 		<Text variant="h2" t="project.ganymede.reflection.header"/>
-		<Text t="project.ganymede.reflection.description"/>
+		<Text variant="h3" t="project.ganymede.reflection.right.header"/>
+		<Text t="project.ganymede.reflection.right.description"/>
+		<Text variant="h3" t="project.ganymede.reflection.wrong.header"/>
+		<Text t="project.ganymede.reflection.wrong.description"/>
+		<Text variant="h3" t="project.ganymede.reflection.lessons.header"/>
+		<Text t="project.ganymede.reflection.lessons.description"/>
+
+		<Text variant="h2" t="project.ganymede.status.header"/>
+		<Text t="project.ganymede.status.description"/>
 	</div>;
 }
