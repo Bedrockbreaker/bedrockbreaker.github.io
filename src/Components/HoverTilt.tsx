@@ -32,6 +32,8 @@ export function HoverTilt({
 	children,
 	...props
 }: HoverTiltProps) {
+	allowDeviceRotation = false; // BUG: Device rotation is broken
+
 	const { prefersReducedMotion } = useAccessibility();
 
 	const outerRef = useRef<HTMLDivElement>(null);
