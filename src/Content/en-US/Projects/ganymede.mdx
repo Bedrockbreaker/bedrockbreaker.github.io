@@ -1,0 +1,95 @@
+import { BadgeList } from "~/Components/BadgeList";
+import { Button } from "~/Components/Button";
+import { HoverTilt } from "~/Components/HoverTilt";
+import { GetUrlIcon } from "~/Components/Icons";
+import { Link } from "~/Components/Link";
+import { Text } from "~/Components/Text";
+import { Projects } from "~/Util/ProjectData";
+
+<Text variant="h1" className="mx-auto text-center">Ganymede</Text>
+
+<Text variant="h2" className="mb-6">Overview</Text>
+
+<div className="max-sm:flex max-sm:flex-col -mb-4">
+	<div className="float-right flex flex-col m-6">
+		<HoverTilt className="max-w-72 sm:w-72 mx-auto -mt-6">{Projects.ganymede.GetImage()}</HoverTilt>
+		<div className="flex flex-col items-center sm:justify-end mt-6 gap-1">
+			<Button
+				kind="secondary"
+				asChild
+				aria-label="View project homepage for Ganymede"
+				className="grow w-full max-w-72"
+			>
+				<Link href={Projects.ganymede.homepage.url} hasExternalIcon={false}>
+					View Project
+					{GetUrlIcon(Projects.ganymede.homepage.icon)}
+				</Link>
+			</Button>
+		</div>
+	</div>
+	<BadgeList project={Projects.ganymede}/>
+
+	*Ganymede* is a first-person "spell shooter" take on capture-the-flag, designed for networked multiplayer with AI-controlled bots. It explores alternatives to conventional FPS mechanics by de-emphasizing direct-damage gunplay and adding a suite of tactical "spells" that focus on positioning, timing, and battlefield control. Originally built using Blueprints, the game was later rewritten in C++ with the Gameplay Ability System (GAS) to support better networking, performance, and modularity.
+</div>
+
+## The Challenge
+
+I set out to explore an FPS design space that emphasized tactics, battlefield control, and player expression over mechanical aiming skill. I wanted to reduce the reliance on direct-damage mechanics and instead focus on "spells" that offered situational utility, counterplay, and room for clever improvisation.
+
+At the system level, I challenged myself to build an AI stack capable of navigating and cooperating in a CTF match -- managing roles, responding to threats, and acting with sufficient unpredictability to feel human. To support strategic diversity, I aimed to design modular spell loadouts, enabling unique playstyles that evoke the feel of a rag-tag squad with specialized roles and asymmetric powers.
+
+## Development Process
+
+### Early Concepts & Prototypes
+
+Early ideation visuals (sketches, diagrams, lists). Spell lists, level sketches, gameplay goals, bot logic, etc.
+
+### Iteration & Refinement
+
+#### Why CTF?
+
+Capture-the-flag offered a natural context for tactical play: guarding routes, laying traps, and flanking enemies; whereas a more traditional deathmatch felt too one-dimensional in contrast. CTF also provided a strong structural reason for bots to act as a team, with an evolving goal that responds to flags being taken and captured, rather than statically trying to just kill other players.
+
+#### Spell System Design
+
+My first prototype was a slow-moving, heat-seeking projectile. Later ideas included movement tech spells (e.g. teleporting forwards a short distance) and utility spells such as a blinding land mine. Additional ideas included passive, aura-style spells (movement speed buffs, temporary invisibility) and enemy detection through walls. However, time constraints limited implementation to just a few of these.
+
+The initial code architecture involved a single, generic spell class, with deep inheritance for specific spell types in Blueprint. At the time, designer-centric extensibility wasn't a consideration, but I later realized that the spell system could be used to support a wide range of spell loadouts, and I wanted to experiment with a more modular design approach.
+
+In the C++ rewrite, I relied heavily on the Gameplay Ability System (GAS), and broke each spell into a "delivery mechanism" (projectile, aura, etc.) and an "effect" (e.g. teleport, heal, etc.). Data Assets could be used to define spell behavior, and the spell delivery system could be extended to support custom logic and networking. In the end, a designer could make a new spell fairly quickly without programmer involvement, and the spell system could be extended to support new delivery mechanisms and effects.
+
+#### AI Evolution
+
+The game's AI was not deeply planned; it grew organically. In particular, it was my first foray into building a game AI system, and much of the early progress involved experimentation. Over time, I built a reactive behavior tree system paired with a graph-based navigation layer. At runtime, each bot responds to flag status and local threats. I also implemented a stochastic A* variant to make long-term pathfinding less deterministic and give the illusion of tactical coordination.
+
+#### Blueprint Spiral
+
+The first version of the game was built entirely in Blueprint. This helped me iterate quickly, but as features accumulated -- especially with AI behaviors -- it became clear that the system was too brittle and opaque to scale. Debugging behaviors and spells became increasingly difficult, and the lack of poor initial architecture was starting to take its toll in maintenence effort and time.
+
+I halted feature implementations, and started work on rewriting the game from scratch in C++ (version 2 of the game). This allowed me to build a more robust system architecture, but I overestimated the amount of time I needed to spend on the project, and I did not have enough time to fully implement all the features from the original Blueprint version.
+
+## Final Implementation
+
+### Core Gameplay
+
+### AI Architecture
+
+### Tooling & Debug Systems
+
+### Gallery
+
+#### Technical Architecture Diagrams
+
+#### Screenshots, Gifs, & Videos
+
+## Reflection & Lessons Learned
+
+### What Went Right
+
+### What Went Wrong
+
+### Lessons Learned
+
+## Status & Next Steps
+
+Current status and future plans.

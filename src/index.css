@@ -9,6 +9,19 @@
 	}
 }
 
+@layer utilities {
+	.shiki, .shiki span {
+		background-color: var(--background-dark) !important;
+	}
+
+	:is(.dark) .shiki, :is(.dark) .shiki span {
+		color: var(--shiki-dark) !important;
+		font-style: var(--shiki-dark-font-style) !important;
+		font-weight: var(--shiki-dark-font-weight) !important;
+		text-decoration: var(--shiki-dark-text-decoration) !important;
+	}
+}
+
 @theme {
 	--default-font-family: "Inter", "system-ui", "Avenir", "Helvetica", "Arial", "sans-serif";
 }
