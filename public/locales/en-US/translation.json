@@ -23,6 +23,7 @@
 			"close": "Close"
 		},
 		"icons": {
+			"curseforge-alt": "CurseForge Logo",
 			"github-alt":"GitHub Logo",
 			"itchio-alt": "itch.io Logo",
 			"linkedin-alt":"LinkedIn Logo",
