@@ -7,8 +7,10 @@ import Ganymede from "~/Assets/Projects/Ganymede.png";
 import GraduatedCylinders from "~/Assets/Projects/GraduatedCylinders.png";
 import Memento from "~/Assets/Projects/Memento.png";
 import OldManWhiskers from "~/Assets/Projects/OldManWhiskers.png";
-import Placeholder_ThemeDark_enUS from "~/Assets/Projects/Placeholder_ThemeDark_en-US.png";
-import Placeholder_ThemeLight_enUS from "~/Assets/Projects/Placeholder_ThemeLight_en-US.png";
+import Placeholder_ThemeDark_en_US from "~/Assets/Projects/Placeholder_ThemeDark_en-US.png";
+import Placeholder_ThemeLight_en_US from "~/Assets/Projects/Placeholder_ThemeLight_en-US.png";
+import Placeholder_ThemeDark_ja_JP from "~/Assets/Projects/Placeholder_ThemeDark_ja-JP.png";
+import Placeholder_ThemeLight_ja_JP from "~/Assets/Projects/Placeholder_ThemeLight_ja-JP.png";
 import Pushr4k from "~/Assets/Projects/Pushr4k.png";
 import SilentNightDeadlyNight from "~/Assets/Projects/SilentNightDeadlyNight.png";
 import TankGame from "~/Assets/Projects/TankGame.png";
@@ -16,11 +18,19 @@ import Website from "~/Assets/Projects/Website.png";
 import Yggdrasil_ThemeDark from "~/Assets/Projects/Yggdrasil_ThemeDark.png";
 import Yggdrasil_ThemeLight from "~/Assets/Projects/Yggdrasil_ThemeLight.png";
 
-const NoImage = () => <ThemedImage
-	sources={{light: Placeholder_ThemeLight_enUS, dark: Placeholder_ThemeDark_enUS}}
-	alt={i18n.t("component.project-card.no-image-alt")}
-	className="rounded-md"
-/>;
+function NoImage() {
+	return i18n.language === "ja-JP"
+		? <ThemedImage
+			sources={{light: Placeholder_ThemeLight_ja_JP, dark: Placeholder_ThemeDark_ja_JP}}
+			alt={i18n.t("component.project-card.no-image-alt")}
+			className="rounded-md"
+		/>
+		: <ThemedImage
+			sources={{light: Placeholder_ThemeLight_en_US, dark: Placeholder_ThemeDark_en_US}}
+			alt={i18n.t("component.project-card.no-image-alt")}
+			className="rounded-md"
+		/>;
+}
 
 export const Projects = {
 	test: new Project({
