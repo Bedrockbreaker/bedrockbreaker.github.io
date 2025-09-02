@@ -14,7 +14,9 @@ export const MDXComponents: Readonly<MDXComponentsType> = {
 	pre: ({className, ...props}: React.HTMLAttributes<HTMLPreElement>) =>
 		<pre
 			className={
-				className + " relative rounded-sm px-[1.3rem] py-[1.2rem] font-mono text-sm [&>*]:px-0 [&>*]:py-0"
+				className
+				+ " relative scheme-light-dark overflow-x-auto rounded-md px-[1.3rem] "
+				+ "py-[1.2rem] font-mono text-sm [&>*]:px-0 [&>*]:py-0"
 			}
 			{...props}
 		/>,
