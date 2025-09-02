@@ -164,7 +164,7 @@ export const Projects = {
 			alt={i18n.t("project.graduatedcylinders.img-alt")}
 			className="rounded-md"
 		/>,
-		hasDetails: true,
+		// hasDetails: true,
 		homepage: {url: "https://www.curseforge.com/minecraft/mc-mods/graduated-cylinders", icon: "curseforge"},
 		source: {url: "https://github.com/bedrockbreaker/Graduated-Cylinders"},
 		tags: [
@@ -207,7 +207,7 @@ export const Projects = {
 			{i18n.t("project.cardbot.description")}
 		</Text>,
 		image: NoImage,
-		hasDetails: true,
+		// hasDetails: true,
 		source: {url: "https://github.com/bedrockbreaker/unobot"},
 		tags: [
 			"multiplayer-logic",
@@ -304,7 +304,7 @@ export const Projects = {
 			alt={i18n.t("project.pushr4k.img-alt")}
 			className="rounded-md"
 		/>,
-		hasDetails: true,
+		// hasDetails: true,
 		homepage: {url: "https://bedrockbreaker.itch.io/pushr4k", icon: "itchio"},
 		tags: [
 			"input-systems",
@@ -349,7 +349,7 @@ export const Projects = {
 			alt={i18n.t("project.memento.img-alt")}
 			className="rounded-md"
 		/>,
-		hasDetails: true,
+		// hasDetails: true,
 		source: {url: "https://github.com/bedrockbreaker/Memento"},
 		tags: [
 			"core-mechanics",
