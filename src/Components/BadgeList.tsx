@@ -13,7 +13,6 @@ export function BadgeList({project, className = ""}: {project: Project, classNam
 			return <HoverTilt
 				key={tag}
 				allowDeviceRotation={false}
-				intensity={5}
 				disableShadow // Disable the default shadow, apply a different one
 				className="hover:drop-shadow-md select-none"
 			>

@@ -19,6 +19,7 @@ interface HoverTiltProps extends React.HTMLAttributes<HTMLDivElement> {
 		gammaMax: number;
 	};
 	disableShadow?: boolean;
+	disableHoverScale?: boolean;
 }
 
 export function HoverTilt({
@@ -28,6 +29,7 @@ export function HoverTilt({
 	// 89 to avoid gimbal lock
 	deviceRotationExtents = {betaMin: 45, betaMax: 89, gammaMin: -30, gammaMax: 30},
 	disableShadow = false,
+	disableHoverScale = false,
 	className = "",
 	children,
 	...props
@@ -48,9 +50,8 @@ export function HoverTilt({
 		const rect = getRect();
 		if (rect === undefined || innerRef.current === null) return;		
 
-		// Compensate for aspect ratio
-		const degX = -offsetY * 2 * intensity * (rect.height / rect.width);
-		const degY = offsetX * 2 * intensity * (rect.width / rect.height);
+		const degX = -offsetY * intensity;
+		const degY = offsetX * intensity;
 
 		const hasRotationForCurrentFrame = degX !== 0 || degY !== 0;
 		if (hasRotationForCurrentFrame !== hasRotation) setHasRotation(hasRotationForCurrentFrame);
@@ -65,8 +66,9 @@ export function HoverTilt({
 		if (rect === undefined) return;
 
 		const { clientX: mouseX, clientY: mouseY } = event;
-		const offsetX = (mouseX - rect.left) / rect.width - 0.5;
-		const offsetY = (mouseY - rect.top) / rect.height - 0.5;
+		const majorAxis = Math.max(rect.width, rect.height);
+		const offsetX = (mouseX - rect.left - rect.width * .5) / majorAxis;
+		const offsetY = (mouseY - rect.top - rect.height * .5) / majorAxis;
 
 		setAnimationFrame(window.requestAnimationFrame(() => {
 			applyTransform(offsetX, offsetY);
@@ -127,7 +129,9 @@ export function HoverTilt({
 		ref={outerRef}
 		data-has-rotation={hasRotation}
 		className={
-			"motion-safe:data-[has-rotation=true]:scale-105 "
+			(disableHoverScale
+				? ""
+				: "motion-safe:data-[has-rotation=true]:scale-105 motion-safe:data-[has-rotation=true]:z-100 ")
 			+ (disableShadow ? "" : "motion-safe:data-[has-rotation=true]:drop-shadow-heavy ")
 			+ "transition-all duration-300 " + className
 		}
