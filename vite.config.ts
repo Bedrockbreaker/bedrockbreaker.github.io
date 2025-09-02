@@ -1,6 +1,7 @@
 import mdx from "@mdx-js/rollup";
 import { resolve } from "node:path";
 import { transformerColorizedBrackets } from "@shikijs/colorized-brackets";
+import rehypeMdxImportMedia from "rehype-mdx-import-media";
 import rehypeShiki from "@shikijs/rehype";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
@@ -12,13 +13,21 @@ import { CommitDates } from "./vite.plugins/CommitDates";
 export default defineConfig({
 	plugins: [
 		{enforce: "pre", ...mdx({
-			rehypePlugins: [[
-				rehypeShiki,
-				{
-					themes: {light: "light-plus", dark: "dark-plus"},
-					transformers: [transformerColorizedBrackets()]
-				}
-			]]
+			rehypePlugins: [
+				[
+					rehypeShiki,
+					{
+						themes: {light: "light-plus", dark: "dark-plus"},
+						transformers: [transformerColorizedBrackets()]
+					}
+				],
+				[
+					rehypeMdxImportMedia,
+					{
+						resolve: false
+					}
+				]
+			]
 		})},
 		react(),
 		CommitDates(),
