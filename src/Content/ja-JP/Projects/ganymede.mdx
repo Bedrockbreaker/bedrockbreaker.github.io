@@ -1,0 +1,314 @@
+import { BadgeList } from "~/Components/BadgeList";
+import { Button } from "~/Components/Button";
+import { HoverTilt } from "~/Components/HoverTilt";
+import { GetUrlIcon } from "~/Components/Icons";
+import { Link } from "~/Components/Link";
+import { Text } from "~/Components/Text";
+import { ThemedImage } from "~/Components/ThemedImg";
+import { Projects } from "~/Util/ProjectData";
+
+import HeatSeekerUrl from "~/Assets/Projects/Ganymede/HeatSeeker.webm";
+import SpellCastingFlow_ThemeDark from "~/Assets/Projects/Ganymede/SpellCastingFlow_ThemeDark.svg";
+import SpellCastingFlow_ThemeLight from "~/Assets/Projects/Ganymede/SpellCastingFlow_ThemeLight.svg";
+
+<Text variant="h1" className="mx-auto text-center">Ganymede</Text>
+
+<Text variant="h2" className="mb-6">Overview</Text>
+
+<div className="max-md:flex max-md:flex-col">
+	<div className="float-right flex flex-col m-6">
+		<HoverTilt className="max-w-72 sm:w-72 mx-auto -mt-6">{Projects.ganymede.GetImage()}</HoverTilt>
+		<div className="flex flex-col items-center sm:justify-end mt-6 gap-1">
+			<Button
+				kind="secondary"
+				asChild
+				aria-label="View project homepage for Ganymede"
+				className="grow w-full max-w-72"
+			>
+				<Link href={Projects.ganymede.homepage.url} hasExternalIcon={false}>
+					View Project
+					{GetUrlIcon(Projects.ganymede.homepage.icon)}
+				</Link>
+			</Button>
+		</div>
+	</div>
+</div>
+
+<BadgeList project={Projects.ganymede}/>
+
+*Ganymede* is a first-person spell-based capture-the-flag prototype, built in Unreal Engine 5 for networked multiplayer with AI-controlled bots. The design focus was on tactical utility and battlefield control over pure mechanical aiming.
+
+The first version was made entirely in Blueprint for speed of iteration. The second iteration was rebuilt in C++ and the Gameplay Ability System (GAS) to support improved networking, modularity, and performance.
+
+## The Challenge
+
+I wanted to test how FPS design changes when direct-damage weapons are de-emphasized in favor of abilities that manipulate space, timing, and information. Capture-the-flag provides a natural structure for that -- it forces teamwork, creates evolving objectives, and gives bots a reason to coordinate beyond just "shoot the enemy."
+
+On the technical side, I challenged myself to:
+
+- Build a modular ability system that designers could extend without rewriting core code.
+- Create AI bots capable of basic CTF play: grabbing the flag, escorting, defending, and opportunistically engaging enemies.
+- Support multiplayer replication in a way that felt responsive despite the complexity of abilities.
+- Exercise my less-developed abilities in level design.
+
+## Development Process
+
+### Early Prototyping
+
+The earliest prototypes were quick Blueprint experiments -- simple projectile abilities, rough maps, and placeholder AI logic. This phase was less about polish and more about proving that "spells instead of guns" could support real FPS flow.
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center justify-center w-full p-6 mt-6 rounded-md bg-dark">
+	<div>
+		<HoverTilt>
+			![Blueprint graph of a landmine actor trigger event](~/Assets/Projects/Ganymede/LandmineGraph.png)
+		</HoverTilt>
+		> Landmines blind players in a radius, with diminishing duration over distance.
+	</div>
+	<div className="row-span-2">
+		<HoverTilt>
+			![Paper sketch of the "blink" spell](~/Assets/Projects/Ganymede/BlinkSketch.jpg)
+		</HoverTilt>
+		> Ideation for the "blink"/short-distance teleport spell.
+	</div>
+	<div>
+		<HoverTilt>
+			![AI behavior tree](~/Assets/Projects/Ganymede/BehaviorTree.png)
+		</HoverTilt>
+		> I was unfamiliar with behavior trees; this implementation (poorly) emulates a state machine.
+	</div>
+</div>
+
+There were quite a few ideas for new spell types and AI behaviors, but many of them were discarded in favor of a smaller scope.
+
+Some of these include:
+
+- **Passive abilities**: Auras that provide temporary buffs or debuffs to allies/enemies, slowly draining mana.
+- **Informational spells**: Shows outlines of nearby enemies or pickups.
+- **Configurable loadouts**: The ability for players to adjust their spell properties to fine tune damage/mana costs, etc.
+- **True AI roles**: Rather than just states, I wanted to explore a more complex AI system that supported roles and task allocation.
+
+### Why CTF?
+
+Capture-the-flag gave me built-in tactical layers: route guarding, trap setting, flanking, and defending. In contrast, a deathmatch setup would've pushed players toward brute-force damage racing. For bots, CTF also created clearer roles -- attacking, defending, escorting -- which aligned with my AI goals.
+
+### Spell System Design
+
+<HoverTilt className="mt-6 rounded-md md:px-6 md:float-right md:flex md:flex-col md:max-w-1/2">
+	<video
+		autoPlay={window.matchMedia("(prefers-reduced-motion: no-preference)").matches}
+		controls={window.matchMedia("(prefers-reduced-motion: reduce)").matches}
+		loop
+		muted
+		playsInline
+		className="rounded-md"
+	>
+		<source src={HeatSeekerUrl} type="video/webm"/>
+	</video>
+</HoverTilt>
+
+The Blueprint version used a single spell base class with deep inheritance for each new type -- functional, but ultimately brittle.
+
+During the C++ rewrite, I restructured the system around GAS. Each spell was split into two layers:
+
+- Delivery mechanism (projectile, aura, instant-cast, etc.)
+- Effect (teleport, damage, blind, etc.)
+
+Behavior could then be configured through Data Assets. This let me author new spells quickly without touching core code.
+
+Implemented Spells:
+
+- **Blink**: Short-distance teleport, primarily for stealing or escaping with the flag.
+- **Heat-seeker**: Slow projectile with basic homing logic.
+- **Blinding mine**: Deployable trap that impairs vision of all players in a radius once triggered.
+- **Magic missile**: A ray-trace projectile with a short range, low damage, but low mana cost.
+- **Melee attack**: Not actually a spell, but acts as a close-quarters option for interruption and surprise.
+
+### AI
+
+This was my first real AI implementation, and the process was very iterative. The final system combined:
+
+- **Behavior tree** for high-level goals:
+	- Move toward the enemy flag.
+	- Return home if carrying a flag.
+	- Protect friendly flag carriers.
+	- Attack visible enemies at point-blank.
+- **Pathfinding**: A "stochastic" A\* variant (randomized node selection, see below) running on a hand-authored waypoint graph, with Unreal's navmesh handling local navigation. The stochastic element avoided the "bots always pick the same path" problem.
+- **Debugging tools**: In-editor visualization of waypoints, chosen paths, and current AI goals.
+
+However, bots didn't react well to non-standard states (teleports, blinds, etc.). Their combat behavior was very simplistic, but the core architecture gave me a foothold in AI tooling and debugging.
+
+<div className="mt-6"/>
+
+```cpp
+/**
+ * Stochastic Node Selection for A* (Pathfinding)
+ * - Lower FScore -> higher probability of selection
+ * - Higher Temperature -> more randomness
+ *
+ * UE-flavored pseudocode for portfolio readability.
+ */
+static FNavNode* SelectRandomNode(
+	const TArray<FNavNode*>&	  OpenSet,
+	const TMap<FNavNode*, float>& FScoreMap,
+	float 						  Temperature)
+{
+	check(OpenSet.Num() > 0 && Temperature > 0.0f);
+
+	// 1. Find max FScore for numerical stability
+	float MaxFScore = TNumericLimits<float>::Lowest();
+	for (FNavNode* Node : OpenSet)
+		MaxFScore = FMath::Max(MaxFScore, FScoreMap[Node]);
+
+	// 2. Compute softmax weights
+	TArray<float> Weights;
+	Weights.Reserve(OpenSet.Num());
+	float SumWeights = 0.0f;
+	for (FNavNode* Node : OpenSet)
+	{
+		float Weight = FMath::Exp((MaxFScore - FScoreMap[Node]) / Temperature);
+		Weights.Add(Weight);
+		SumWeights += Weight;
+	}
+
+	// 3. Weighted random draw
+	float RandomThreshold = FMath::FRandRange(0.0f, SumWeights);
+	for (int32 i = 0; i < OpenSet.Num(); ++i)
+	{
+		RandomThreshold -= Weights[i];
+		if (RandomThreshold <= 0.0f) return OpenSet[i];
+	}
+
+	// Fallback (if rare numerical stability issues occur)
+	return OpenSet.Last();
+}
+```
+
+### From Blueprint to C++
+
+The initial Blueprint version grew brittle fast. Debugging behaviors and spells became increasingly difficult, and the lack of poor initial architecture was starting to take its toll in maintenance effort and time, so during development, I had to stop adding features and start over.
+
+The C++ rewrite:
+
+- Established a cleaner ability framework in GAS.
+- Improved multiplayer code replication.
+- Made AI debugging more transparent.
+
+{/*
+The UML diagram of the Spell Casting Flow image below
+
+@startuml
+
+package "UE Classes" <<rectangle>> {
+    class UPrimaryDataAsset
+    class UGameplayEffect
+}
+
+class USpellData {
+    +USpellDelivery Delivery
+    +USpellEffect Effect
+}
+class USpellDelivery {
+    +void Trigger(Delegate Callback)
+    -FSpellCastingContext CreateContext()
+}
+class USpellEffect {
+    +GameplayEffect EffectClass
+    +Map<Tag, float> DataTags
+    +float Level
+
+    +void Cast(FSpellCastingContext SpellContext)
+}
+struct FSpellCastingContext {
+    +Vector DeliveryLocation
+    +Guid CasterId
+    +Guid[] GatheredTargets
+}
+
+UPrimaryDataAsset <|-- USpellData
+USpellData *-- USpellDelivery
+USpellData *-- USpellEffect
+UGameplayEffect <.. USpellEffect : <<uses subtype>>
+USpellDelivery --> FSpellCastingContext
+USpellEffect <-- FSpellCastingContext
+
+note left of USpellData
+=== Spell Casting Flow ==
+
+1. //ExampleAbility// is activated
+2. //ExampleAbility// calls SpellData->Delivery.Trigger()
+3. USpellDelivery performs action
+    (e.g. launches a projectile)
+4. USpellDelivery calls internal CreateContext
+    (e.g. collects Actors in a radius after landing)
+5. USpellDelivery returns the context through the Delegate
+6. //ExampleAbility// calls SpellEffect->Cast()
+7. //ExampleAbility// ends.
+end note
+
+@enduml
+*/}
+
+<div className="flex justify-center">
+	<HoverTilt>
+		<ThemedImage
+			sources={{
+				light: SpellCastingFlow_ThemeLight,
+				dark: SpellCastingFlow_ThemeDark
+			}}
+			alt="Spell Casting Flow"
+			className="rounded-md"
+		/>
+	</HoverTilt>
+</div>
+
+### Level Design
+
+The first prototype used a Marketplace map. Later, I built my own, drawing from Halo-style two-base arenas. The main challenge was balancing open sightlines (good for spells with travel time) against flanking routes (good for Blink and traps).
+
+Player feedback was invaluable, and pushed me to add more cover and alternative routes through the center area.
+
+<div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-6 bg-dark mt-6 p-6 rounded-md">
+	<div>
+		<HoverTilt>
+			![Old level design from the Marketplace](~/Assets/Projects/Ganymede/OldLevel.png)
+		</HoverTilt>
+		> Pretty, but not very fun to play CTF on.
+	</div>
+	<div>
+		<HoverTilt>
+			![New level design of my own](~/Assets/Projects/Ganymede/NewLevel.png)
+		</HoverTilt>
+		> Player feedback consistently said this map was fun even when just moving around.
+	</div>
+</div>
+
+## Reflection
+
+### What Worked
+
+- **Rapid prototyping**: Starting with a rough Blueprint prototype let me prove out the core gameplay loop quickly, then focus on iteration rather than premature polish.
+- **GAS architecture**: Moving to C++ with GAS gave me a modular foundation for spell creation and multiplayer handling. Even though the system wasn't fully realized, it's extensible and testable.
+- **AI pathing approach**: The stochastic A\* over waypoints introduced enough unpredictability to keep bots from feeling mechanical. Combined with simple behavior tree roles, it provided a serviceable baseline of "teamplay."
+- **Iterative level design**: Playtest feedback on the map layout was immediately actionable, and revisions directly improved the flow of matches.
+
+### What Didn't
+
+- **Replication code**: My first pass at multiplayer networking was fragile. I underestimated Unreal's replication complexity, which led to brittle solutions under a limited scope. This, however, pushed me to use GAS with built-in replication, which ultimately proved valuable.
+- **AI scope**: I aimed for bots that could feel like teammates, but their combat behaviors remained simplistic. They didn't react well to status effects or disruptive abilities, which limited believability. Still, as my first venture into game AI, I gained significant strides in my understanding of it.
+- **Architecture debt**: Starting in Blueprint (then further bolting AI onto character controllers) created maintainability issues that required significant refactoring. This was a good learning experience, but some systems should have been built with better solutions from the start.
+- **Content scope**: Only a handful of spells were ever fully implemented, leaving much of the intended tactical diversity unexplored. My initial goal to explore this FPS design space, while a success, still has more that can be done.
+
+### Lessons Learned
+
+- **Prototype first, refactor early**: Rapid iteration is valuable, but delaying an architectural reset makes later changes harder. For anything networked or extensible, C++ and GAS should have been the starting point, not a rewrite.
+- **Scope AI realistically**: Strong game rules can carry weak AI, but overscoping AI ambitions without early planning and robust tooling undermines credibility.
+- **Tooling is essential**: Debug visualizers and authoring tools saved the AI effort; in future projects, I'd build these in parallel with core systems.
+- **MVP mindset**: Shipping a playable slice with a small set of polished mechanics is more valuable than a half-finished wide feature set.
+
+## Status & Next Steps
+
+The project is on hold. However, the next iteration will focus on:
+
+- A full spell roster with better balance.
+- Reactive AI that responds to status effects, has team roles, and can coordinate.
+- Visual and audio polish to bring the prototype to a polished state.
