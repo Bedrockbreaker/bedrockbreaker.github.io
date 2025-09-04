@@ -19,15 +19,11 @@ export function Portfolio() {
 	const [projects] = useState<(keyof typeof Projects)[]>([
 		"ganymede",
 		"graduatedcylinders",
-		"pushr4k",
-		"quiethours",
+		"katalyst",
+		"memento",
 		"cardbot",
+		"pushr4k",
 		"oldmanwhiskers",
-		"yggdrasil",
-		"tankgame",
-		"partypooper",
-		"tcresearchsolver",
-		"silentnight",
 		"portfolio"
 	]);
 

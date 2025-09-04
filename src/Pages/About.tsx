@@ -79,8 +79,8 @@ export function About() {
 				<CarouselContent>
 					<CarouselItem><ProjectCard project="ganymede"/></CarouselItem>
 					<CarouselItem><ProjectCard project="graduatedcylinders"/></CarouselItem>
-					<CarouselItem><ProjectCard project="pushr4k"/></CarouselItem>
-					<CarouselItem><ProjectCard project="quiethours"/></CarouselItem>
+					<CarouselItem><ProjectCard project="katalyst"/></CarouselItem>
+					<CarouselItem><ProjectCard project="memento"/></CarouselItem>
 					<CarouselItem><ProjectCard project="cardbot"/></CarouselItem>
 				</CarouselContent>
 				<div className="flex flex-row mt-1 gap-1 items-center">
