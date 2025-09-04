@@ -101,10 +101,6 @@ export function About() {
 			<Text variant="h4" className="-mb-6" t="about.about-me.header"/>
 			<Text t="about.about-me.paragraphs.0"/>
 			<Text t="about.about-me.paragraphs.1"/>
-			<Text variant="h4" className="mt-12 -mb-6" t="about.working-in-japan.header"/>
-			<Text t="about.working-in-japan.paragraphs.0"/>
-			<Text t="about.working-in-japan.paragraphs.1"/>
-			<Text t="about.working-in-japan.paragraphs.2"/>
 			<Text variant="h4" className="mt-12 -mb-6" t="about.current-projects.header"/>
 			<Text t="about.current-projects.paragraphs.0"/>
 			<UL>
@@ -120,6 +116,10 @@ export function About() {
 					</Trans>
 				</LI>
 			</UL>
+			<Text variant="h4" className="mt-12 -mb-6" t="about.working-in-japan.header"/>
+			<Text t="about.working-in-japan.paragraphs.0"/>
+			<Text t="about.working-in-japan.paragraphs.1"/>
+			<Text t="about.working-in-japan.paragraphs.2"/>
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center mt-12">
 				<Card
 					borderStyle="1"
