@@ -23,6 +23,7 @@
 			"close": "Close"
 		},
 		"icons": {
+			"bluesky-alt": "Bluesky Logo",
 			"curseforge-alt": "CurseForge Logo",
 			"github-alt":"GitHub Logo",
 			"itchio-alt": "itch.io Logo",
@@ -323,6 +324,11 @@
 			"title": "Memento",
 			"description": "Experimental narrative game where the save/load system is a core progression mechanic.",
 			"img-alt": "A Penrose triangle with corrupted plant overgrowth."
+		},
+		"katalyst": {
+			"title": "Project: Katalyst",
+			"description": "Lead Engineer for an unreleased title by Tongue In Cheek Productions. Directing technical efforts of a 35+ person team across engineering, art, and design.",
+			"img-alt": "Three Katalysts huddling together."
 		}
 	}
 }

@@ -120,7 +120,7 @@ export function GetCategoryFromTag(tag: Tag) {
 	}) as typeof tagCategories[keyof typeof tagCategories];
 }
 
-export type UrlIcon = "external" | "github" | "curseforge" | "itchio" | "personal-website";
+export type UrlIcon = "external" | "github" | "curseforge" | "itchio" | "personal-website" | "bluesky";
 
 interface UrlDetails {
 	url: string;
