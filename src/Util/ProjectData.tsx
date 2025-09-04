@@ -6,6 +6,7 @@ import { AllTags, Project } from "./Project";
 import CardBot from "~/Assets/Projects/CardBot.png";
 import Ganymede from "~/Assets/Projects/Ganymede.png";
 import GraduatedCylinders from "~/Assets/Projects/GraduatedCylinders.png";
+import Katalyst from "~/Assets/Projects/Katalyst.png";
 import Memento from "~/Assets/Projects/Memento.png";
 import OldManWhiskers from "~/Assets/Projects/OldManWhiskers.png";
 import Placeholder_ThemeDark_en_US from "~/Assets/Projects/Placeholder_ThemeDark_en-US.png";
@@ -370,6 +371,34 @@ export const Projects = {
 			"solo-developer",
 			"programmer",
 			"designer"
+		]
+	}),
+	katalyst: new Project({
+		title: i18n.t("project.katalyst.title"),
+		description: () => <Text variant="muted">
+			{i18n.t("project.katalyst.description")}
+		</Text>,
+		image: () => <img
+			src={Katalyst}
+			alt={i18n.t("project.katalyst.img-alt")}
+			className="rounded-md"
+		/>,
+		homepage: {url: "https://bsky.app/profile/project-katalyst.bsky.social", icon: "bluesky"},
+		tags: [
+			"game",
+			"programmer",
+			"core-mechanics",
+			"input-systems",
+			"data-driven-design",
+			"devtools",
+			"level-scripting",
+			"15-team-members",
+			"3-months",
+			"unity",
+			"pc",
+			"console",
+			"csharp",
+			"work-in-progress"
 		]
 	})
 };
