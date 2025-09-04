@@ -3,6 +3,7 @@ import { ThemedImage } from "~/Components/ThemedImg";
 import i18n from "./i18n";
 import { AllTags, Project } from "./Project";
 
+import CardBot from "~/Assets/Projects/CardBot.png";
 import Ganymede from "~/Assets/Projects/Ganymede.png";
 import GraduatedCylinders from "~/Assets/Projects/GraduatedCylinders.png";
 import Memento from "~/Assets/Projects/Memento.png";
@@ -206,7 +207,11 @@ export const Projects = {
 		description: () => <Text variant="muted">
 			{i18n.t("project.cardbot.description")}
 		</Text>,
-		image: NoImage,
+		image: () => <img
+			src={CardBot}
+			alt={i18n.t("project.cardbot.img-alt")}
+			className="rounded-md"
+		/>,
 		// hasDetails: true,
 		source: {url: "https://github.com/bedrockbreaker/unobot"},
 		tags: [
