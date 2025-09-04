@@ -3,8 +3,8 @@ import { initReactI18next } from "react-i18next";
 import httpBackend from "i18next-http-backend";
 import languageDetector from "i18next-browser-languagedetector";
 
-import en_US from "../../public/locales/en-US/translation.json";
-import ja_JP from "../../public/locales/ja-JP/translation.json";
+import en_US from "~/Assets/Locales/en-US/translation.json";
+import ja_JP from "~/Assets/Locales/ja-JP/translation.json";
 
 export const defaultNS = "translation";
 export const resources = {
