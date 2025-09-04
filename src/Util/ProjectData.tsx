@@ -141,7 +141,8 @@ export const Projects = {
 			"combat-design",
 			"ai-behavior",
 			"multiplayer-logic",
-			"pathfinding",
+			"devtools",
+			"data-driven-design",
 			"game",
 			"pc",
 			"unreal-engine",
@@ -150,8 +151,7 @@ export const Projects = {
 			"1-3-months",
 			"solo-developer",
 			"programmer",
-			"designer",
-			"work-in-progress"
+			"designer"
 		]
 	}),
 	graduatedcylinders: new Project({
