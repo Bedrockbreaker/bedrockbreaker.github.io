@@ -310,7 +310,6 @@ export const Projects = {
 			alt={i18n.t("project.pushr4k.img-alt")}
 			className="rounded-md"
 		/>,
-		// hasDetails: true,
 		homepage: {url: "https://bedrockbreaker.itch.io/pushr4k", icon: "itchio"},
 		tags: [
 			"input-systems",
