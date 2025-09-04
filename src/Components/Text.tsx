@@ -17,6 +17,8 @@ const variantClasses = {
 
 export type TextVariant = keyof typeof variantClasses;
 
+type TranslationKey = Parameters<ReturnType<typeof useTranslation>["t"]>[0];
+
 export function Text({variant, className, children}: {
 	variant?: TextVariant,
 	className?: string,
@@ -24,12 +26,12 @@ export function Text({variant, className, children}: {
 }): ReactElement
 export function Text({variant, t, className}: {
 	variant?: TextVariant,
-	t: string,
+	t: TranslationKey,
 	className?: string
 }): ReactElement
 export function Text({variant = "p", t: tKey, className = "", children}: {
 	variant?: TextVariant,
-	t?: string,
+	t?: TranslationKey,
 	className?: string,
 	children?: React.ReactNode
 }) {

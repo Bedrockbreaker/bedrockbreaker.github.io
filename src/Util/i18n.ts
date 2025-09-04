@@ -8,12 +8,8 @@ import ja_JP from "~/Assets/Locales/ja-JP/translation.json";
 
 export const defaultNS = "translation";
 export const resources = {
-	en: {
-		translation: en_US
-	},
-	ja: {
-		translation: ja_JP
-	}
+	en: { [defaultNS]: en_US },
+	ja: { [defaultNS]: ja_JP }
 } as const;
 
 i18n
@@ -22,7 +18,7 @@ i18n
 	.use(initReactI18next)
 	.init({
 		fallbackLng: "en",
-		ns: ["translation"],
+		ns: defaultNS,
 		defaultNS,
 		resources,
 		interpolation: {
