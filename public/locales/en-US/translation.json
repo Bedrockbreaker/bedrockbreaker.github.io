@@ -279,7 +279,7 @@
 		},
 		"ganymede": {
 			"title": "Ganymede",
-			"description": "Rebuilt the entire AI stack for a networked CTF shooter. Implemented stochastic A* for non-deterministic long-term pathfinding, tactical state machines, and team coordination behavior across bot agents. Currently rewriting from Blueprint to C++ with GAS for extensibility and performance.",
+			"description": "A first-person, spell-based capture-the-flag prototype, where battlefield control and utility take precedence over raw aim. Featuring modular abilities, AI-driven teammates, and networked multiplayer, it explores how FPS design shifts when spells replace traditional guns.",
 			"img-alt": "A person in a futurustic suit firing a gun with a flag on their head in a sci-fi valley."
 		},
 		"graduatedcylinders": {
