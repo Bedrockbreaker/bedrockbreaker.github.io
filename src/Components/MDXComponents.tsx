@@ -28,5 +28,7 @@ export const MDXComponents: Readonly<MDXComponentsType> = {
 	a: (props: LinkProps) => <Link {...props}/>,
 	ul: (props: React.HTMLAttributes<HTMLUListElement>) => <UL {...props}/>,
 	ol: (props: React.HTMLAttributes<HTMLOListElement>) => <OL {...props}/>,
-	li: (props: React.HTMLAttributes<HTMLLIElement>) => <LI {...props}/>
+	li: (props: React.HTMLAttributes<HTMLLIElement>) => <LI {...props}/>,
+	img: ({className, ...props}: React.HTMLAttributes<HTMLImageElement>) =>
+		<img className={"rounded-md " + className} {...props}/>
 };
