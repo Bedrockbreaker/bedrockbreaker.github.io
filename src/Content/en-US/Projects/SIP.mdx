@@ -1,0 +1,336 @@
+import { Divider } from "~/Components/Divider";
+import { HoverTilt } from "~/Components/HoverTilt";
+import { Text } from "~/Components/Text";
+
+<Text variant="h1" className="mx-auto text-center leading-none">Student Innovation Project:</Text>
+<Text variant="h1" className="mx-auto text-center leading-none italic">Narrative-Conscious Persistence Through Reframing Save/Load as a Mechanically Embedded, Systemically Causal, and Progression-Critical Player Action in Decision-Responsive Game Worlds</Text>
+
+<Text variant="blockquote" className="border-l-transparent border-r-2 text-right pr-6 mb-6">Jenson Searle</Text>
+
+<HoverTilt className="max-w-96 sm:w-96 mx-auto mb-6">![Memento Logo](~/Assets/Projects/Memento.png)</HoverTilt>
+
+## Technical Field
+
+This project involves the fields of Game Programming and Game Design -- in particular, tools and gameplay programming, as well systems and narrative design.
+
+## Background Information
+
+This project was born from a desire to challenge long-standing assumptions about how players interact with narrative and consequence in games. Many titles treat the ability to alter or revisit past events as purely mechanical convenience, disconnected from the world's fiction. I wanted to explore what happens when that interaction becomes a primary axis play -- when the act of shaping history is woven directly into the player's relationship with the story, the world, and its characters. My influences span literary works that play with structure and unreliable timelines, immersive sims with deeply reactive systems, and narrative-driven adventures where choices carry long-term weight. The goal is to bridge the gap between systemic interactivity and emotional storytelling, developing an experience where mechanical actions and narrative consequences are inseparable.
+
+## Prior Art
+
+1. **Undertale**  
+	Save files are part of the game's metaphysics, and player actions outside of the story (loading, quitting, etc.) are canonized within the narrative, but these actions are only used as meta-commentary.  
+	[https://store.steampowered.com/app/391540/Undertale](https://store.steampowered.com/app/391540/Undertale)
+
+2. **The Forgotten City**  
+	A time loop exists which resets the world, but the player retains knowledge across resets.  
+	[https://store.steampowered.com/app/874260/The_Forgotten_City](https://store.steampowered.com/app/874260/The_Forgotten_City)
+
+3. **Outer Wilds**  
+	The game state resets every 22 minutes, but knowledge persists across each loop.  
+	[https://store.steampowered.com/app/753640/Outer_Wilds](https://store.steampowered.com/app/753640/Outer_Wilds)
+
+4. **OneShot**  
+	The game acknowledges save files as part of its narrative and requires manipulating them on-disk to progress.  
+	[https://store.steampowered.com/app/420530/OneShot](https://store.steampowered.com/app/420530/OneShot)
+
+5. **Save Me Mr. Tako**  
+	The save system suggests narrative layers.  
+	[https://store.steampowered.com/app/1472540/Save_me_Mr_Tako_Definitive_Edition](https://store.steampowered.com/app/1472540/Save_me_Mr_Tako_Definitive_Edition)
+
+6. **Braid**  
+	Time manipulation is a core mechanic, where rewinding time is also a narrative metaphor.  
+	[https://store.steampowered.com/app/26800/Braid](https://store.steampowered.com/app/26800/Braid)
+
+7. **Prince of Persia: The Sands of Time**  
+	The rewind ability is diegetically framed within the game's universe.  
+	[https://store.steampowered.com/app/13600/Prince_of_Persia_The_Sands_of_Time](https://store.steampowered.com/app/13600/Prince_of_Persia_The_Sands_of_Time)
+
+8. **Zero Escape series**  
+	The player jumps between timelines to solve puzzles, and characters become aware of branching and loops.  
+	[https://store.steampowered.com/bundle/2638/Zero_Escape_Trilogy](https://store.steampowered.com/bundle/2638/Zero_Escape_Trilogy)
+
+9. **Returnal**  
+	The protagonist remembers death loops, and systems support progression over repeated resets through a roguelike gameplay layer.  
+	[https://store.steampowered.com/app/1649240/Returnal](https://store.steampowered.com/app/1649240/Returnal)
+
+10. **The Sexy Brutale**  
+	This game involves a time loop concept by rewinding time to manipulate NPC schedules, where progress is about solving narrative puzzles over multiple "resets."  
+	[https://store.steampowered.com/app/552590/The_Sexy_Brutale](https://store.steampowered.com/app/552590/The_Sexy_Brutale)
+
+## Problem Statements
+
+1. **Game Design**  
+	Most games treat save/load as a non-diegetic affordance, giving players total memory control. But narrative games that do touch on this -- such as Undertale or The Forgotten City -- typically comment on save mechanics only as a narrative layer. My approach is different, as I systematize save/load as part of the player’s action space.
+
+2. **Game Programming**  
+	Most narrative games serialize flat key/value pairs, representing state as a snapshot. This works for linear or branching paths, but becomes fragile when players can revisit, replay, or reorder actions. Traditional systems lose the how and why a player reached a state. By modeling world states as nodes in a directed acyclic graph, I preserve the lineage of player decisions and their transitions, enabling the system to evaluate temporal proximity of state changes (e.g. “what was undone?”), detect cyclical behavior or indecision (e.g. reloading the same scene multiple times), and dynamically adjust outcomes based on player patterns, not just flags.
+
+3. **Demand for Games**  
+	Below is quantifiable information that confirms the demand for video games.
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center justify-center w-full p-6 mt-6 rounded-md bg-dark">
+	<div>
+		<HoverTilt>
+			![Bullet point forecast](~/Assets/Projects/Memento/QuantifiableDemand1.png)
+		</HoverTilt>
+		> See Appendix F1
+	</div>
+	<div className="row-span-2">
+		<HoverTilt>
+			![Bar chart forecast](~/Assets/Projects/Memento/QuantifiableDemand2.png)
+		</HoverTilt>
+		> See Appendix F2
+	</div>
+	<div>
+		<HoverTilt>
+			![Market report highlights](~/Assets/Projects/Memento/QuantifiableDemand3.png)
+		</HoverTilt>
+		> See Appendix F3
+	</div>
+</div>
+
+## Project Description
+
+This project is an integration of progression mechanics -- traditionally considered external to the narrative experience, such as save/load systems -- into the diegetic structure of the game world. The design centers on player agency, choice, and consequence, with core gameplay systems that track not only in-world actions but also meta-actions such as when and how players revisit previous decisions. The supporting game engine architecture is built around a stateful persistence model that uses a node-based world-state graph, enabling dynamic evaluation of narrative and gameplay consequences across nonlinear timelines. A custom serialization and delta-tracking system will be developed to support high-fidelity branching without the overhead of conventional flag-checking logic. The intended area of application includes interactive storytelling systems, narrative game design, and experimental progression mechanics. The primary tasks supported are narrative authoring with temporal dependencies, consequence evaluation in non-deterministic player behavior, and player-facing interaction with progression as a systemic feature. Although the project itself is either primarily conceptual or implementation-specific in nature, a complete game that uses this design and implementation would include players of narrative-heavy, story-rich games, particularly those familiar with titles that explore philosophical or meta-mechanical themes, such as Outer Wilds, Nier: Automata, or The Forgotten City.
+
+## Innovation Claims
+
+1. **Game Design**  
+	I am recontextualizing save/load as an integrated game mechanic, embedded directly in the game’s narrative, systems, and progression structure. Saving is no longer an external player tool -- it is a meta-aware act with consequences.
+
+2. **Game Programming**  
+	I am developing a persistent world state system based on an acyclic graph of state nodes and transitions. This allows the game to track not just the current world state, but the entire sequence of prior decisions and their causal dependencies -- a marked improvement over linear save snapshots.
+
+## Usage Scenario
+
+This project can be used in any nonlinear, narrative-heavy game. For an example game, the player assumes the role of a character navigating a psychologically charged, narrative-rich environment, where decision-making and consequence form the backbone of both progression and thematic expression. Rather than relying on traditional save/load systems as external utilities, this game recontextualizes those actions as diegetic mechanics -- systems that exist within the game world and carry narrative weight. A player might, for instance, choose to revisit a previous moment not to "retry" an outcome in the traditional sense, but to interrogate the meaning of their past decisions, with the game recognizing not only the altered choice but the act of returning itself. This leads to new world states, emergent character reactions, and evolving narrative arcs. The system supports a branching structure of narrative causality informed by both temporal behavior and choice context, enabling a player experience where reflection, repetition, and persistence are not only supported, but thematically and mechanically incentivized. The core innovations are intended as both a proof of concept and design investigation into integrating narrative consequence with player-driven temporal systems, suitable for applications in story-driven games where player agency is framed as more than linear progression.
+
+## Evaluation Criteria
+
+The following questions will identify the successful completion of the project, broken down into domains/categories.
+
+1. **Core Gameplay Mechanics**
+	- Does the prototype include at least one fully implemented instance of the core save/load-driven mechanic?
+	- Does the save/load system produce consequences that alter future gameplay or narrative states?
+	- Can the player engage with this system through in-world actions (not just UI menus)?
+	- Is the player clearly informed (diegetically or via feedback) that their use of the system has persistent consequences?
+
+2. **Narrative & Systems Integration**
+	- Are narrative events affected by the player's use or non-use of the core mechanic?
+	- Is there at least one character or world system that acknowledges or reacts to timeline reentry or altered decisions?
+	- Are player choices tracked across at least two playthroughs states or reversions?
+	- Does the game include at least one moment where mechanical behavior reinforces a narrative theme (e.g. regret, revisionism, determinism)?
+
+3. **Programming & Systems Architecture**
+	- Is the save/load system implemented as an integrated gameplay mechanic, not just an engine feature?
+	- Is there a custom state tracking system (e.g. node graph, command history, or deltas) implemented to manage narrative and gameplay branches?
+	- Does the game support serialization and restoration of world state across multiple progression points?
+	- Is state persistence designed to be data-driven and extensible to future content without major rewrites?
+	- Are game objects and systems properly decoupled to allow safe save/load at runtime?
+
+4. **Systems-Level Behavior**
+	- Are the consequences of saving/loading observable within the vertical slice (not implied)?
+	- Does reloading affect not just values (health, location), but systemic world behavior (dialogue, state machines, etc.)?
+	- Are at least two non-narrative systems (e.g. AI, combat, puzzles) impact by save/load behavior?
+	- Is the mechanic resilient to abuse (e.g. no infinite reloading to bypass systems without narrative cost)?
+
+5. **UX, Feedback, & Presentation**
+	- Is the player's interaction with the save/load system clearly communicated through UI or in-world feedback?
+	- Does the game avoid using standard save/load language and visuals, reinforcing the mechanic as an in-universe feature?
+	- Is there visual or auditory feedback that reinforces the concept of timeline alteration or decision revision?
+	- Are in-game prompts or responses tailored based on the player's repeated or altered actions?
+
+6. **Tools, Testing, & Debugging**
+	- Does the prototype include developer-facing tools for testing save/load state or debugging branching logic?
+	- Is there a method to inspect or log which narrative or gameplay states have changed due to timeline alteration?
+	- Can the player experience at least one divergent outcome based solely on the use of the core mechanic?
+	- Has the system been tested for edge cases, including repeated reloading, skipping intended states, or premature exits?
+
+7. **Project Scope & Readiness**
+	- Does the vertical slice demonstrate a self-contained sequence that showcases the mechanic's full loop?
+	- Is the prototype stable enough to be played from beginning to end without critical blocking bugs?
+	- Is the pitch-able version of the prototype playable without external explanation (i.e. it teaches its own mechanics)?
+	- Has all placeholder content (text, UI, art) been replaced with prototype-level or better polish?
+
+## Objectives and Tasks Associated with the Project
+
+### Design and Implement a Stateful Save/Load System Based on a Directed Acyclic Graph of Player Choices and Transitions
+
+This system replaces traditional linear or snapshot-based serialization with a causally-aware graph structure, enabling the game to understand how and why a particular world state was reached. It allows for reasoning about player behavior patterns such as indecision, revision, or timeline abuse.
+
+- **Design the world-state graph structure**
+	- Define node schema (e.g. timestamp, state delta, player choice metadata)
+	- Define transition logic (e.g. what constitutes a valid edge)
+	- Design support for branching, reversion, and cross-cutting player behavior patterns (e.g. revisiting the same choice repeatedly)
+- **Build core graph management system in C++**
+	- Implement node creation and transition APIs
+	- Create storage layer to serialize and deserialize the entire graph (or relevant subgraphs)
+	- Ensure versioning compatibility and resilience against corrupted or partial data
+- **Implement runtime state reconstruction**
+	- Allow game world to rehydrate from any node
+	- Build dependency resolution logic so game systems know what changes to apply during restoration
+	- Support delta-based resolution to avoid full reinitialization for minor timeline deviations
+- **Develop in-editor tooling for graph visualization**
+	- Visualize player choice paths, transitions, and metadata
+	- Add dev options to insert, collapse, or revert graph branches for testing
+	- Include debug tagging (e.g. "loop start," "regret node," etc.)
+
+### Embed the Save/Load Mechanic Directly Into Narrative and Gameplay, Allowing Player Interactions With Time to Have Observable, Systemic Consequences
+
+Rather than treating save/load as an external utility, the mechanic becomes part of the player's in-game actions -- triggered, contextualized, and responded to by world systems and characters. Narrative content and gameplay systems adapt not only to the choices made but to the act of making or revisiting those choices.
+
+- **Author narrative content responsive to time manipulation**  
+	- Write dialogue sequences where characters react to player indecisions, repeat behavior, or divergent paths
+	- Implement at least one branching narrative arc where return to a previous choice produces unique consequences (not just an alternative outcome)
+	- Use Twine or internal scripting tools to prototype temporal-aware branching
+- **Build systemic feedback for save/load actions**
+	- Modify AI, puzzles, and other world systems to store memory of timeline entries
+	- Implement at least two cases where gameplay systems adapt behavior based on timeline usage (e.g. puzzle gets harder on second attempt, AI reacts to altered events)
+	- Log and expose temporal metadata (e.g. number of reloads, choice reversions) to game systems for consequence evaluation
+- **Replace traditional save/load UI with in-world affordances**
+	- Implement diegetic save/load triggers (e.g. time shrines, memory crystals, character dialogue)
+	- Provide sensory feedback (audio, VFX, screen distortion) to convey the temporal nature of the act
+	- Ensure that any mechanic reinforcing time manipulation is perceived as part of the world, not an external developer-facing action
+
+### Deliver a Vertical Slice Demonstrating the Mechanic's Impact on Systemic Behavior, Narrative Integration, and Player Feedback
+
+This slice must showcase the full conceptual and mechanical arc of the design, from player discovery to decision-making, consequence feedback, and narrative evolution. It should operate without external explanation, teaching its mechanics through interaction alone.
+
+- **Develop a self-contained narrative environment**
+	- Build a third-person exploratory space with context-sensitive interaction
+	- Include three to five meaningful choices with diverging outcomes and at least one opportunity for timeline reentry
+	- Ensure content reflects a strong thematic tone (e.g. regret, determinism)
+- **Integrate save/load system and test narrative reactivity**
+	- Instrument the graph system with the slice to log all transitions
+	- Create branching narrative beats that dynamically adjust to the timeline path taken
+	- Include at least one character or object that visibly changes behavior based on temporal revision history
+- **Finalize UX and presentational polish**
+	- Replace placeholder UI with minimal but expressive UI affordances
+	- Add dynamic text, lighting, and sound changes to emphasize consequence feedback
+	- Ensure all player feedback loops reinforce the sense of persistent consequence
+- **Conduct testing and tuning**
+	- Blind playtesting to validate that the mechanic is understandable without tutorialization
+	- Collect playtest logs for analysis of reversion paths, mechanic engagement rates, and player comprehension
+	- Stress-test save/load system for edge cases (e.g. deeply nested reentries, corrupted timelines)
+
+## Description of Design Prototype
+
+- **Target Platform**: PC (Windows 11 / Linux)
+- **Game Engine**: Unreal Engine 5.6.1
+- **Programming Language**: C++ (with select use of Blueprint for rapid UI prototyping)
+- **Development Environment**: Visual Studio Code with integrated Git version control
+- **Narrative Tools**: Twine and custom scripting framework within the engine for interactive dialogue branching.
+- **Project Management**: GitHub Projects for task tracking, milestone breakdowns, and sprint planning.
+
+The prototype will be delivered as a standalone executable with a supplementary README file containing run instructions and build notes. It will boot directly into the playable segment and include:
+- A narrative introduction scene to establish tone and input vocabulary.
+- A controlled interactive environment where the player makes consequential choices.
+- A systemic state persistence layer, simulating long-term narrative and mechanical consequences.
+- A minimal UI system reflecting world state shifts without explicit exposition.
+
+The prototype is intended to simulate a condensed gameplay loop that reflects the broader design and systemic goals of a full project that implements the design and programming. No external server, database, or installation dependencies are required to run the prototype.
+
+The prototype will demonstrate the following major systems:
+- An integrated save/load mechanic implemented into the core gameplay loop rather than as a utility. The system tracks player choices, temporal behaviors, and state transitions through a modular persistence layer, enabling narrative variance based on player revisitation patterns.
+- State-driven narrative delivery where dialogue and environmental response systems dynamically adjust based on prior player interactions, rather than using static binary flags or branching scripts.
+- A simplified third-person interaction model, including context-sensitive controls for exploration and choice-making within defined narrative spaces.
+- A backend system that maintains a world state graph and supports reactivity not only to what players choose, but when and how those choices are revisited, simulating narrative memory across multiple play sessions.
+
+The prototype serves as a reference implementation in a vertical slice representing the intended mechanical, narrative, and thematic goals of a theoretical final product. It is not a tech demo or sandbox, but a structural coherent excerpt -- designed to facilitate the feasibility and impact of its core systemic ideas. While narrative content in the prototype is condensed for scope, the underlying systems are architected for extensibility into a larger game structure.
+
+Development is managed using an Agile Scrum methodology, structured around bi-weekly sprints with clearly defined deliverables:
+- Sprint planning sessions with weekly backlog grooming and prioritization of development tasks.
+- Milestone reviews with demos to test mechanical and narrative cohesion.
+- Post-sprint retrospectives assessing scope, risk, and technical debt.
+
+Version control is maintained through Git, with regular commits tied to GitHub Issue tasks to track development progress against sprint goals.
+
+## Evaluation Plan
+
+To assess the success of the prototype, a structured evaluation will be conducted across the seven interrelated domains corresponding to the categories of the evaluation questions above: core mechanics, narrative-system integration, technical architecture, systemic consequences, player experience, tooling, and project completeness. Each domain includes concrete, testable criteria designed to validate both the implementation quality and the conceptual innovation of the work. Together, these plans form a comprehensive framework for evaluating both the technical sophistication and experiential quality of the prototype. This ensures that innovation is measured not only by conceptual originality, but by the effective implementation and impact of the system within a playable, cohesive game experience.
+
+1. **Core Gameplay Mechanics**  
+	This will be assessed through implemented sequences that allow players to directly engage with the core system. Internal checkpoints and flags will verify that system interactions produce lasting effects and that player agency within the mechanic is expressed through in-world interaction rather than abstracted UI triggers. Automated playtest instrumentation and player behavior logging will be used to confirm that engagement with the mechanic produces observable shifts in world or character state.
+
+2. **Narrative & Systems Integration**  
+	This will be evaluated based on how narrative elements respond to systemic state changes. This includes direct acknowledgment of altered decisions by characters or world systems, as well as thematic alignment between player action and narrative outcome. Particular attention will be paid to how mechanical consequences support or reinforce narrative motifs, and whether these outcomes persist across timeline alterations or revisions.
+
+3. **Programming & Systems Architecture**  
+	This will be reviewed with emphasis on how state persistence is implemented beyond built-in engine save/load features. A custom state management framework will be used to demonstrate modular and extensible support for branching narratives and gameplay logic. Evaluation will include examination of code structure, decoupling between systems, and data-driven extensibility that would allow scalable content development post-prototype.
+
+4. **Systems-Level Behavior**  
+	This will be validated through in-game evidence of how the core mechanic influences AI behavior, puzzle logic, or world simulation. Multiple subsystems must respond dynamically to the altered state landscape, and the design must account for emergent edge cases or potential exploits. Outcomes will be analyzed for both narrative significance and systemic resilience.
+
+5. **UX, Feedback, & Presentation**  
+	This will be evaluated by examining how the game communicates systemic consequences to the player. This includes in-world diegetic feedback, adaptive UI cues, and the absence of genre-standard save/load metaphors. Evaluation will involve direct observation of player comprehension during blind playtests to confirm that players understand the mechanic through interaction rather than explanation.
+
+6. **Tools, Testing, & Debugging**  
+	This will be examined through the presence of developer-facing tools and debug views that support branching narrative development, world-state inspection, and timeline traversal. Automated logs and state visualization tools will support validation of branching logic and ensure the designer can trace player outcomes through repeated interaction cycles.
+
+7. **Project Scope & Readiness**  
+	This will be assessed through a comprehensive vertical slice that presents a fully contained mechanic arc, from player discovery to consequence realization. The prototype must be stable, playable without external explanation, and polished to a level that demonstrates pitch-readiness. Narrative and system elements must work in concert to teach, reinforce, and escalate the core mechanic within the limited scope of the slice.
+
+## Intellectual Property
+
+This section outlines the research conducted regarding the acquisition of intellectual property protections relevant to a commercial video game project. While no formal filings have been made, this research serves as preparation for potential future commercialization of the work.
+
+As of now, the project's name and core systems are original, and steps have been taken to understand the intellectual property protections available through state and federal channels.
+
+1. **Tradename Registration**  
+	To register a tradename in the state of Arizona, one must file the with the Arizona Secretary of State, not the Arizona Corporation Commission (which handles entity filings, not tradenames). This process includes a simple name search, conducted through their online database to ensure availability. Second, if the name is available, the tradename can be registered by submitting Form TDN (Tradename Application) along with a filing fee (currently $10 USD as of 2025). Third, the tradename is valid for five years and can be continually renewed.
+	
+	At the federal level, the USPTO's Trademark Electronic Search System (TESS) should be used to verify that the name is not already trademarked nationally. While tradenames can be registered at the state level, federal trademark registration provides stronger protection if the project enters interstate commerce (as any game project likely will).
+
+2. **Trademark Registration**  
+	If the project name is used in connection with goods (i.e. software, video games) in commerce, it likely qualifies for trademark protection. This process involves searching the TESS database to ensure the proposed trademark is not already registered or confusingly similar. Then, if the trademark is available, submit an application via the Trademark Electronic Application System (TEAS). The appropriate International Classes must be chosen, such as Class 9 for downloadable game software or Class 41 for entertainment services. Filing feeds vary depending on the type of application (typically $250 - 300 USD per class). Finally, Arizona also offers state-level trademark registration via the Secretary of State's office, which is generally less expensive but offers more limited protection. Federal trademarks provide the strongest legal defense, and should likely be pursued if the game reaches public release or commercial distribution.
+
+3. **Patent Research**  
+	While most video game projects do not qualify for utility patents due to the abstract nature of game logic, some novel systems -- particularly in areas like networking, procedural generation, or data compression -- may be eligible.
+	
+	In this case, the project explores a nontraditional integration of save/load systems within narrative mechanics. However, after reviewing relevant entries in the United States Patent and Trademark Office databases, no existing patent appears to directly cover the specific implementation explored here.
+	
+	Nonetheless, a formal patentability assessment would require consultation with an IP attorney specializing in software and interactive media. At present, the project will not pursue a utility patent due to the industry precedent that gameplay mechanic patents often inhibit creative development and are not broadly enforceable without substantial legal infrastructure.
+
+## Project Completion Assessment
+
+> No updates to the project have been made since SIP311.
+
+## Appendices
+
+### Documentation
+
+**Appendix A.1**: Example Game Design Document - GDD.md  
+**Appendix A.2**: Feature Design Document - SaveLoadDesign.md  
+**Appendix A.3**: Narrative Design Document - Narrative.md  
+**Appendix A.4**: System Design Document - SaveGraph.md  
+**Appendix A.5**: Tools Design Document - SaveDebugging.md  
+(See the Docs folder in the GitHub repository linked below.)
+
+### Development Showcase Media
+
+**Appendix B.1**: Programming Documentation - [https://youtu.be/FrcJBMLwFhk](https://youtu.be/FrcJBMLwFhk)  
+**Appendix B.2**: Programming Progress - [https://youtu.be/UUyFzWVc_Ig](https://youtu.be/UUyFzWVc_Ig)  
+**Appendix B.3**: Working Save System - [https://youtu.be/8Hr9UWo174Q](https://youtu.be/8Hr9UWo174Q)  
+
+### Release Binaries
+
+**Appendix C.1**: Final Game Build (Windows) - Game.zip  
+**Appendix C.2**: Final Game Build (Linux) - Game.tar.gz  
+(Will be uploaded as artifacts to the GitHub repository when completed.)
+
+### Repository
+
+**Appendix D.1**: GitHub Source Code Repository - [https://github.com/bedrockbreaker/Memento](https://github.com/bedrockbreaker/Memento)
+
+### Licensed Products
+
+**Appendix E.1**: Unreal Engine - [https://www.unrealengine.com](https://www.unrealengine.com)  
+**Appendix E.2**: Obsidian - [https://obsidian.md](https://obsidian.md)
+
+### Supporting Research
+
+**Appendix F.1**: Games (Worldwide) - [https://www.statista.com/outlook/amo/media/games/worldwide](https://www.statista.com/outlook/amo/media/games/worldwide)  
+**Appendix F.2**: Video Game Market Report - [https://www.alliedmarketresearch.com/video-game-market-A85196](https://www.alliedmarketresearch.com/video-game-market-A85196)  
+**Appendix F.3**: Video Game Market Trends - [https://www.grandviewresearch.com/industry-analysis/video-game-market](https://www.grandviewresearch.com/industry-analysis/video-game-market)
