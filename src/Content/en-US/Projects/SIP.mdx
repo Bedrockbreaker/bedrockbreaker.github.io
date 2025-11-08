@@ -319,18 +319,25 @@ As of now, the project's name and core systems are original, and steps have been
 - Began development of a debug visualization tool for inspecting and verifying save states in real time.
 - Initiated work on a dedicated test scene designed to validate save/load integrity, including verification of positions, inventory contents, and variable states.
 
+**2025-09-26**
+
+- Added compilation guards to remove debug-only code from shipping builds.
+- Finished test scene and verified object states and player states serialize and deserialize correctly.
+- Completed development of debug visualization tool to allow for debugging of inconsistencies in save states.
+- Implemented save cloning functionality to allow for the creation of new save states from existing ones (debugging tool).
+
+**2025-09-27**
+
+- Defined interface for other systems (NPCs, the environment, puzzles, etc.) to query the save graph and their previous states.
+- Started rewrite of how loading saves works, as the previous implementation did not conform to spec, resulting in intended use cases being impossible to implement.
+
 <div className="border-l-2 border-accent pl-6">
-	**2025-09-26**
+	**2025-10-25**
 
-	- Added compilation guards to remove debug-only code from shipping builds.
-	- Finished test scene and verified object states and player states serialize and deserialize correctly.
-	- Completed development of debug visualization tool to allow for debugging of inconsistencies in save states.
-	- Implemented save cloning functionality to allow for the creation of new save states from existing ones (debugging tool).
-
-	**2025-09-27**
-
-	- Defined interface for other systems (NPCs, the environment, puzzles, etc.) to query the save graph and their previous states.
-	- Started rewrite of how loading saves works, as the previous implementation did not conform to spec, resulting in intended use cases being impossible to implement.
+	- Finished rewrite of how loading saves works.
+	- Created new SaveHistory object that can be used to query metadata about the save graph.
+	- Moved debug commands and hotkeys to dedicated Developer Tools module.
+	- Packaged the save system modules into their own plugin.
 </div>
 
 ## Appendices
