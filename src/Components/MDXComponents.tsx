@@ -4,11 +4,20 @@ import { Link, type LinkProps } from "./Link";
 import { LI, OL, UL } from "./List";
 import { Text } from "./Text";
 
+function GetIdFromChildren(children: React.ReactNode): string {
+	if (typeof(children) !== "string") return "";
+
+	return children
+		.toLowerCase()
+		.replace(/[^a-z0-9]+/g, "-")
+		.replace(/^-|-$/g, "");
+}
+
 export const MDXComponents: Readonly<MDXComponentsType> = {
-	h1: (props: any) => <Text variant="h1" {...props}/>,
-	h2: (props: any) => <Text variant="h2" {...props}/>,
-	h3: (props: any) => <Text variant="h3" {...props}/>,
-	h4: (props: any) => <Text variant="h4" {...props}/>,
+	h1: (props: any) => <Text variant="h1" id={GetIdFromChildren(props.children)} {...props}/>,
+	h2: (props: any) => <Text variant="h2" id={GetIdFromChildren(props.children)} {...props}/>,
+	h3: (props: any) => <Text variant="h3" id={GetIdFromChildren(props.children)} {...props}/>,
+	h4: (props: any) => <Text variant="h4" id={GetIdFromChildren(props.children)} {...props}/>,
 	p: (props: any) => <Text {...props}/>,
 	blockquote: (props: any) => <Text variant="blockquote" {...props}/>,
 	pre: ({className, ...props}: React.HTMLAttributes<HTMLPreElement>) =>
