@@ -19,20 +19,23 @@ export type TextVariant = keyof typeof variantClasses;
 
 type TranslationKey = Parameters<ReturnType<typeof useTranslation>["t"]>[0];
 
-export function Text({variant, className, children}: {
+export function Text({variant, className, id, children}: {
 	variant?: TextVariant,
 	className?: string,
+	id?: string,
 	children: React.ReactNode
 }): ReactElement
-export function Text({variant, t, className}: {
+export function Text({variant, t, className, id}: {
 	variant?: TextVariant,
 	t: TranslationKey,
-	className?: string
+	className?: string,
+	id?: string
 }): ReactElement
-export function Text({variant = "p", t: tKey, className = "", children}: {
+export function Text({variant = "p", t: tKey, className = "", id = "", children}: {
 	variant?: TextVariant,
 	t?: TranslationKey,
 	className?: string,
+	id?: string,
 	children?: React.ReactNode
 }) {
 	const { t } = useTranslation();
@@ -40,26 +43,26 @@ export function Text({variant = "p", t: tKey, className = "", children}: {
 
 	switch(variant) {
 		case "h1":
-			return <h1 className={`${variantClasses.h1} ${className}`}>{children}</h1>;
+			return <h1 id={id} className={`${variantClasses.h1} ${className}`}>{children}</h1>;
 		case "h2":
-			return <h2 className={`${variantClasses.h2} ${className}`}>{children}</h2>;
+			return <h2 id={id} className={`${variantClasses.h2} ${className}`}>{children}</h2>;
 		case "h3":
-			return <h3 className={`${variantClasses.h3} ${className}`}>{children}</h3>;
+			return <h3 id={id} className={`${variantClasses.h3} ${className}`}>{children}</h3>;
 		case "h4":
-			return <h4 className={`${variantClasses.h4} ${className}`}>{children}</h4>;
+			return <h4 id={id} className={`${variantClasses.h4} ${className}`}>{children}</h4>;
 		case "p":
-			return <p className={`${variantClasses.p} ${className}`}>{children}</p>;
+			return <p id={id} className={`${variantClasses.p} ${className}`}>{children}</p>;
 		case "blockquote":
-			return <blockquote className={`${variantClasses.blockquote} ${className}`}>{children}</blockquote>;
+			return <blockquote id={id} className={`${variantClasses.blockquote} ${className}`}>{children}</blockquote>;
 		case "code":
-			return <code className={`${variantClasses.code} ${className}`}>{children}</code>;
+			return <code id={id} className={`${variantClasses.code} ${className}`}>{children}</code>;
 		case "lead":
-			return <p className={`${variantClasses.lead} ${className}`}>{children}</p>;
+			return <p id={id} className={`${variantClasses.lead} ${className}`}>{children}</p>;
 		case "large":
-			return <div className={`${variantClasses.large} ${className}`}>{children}</div>;
+			return <div id={id} className={`${variantClasses.large} ${className}`}>{children}</div>;
 		case "small":
-			return <small className={`${variantClasses.small} ${className}`}>{children}</small>;
+			return <small id={id} className={`${variantClasses.small} ${className}`}>{children}</small>;
 		case "muted":
-			return <p className={`${variantClasses.muted} ${className}`}>{children}</p>;
+			return <p id={id} className={`${variantClasses.muted} ${className}`}>{children}</p>;
 	}
 }
