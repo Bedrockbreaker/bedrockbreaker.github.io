@@ -3,9 +3,13 @@ import { ThemedImage } from "~/Components/ThemedImg";
 import i18n from "./i18n";
 import { AllTags, Project } from "./Project";
 
+import BrickByBrick from "~/Assets/Projects/BrickByBrick.png";
 import CardBot from "~/Assets/Projects/CardBot.png";
+import GachaGoobers_ThemeDark from "~/Assets/Projects/GachaGoobers_ThemeDark.png";
+import GachaGoobers_ThemeLight from "~/Assets/Projects/GachaGoobers_ThemeLight.png";
 import Ganymede from "~/Assets/Projects/Ganymede.png";
 import GraduatedCylinders from "~/Assets/Projects/GraduatedCylinders.png";
+import JohnLemon from "~/Assets/Projects/JohnLemon.png";
 import Katalyst from "~/Assets/Projects/Katalyst.png";
 import Memento from "~/Assets/Projects/Memento.png";
 import OldManWhiskers from "~/Assets/Projects/OldManWhiskers.png";
@@ -16,6 +20,7 @@ import Placeholder_ThemeLight_ja_JP from "~/Assets/Projects/Placeholder_ThemeLig
 import Pushr4k from "~/Assets/Projects/Pushr4k.png";
 import SilentNightDeadlyNight from "~/Assets/Projects/SilentNightDeadlyNight.png";
 import TankGame from "~/Assets/Projects/TankGame.png";
+import Tumblyroos from "~/Assets/Projects/Tumblyroos.png";
 import Website from "~/Assets/Projects/Website.png";
 import Yggdrasil_ThemeDark from "~/Assets/Projects/Yggdrasil_ThemeDark.png";
 import Yggdrasil_ThemeLight from "~/Assets/Projects/Yggdrasil_ThemeLight.png";
@@ -58,45 +63,19 @@ export const Projects = {
 		source: {url: "https://github.com/bedrockbreaker/Yggdrasil-Chess-Engine"},
 		tags: [
 			"core-mechanics",
-			"serialization",
+			"cross-mod-compatibility",
 			"data-driven-design",
 			"game",
 			"pc",
 			"godot",
 			"csharp",
-			"2-4-weeks",
+			"1-4-weeks",
 			"solo-developer",
 			"programmer",
 			"designer",
 			"artist",
 			"work-in-progress",
 			"open-source"
-		]
-	}),
-	oldmanwhiskers: new Project({
-		title: i18n.t("project.oldmanwhiskers.title"),
-		description: () => <Text variant="muted">
-			{i18n.t("project.oldmanwhiskers.description")}
-		</Text>,
-		image: () => <img
-			src={OldManWhiskers}
-			alt={i18n.t("project.oldmanwhiskers.img-alt")}
-			className="rounded-md"
-		/>,
-		homepage: {url: "https://bedrockbreaker.itch.io/old-man-whiskers", icon: "itchio"},
-		tags: [
-			"core-mechanics",
-			"animation-systems",
-			"input-systems",
-			"procedural-generation",
-			"game",
-			"pc",
-			"unreal-engine",
-			"blueprint",
-			"48-hours",
-			"2-4-team-members",
-			"programmer",
-			"designer"
 		]
 	}),
 	portfolio: new Project({
@@ -118,7 +97,7 @@ export const Projects = {
 			"portfolio",
 			"website",
 			"typescript",
-			"1-3-months",
+			"1-6-months",
 			"solo-developer",
 			"programmer",
 			"designer",
@@ -139,18 +118,16 @@ export const Projects = {
 		hasDetails: true,
 		homepage: {url: "https://bedrockbreaker.itch.io/ganymede", icon: "itchio"},
 		tags: [
-			"core-mechanics",
 			"combat-design",
 			"ai-behavior",
-			"multiplayer-logic",
-			"devtools",
 			"data-driven-design",
 			"game",
 			"pc",
+			"console",
 			"unreal-engine",
 			"blueprint",
 			"cpp",
-			"1-3-months",
+			"6-12-months",
 			"solo-developer",
 			"programmer",
 			"designer"
@@ -176,7 +153,7 @@ export const Projects = {
 			"pc",
 			"minecraft",
 			"java",
-			"3-months",
+			"2-years-plus",
 			"solo-developer",
 			"programmer",
 			"designer",
@@ -197,7 +174,7 @@ export const Projects = {
 			"tool",
 			"pc",
 			"cpp",
-			"1-2-weeks",
+			"1-4-weeks",
 			"solo-developer",
 			"programmer",
 			"open-source"
@@ -222,7 +199,7 @@ export const Projects = {
 			"discord",
 			"nodejs",
 			"javascript",
-			"3-months",
+			"1-6-months",
 			"solo-developer",
 			"programmer",
 			"artist",
@@ -245,7 +222,7 @@ export const Projects = {
 			"ux-interaction-design",
 			"game",
 			"board-game",
-			"2-4-weeks",
+			"1-4-weeks",
 			"5-14-team-members",
 			"designer"
 		]
@@ -269,7 +246,7 @@ export const Projects = {
 			"pc",
 			"unity",
 			"csharp",
-			"1-3-months",
+			"1-4-weeks",
 			"solo-developer",
 			"programmer",
 			"designer",
@@ -286,14 +263,13 @@ export const Projects = {
 		source: {url: "https://github.com/bedrockbreaker/PartyPooper"},
 		tags: [
 			"modding-tools",
-			"devtools",
 			"asset-pipelines",
 			"build-tooling",
 			"tool",
 			"pc",
 			"construct",
 			"typescript",
-			"2-4-weeks",
+			"1-4-weeks",
 			"solo-developer",
 			"programmer",
 			"work-in-progress",
@@ -313,7 +289,6 @@ export const Projects = {
 		homepage: {url: "https://bedrockbreaker.itch.io/pushr4k", icon: "itchio"},
 		tags: [
 			"input-systems",
-			"save-load-systems",
 			"data-driven-design",
 			"performance-optimization",
 			"game",
@@ -339,7 +314,7 @@ export const Projects = {
 			"game",
 			"documentation",
 			"console",
-			"1-2-weeks",
+			"1-4-weeks",
 			"solo-developer",
 			"designer"
 		]
@@ -360,16 +335,41 @@ export const Projects = {
 			"core-mechanics",
 			"devtools",
 			"save-load-systems",
-			"narrative-systems",
-			"ux-interaction-design",
 			"game",
 			"pc",
+			"console",
 			"unreal-engine",
 			"cpp",
-			"3-months",
+			"1-6-months",
 			"solo-developer",
 			"programmer",
 			"designer"
+		]
+	}),
+	tumblyroos: new Project({
+		title: i18n.t("project.tumblyroos.title"),
+		description: () => <Text variant="muted">
+			{i18n.t("project.tumblyroos.description")}
+		</Text>,
+		image: () => <img
+			src={Tumblyroos}
+			alt={i18n.t("project.tumblyroos.img-alt")}
+			className="rounded-md"
+		/>,
+		homepage: {url: "https://www.tongueincheek.dev/", icon: "external"},
+		tags: [
+			"core-mechanics",
+			"ai-behavior",
+			"physics-systems",
+			"game",
+			"pc",
+			"console",
+			"unreal-engine",
+			"cpp",
+			"1-6-months",
+			"15-team-members",
+			"programmer",
+			"work-in-progress"
 		]
 	}),
 	katalyst: new Project({
@@ -384,20 +384,165 @@ export const Projects = {
 		/>,
 		homepage: {url: "https://bsky.app/profile/project-katalyst.bsky.social", icon: "bluesky"},
 		tags: [
-			"game",
-			"programmer",
-			"core-mechanics",
-			"input-systems",
-			"data-driven-design",
+			"multiplayer-logic",
 			"devtools",
 			"level-scripting",
-			"15-team-members",
-			"3-months",
-			"unity",
+			"game",
 			"pc",
 			"console",
+			"unity",
 			"csharp",
+			"15-team-members",
+			"1-2-years",
+			"programmer",
 			"work-in-progress"
+		]
+	}),
+	taintedheart: new Project({
+		title: i18n.t("project.taintedheart.title"),
+		description: () => <Text variant="muted">
+			{i18n.t("project.taintedheart.description")}
+		</Text>,
+		image: NoImage,
+		tags: [
+			"core-mechanics",
+			"save-load-systems",
+			"narrative-systems",
+			"game",
+			"pc",
+			"console",
+			"2-years-plus",
+			"solo-developer",
+			"programmer",
+			"designer",
+			"work-in-progress"
+		]
+	}),
+	thsegmentationfault: new Project({
+		title: i18n.t("project.thsegmentationfault.title"),
+		description: () => <Text variant="muted">
+			{i18n.t("project.thsegmentationfault.description")}
+		</Text>,
+		image: NoImage,
+		tags: [
+			"narrative",
+			"documentation",
+			"1-6-months",
+			"solo-developer",
+			"designer"
+		]
+	}),
+	shepherdofthestorm: new Project({
+		title: i18n.t("project.shepherdofthestorm.title"),
+		description: () => <Text variant="muted">
+			{i18n.t("project.shepherdofthestorm.description")}
+		</Text>,
+		image: NoImage,
+		tags: [
+			"narrative",
+			"documentation",
+			"solo-developer",
+			"1-6-months",
+			"designer"
+		]
+	}),
+	oldmanwhiskers: new Project({
+		title: i18n.t("project.oldmanwhiskers.title"),
+		description: () => <Text variant="muted">
+			{i18n.t("project.oldmanwhiskers.description")}
+		</Text>,
+		image: () => <img
+			src={OldManWhiskers}
+			alt={i18n.t("project.oldmanwhiskers.img-alt")}
+			className="rounded-md"
+		/>,
+		homepage: {url: "https://bedrockbreaker.itch.io/old-man-whiskers", icon: "itchio"},
+		tags: [
+			"animation-systems",
+			"input-systems",
+			"procedural-generation",
+			"game",
+			"pc",
+			"unreal-engine",
+			"blueprint",
+			"48-hours",
+			"2-4-team-members",
+			"programmer",
+			"designer"
+		]
+	}),
+	gachagoobers: new Project({
+		title: i18n.t("project.gachagoobers.title"),
+		description: () => <Text variant="muted">
+			{i18n.t("project.gachagoobers.description")}
+		</Text>,
+		image: () => <ThemedImage
+			sources={{light: GachaGoobers_ThemeLight, dark: GachaGoobers_ThemeDark}}
+			alt={i18n.t("project.gachagoobers.img-alt")}
+			className="rounded-md"
+		/>,
+		homepage: {url: "https://bedrockbreaker.itch.io/gacha-goobers", icon: "itchio"},
+		source: {url: "https://github.com/Bedrockbreaker/GachaMall"},
+		tags: [
+			"ai-behavior",
+			"level-scripting",
+			"game-economy",
+			"game",
+			"pc",
+			"unity",
+			"csharp",
+			"48-hours",
+			"2-4-team-members",
+			"programmer"
+		]
+	}),
+	brickbybrick: new Project({
+		title: i18n.t("project.brickbybrick.title"),
+		description: () => <Text variant="muted">
+			{i18n.t("project.brickbybrick.description")}
+		</Text>,
+		image: () => <img
+			src={BrickByBrick}
+			alt={i18n.t("project.brickbybrick.img-alt")}
+			className="rounded-md"
+		/>,
+		homepage: {url: "https://bedrockbreaker.itch.io/brick-by-brick", icon: "itchio"},
+		source: {url: "https://github.com/Tongue-N-Cheek/BrickByBrick"},
+		tags: [
+			"data-driven-design",
+			"narrative-systems",
+			"procedural-generation",
+			"game",
+			"pc",
+			"unity",
+			"csharp",
+			"1-4-weeks",
+			"5-14-team-members",
+			"programmer"
+		]
+	}),
+	johnlemon: new Project({
+		title: i18n.t("project.johnlemon.title"),
+		description: () => <Text variant="muted">
+			{i18n.t("project.johnlemon.description")}
+		</Text>,
+		image: () => <img
+			src={JohnLemon}
+			alt={i18n.t("project.johnlemon.img-alt")}
+			className="rounded-md"
+		/>,
+		source: {url: "https://github.com/Bedrockbreaker/ArizonaJam2025"},
+		tags: [
+			"core-mechanics",
+			"level-scripting",
+			"animation-systems",
+			"game",
+			"pc",
+			"unity",
+			"csharp",
+			"48-hours",
+			"5-14-team-members",
+			"programmer"
 		]
 	})
 };

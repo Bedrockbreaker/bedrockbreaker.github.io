@@ -176,7 +176,7 @@
 				"Design, develop, and implement the architecture and infrastructure needed to support a complete game project.",
 				"Implement and analyze fundamental data structures and algorithms associated with game applications supporting gameplay mechanics.",
 				"Use software development processes to analyze a project problem and to design, build, and test a corresponding software solution.",
-				"Demonstrate development skills using multiple programming langues, development environments, and platforms, including advanced and/or experimental topics in game programming.",
+				"Demonstrate development skills using multiple programming languages, development environments, and platforms, including advanced and/or experimental topics in game programming.",
 				"Establish collaboration, mentorship, and professional leadership skills by working with other disciplines to deliver highly polished and completed projects."
 			]
 		},
@@ -186,7 +186,7 @@
 				"Prototype and complete original games for multiple platforms following the full game production pipeline.",
 				"Create and implement game elements, systems, and play mechanics using industry-standard tools, techniques, and production methods, including art or scripting/programming applications.",
 				"Demonstrate effective game design practices and techinques within the project scope and context, such as genre, style, platform, and audience.",
-				"Demonstrate the eability to evaluate game designs for a variety of gameplay mechanics, game applications, and game genres.",
+				"Demonstrate the ability to evaluate game designs for a variety of gameplay mechanics, game applications, and game genres.",
 				"Effectively articulate game design elements and mechanics across disciplines utilizing written and verbal communication skills.",
 				"Establish collaboration, mentorship, and professional leadership skills by working with other disciplines to deliver highly polished and completed projects."
 			]
@@ -211,12 +211,13 @@
 		"physics-systems": "Physics Systems",
 		"modding-tools": "Modding Tools",
 		"rendering-pipeline": "Rendering Pipeline",
-		"ui-ux-toolinmg": "UI/UX Tooling",
+		"ui-ux-tooling": "UI/UX Tooling",
 		"editor-extensions": "Editor Extensions",
 		"devtools": "Devtools",
 		"save-load-systems": "Save/Load Systems",
 		"serialization": "Serialization",
 		"data-driven-design": "Data-Driven Design",
+		"narrative": "Narrative Design",
 		"narrative-systems": "Narrative Systems",
 		"level-scripting": "Level Scripting",
 		"game-economy": "Game Economy",
@@ -234,10 +235,11 @@
 		"5-14-team-members": "5-14 Team Members",
 		"15-team-members": "15+ Team Members",
 		"48-hours": "48 Hours",
-		"1-2-weeks": "1-2 Weeks",
-		"2-4-weeks": "2-4 Weeks",
-		"1-3-months": "1-3 Months",
-		"3-months": "3+ Months",
+		"1-4-weeks": "1-4 Weeks",
+		"1-6-months": "1-6 Months",
+		"6-12-months": "6-12 Months",
+		"1-2-years": "1-2 Years",
+		"2-years-plus": "2+ Years",
 		"unreal-engine": "Unreal Engine",
 		"unity": "Unity",
 		"godot": "Godot",
@@ -268,11 +270,6 @@
 			"description": "A modular chess engine with support for arbitrary rule variants. Designed a flexible rule system to support variant loading, dynamic board shapes, and extensible piece behavior.",
 			"img-alt": "A pixel art green dragon wrapped around a chess pawn."
 		},
-		"oldmanwhiskers": {
-			"title": "Old Man Whiskers",
-			"description": "Implemented core systems in a jam-winning top-down casual game: a procedural item spawner using blue-noise distribution, a dynamic item finding and digging system, and an event-driven inventory system.",
-			"img-alt": "An old man with a crazy beard his four cats."
-		},
 		"portfolio": {
 			"title": "Portfolio",
 			"description": "The site you're currently viewing, built in TypeScript and React. Serves as both my personal portfolio and a testbed for UI/UX patterns in devtools.",
@@ -285,7 +282,7 @@
 		},
 		"graduatedcylinders": {
 			"title": "Graduated Cylinders",
-			"description": "With over 50,000+ downloads, Graduated Cylinders is my most successful shipped project. Developed a dynamic fluid-transfer mod for Minecraft with full inter-mod compatibility. Hooks into mods' fluid containers at runtime and injects a configurable UI for precise fluid handling.",
+			"description": "With over 75,000+ downloads, Graduated Cylinders is my most successful shipped project. Developed a dynamic fluid-transfer mod for Minecraft with full inter-mod compatibility. Hooks into mods' fluid containers at runtime and injects a configurable UI for precise fluid handling.",
 			"img-alt": "A man holding chemicals in a test tube."
 		},
 		"tcresearchsolver": {
@@ -325,10 +322,47 @@
 			"description": "Experimental narrative game where the save/load system is a core progression mechanic.",
 			"img-alt": "A Penrose triangle with corrupted plant overgrowth."
 		},
+		"tumblyroos": {
+			"title": "Tumblyroos",
+			"description": "Lead Engineer for a thrilling and bizarre horror game where you play as the star of a children's show who discovers that their entire life is a carefully controlled, 24/hr live streaming show run entirely by a mad artificial intelligence.",
+			"img-alt": "Blu, the star of Tumblyroos."
+		},
 		"katalyst": {
 			"title": "Project: Katalyst",
 			"description": "Lead Engineer for an unreleased title by Tongue In Cheek Productions. Directing technical efforts of a 35+ person team across engineering, art, and design.",
 			"img-alt": "Three Katalysts huddling together."
+		},
+		"taintedheart": {
+			"title": "Tainted Heart",
+			"description": "A paradise by any other name would still be a prison... Unknowingly trapped within a virtual simulation, a young girl must navigate a warped world to discover the consequences of its creator's insatiable ambitions connected to the future of the people inside it."
+		},
+		"thsegmentationfault": {
+			"title": "Tainted Heart; Segmentation Fault",
+			"description": "A collection of short stories from the Tainted Heart universe."
+		},
+		"shepherdofthestorm": {
+			"title": "Shepherd of the Storm",
+			"description": "An original RPG narrative, where terraforming the Outer Rim has turned these planets into the wild west -- complete with ray guns and robots."
+		},
+		"oldmanwhiskers": {
+			"title": "Old Man Whiskers",
+			"description": "Implemented core systems in a jam-winning top-down casual game: a procedural item spawner using blue-noise distribution, a dynamic item finding and digging system, and an event-driven inventory system.",
+			"img-alt": "An old man with a crazy beard his four cats."
+		},
+		"gachagoobers": {
+			"title": "Gacha Goobers",
+			"description": "Implemented 2D controls, randomized gacha mechanics, multiple AI behaviors, and an item/shop system in a 48-hour game jam.",
+			"img-alt": "Mothman wearing a sweatshirt with a heart on it."
+		},
+		"brickbybrick": {
+			"title": "Brick-by-Brick",
+			"description": "A short and sweet puzzle game about the dangerous loop of doomscrolling, complete with 99 unique posts. Made by a team of five in four days as a game jam entry. Wrote narrative scaffolding to allow for dialogue trees, multiple endings, and designer-editable posts.",
+			"img-alt": "An overwhelming series of social media posts cascading down the screen."
+		},
+		"johnlemon": {
+			"title": "John Lemon's Ghastly Hassle",
+			"description": "A horror puzzle game made for the 2025 Arizona Game Challenge between several universities with a team of 5. Implemented smooth camera controls, multiple mix-and-matchable puzzle elements, and UI.",
+			"img-alt": "Ivan (John Lemon's friend) creeping through a hallway."
 		}
 	}
 }

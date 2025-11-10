@@ -36,6 +36,7 @@ export const tagCategories = {
 			"save-load-systems",
 			"serialization",
 			"data-driven-design",
+			"narrative",
 			"narrative-systems",
 			"level-scripting",
 			"game-economy",
@@ -63,10 +64,11 @@ export const tagCategories = {
 		badgeKind: "color5",
 		tags: [
 			"48-hours",
-			"1-2-weeks",
-			"2-4-weeks",
-			"1-3-months",
-			"3-months"
+			"1-4-weeks",
+			"1-6-months",
+			"6-12-months",
+			"1-2-years",
+			"2-years-plus"
 		]
 	},
 	engine: {
