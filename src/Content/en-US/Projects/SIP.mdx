@@ -399,28 +399,123 @@ As of now, the project's name and core systems are original, and steps have been
 
 ## Showcase Speech
 
-> On-screen actions are denoted `like this`. If you want a style reference, think of something very similar to 3Blue1Brown. I'll even be using Manim for the animations.
+> Stage directions are denoted `like this`. If you want a style reference, think of something very similar to 3Blue1Brown. I'll even be using Manim for the animations.
 
-`About a 1 second recording from a video game.` Pause. `The video freezes.` When you press "save," you're doing something extraordinary. You're freezing an entire universe in time -- every object, every decision, every variable, perfectly suspended. `The still image shatters into fragments, with the fragments arranging themselves into clumps with thin threads connecting one to the next.` And when you load that save, you're not just returning to the past. You're replacing the present with a version that remembers none of what came after. `A few of the ending clumps disappear, and the fragments rearrange to form a new image of the previous save.`
+`A one-second clip of gameplay plays.`
 
-But what happens when it does remember? `The shot zooms out with the still framed within a clump. The erased clumps reappear, now with translucent connections between them.` What if characters, systems, and stories knew you'd changed history, and reacted not just to that you chose differently, but to that you *chose again?*
+Pause.
 
-`Fade out. Write the SIP name on screen slowly, as the dialogue is spoken.` That's the foundation of the system I, Jenson Searle, have been building: a system that treats save and load as a "law of physics" inside the world. A world where the timeline isn't a line at all -- it's a web of your very re-decisions. And every time you save, you're creating another thread in that weave.
+`The clip freezes mid-motion.`
 
-`A single thread is extended from the final letter. The camera zooms in, removing the title from view.` But to understand why this matters, let's look under the hood.
+When you press "save," you're doing something quietly extraordinary. You're freezing an entire universe in place -- every object, every variable, every unfinished intention -- perfectly suspended.
 
-`3 nodes (clumps) are formed on the growing thread.` Traditional save systems flatten time. They serialize everything -- player position, quest flags, world variables `a player character, quest book, and rocks/enemies appear, but shrink towards the final node until disappearing, seemingly entering the node.` -- into a snapshot. When you load, that snapshot overwrites the present, erasing all memory of what happened in-between. `The last two nodes fade out.` It's a clean state restore, and perfectly usable for most games, but a total amnesia event for the world.
+`The frozen frame fractures into clusters of shards, thin filaments linking one cluster to another.`
 
-`Fade in the two nodes again.` The system I built, by contrast, don't just record the "what." It records the "how." `Rotate the camera to reveal a 3D network of nodes that was hidden from view.` Every save becomes a node in a branching tree, commonly referred to as a "graph" `edges and nodes begin taking on color, starting from a off-screen root node.` -- a trace of cause and consequence, `Nodes pulse in a wave across the screen.` of what led you here, and what you chose to undo. This means the world can reason about history itself. `zoom in on a specific subgraph` It can ask, "How many times has this moment been revisited?", `graph continues to expand with multiple threads growing, creating new nodes.` "Which paths converge on the same decision?", "What keeps pulling the player back to this branch?"
+And when you load that save, you're not simply returning to the past. You're replacing the present with a version that has no memory of what came after.
 
-For designers, that opens up a completely new layer of interactivity `highlight a specific node.`. You can query not just the state, but *intent*. `a small counter, e.g. "3 visits" appears beside the highlighted node` Maybe an NPC begins to notice you always return to them right before a betrayal. `"Betrayal?" appears under the counter` Maybe a puzzle reshapes itself because you've already solved it -- twice `A thread connects to this node revealing its own node that lights up in response, and "Puzzle Changed!" appears for that node.`. Maybe your own timeline fractures under the weight of too many revisions. `Desaturate, fade out.`
+`A few clusters vanish. The remaining shards slide into the shape of an earlier moment.`
 
-`Fade in with a single node on screen.` Technically, this works because every save operation produces a new node -- not a replacement. `"Current Save" is labeled next to the node, and a thread comes out that spawns a child node.` These nodes are linked through metadata describing their ancestry: the parent save, the timestamp, even whether it was made invisibly by the system. `The root node is highlighted again, showing the player load the older save, and another child node is formed that links both of the previous nodes.` The result is a complete causal graph of the player's journey -- a map of how they *think* `fade in a larger graph with multiple threads`. Designers can access this graph directly, using simple queries like `highlight a different node for each quote` "how many times was this object restored?" or "which saves share this state?" That's the real innovation: persistence that remembers its context.
+But what happens when the world remembers?
 
-`Zoom in on a leaf node, and frame gameplay footage in the node. Continuing zooming in to fully transition.` For players, the difference is subtle but profound. Instead of a utility, saving becomes a choice -- one the world reacts to. Reloading isn't retreating to safety anymore; it's stepping into a different strand of time that has consequences of its own.
+`Camera pulls back, framing the moment inside a node. The erased clusters reappear with faint, translucent threads connecting them.`
 
-In the prototype, this is demonstrated through the Gallery -- a physical space where each save manifests as a painting. Loading means re-entering that moment, and each time you do, the world quietly acknowledges it. Paintings degrade. Dialogue shifts. Systems start to notice patterns. Even the puzzles themselves begin to depnd on your history with them.
+What if characters, systems, even the story itself responded not just to what you chose -- but to the fact that you chose *again?*
 
-The end result is a game world that doesn't just let you rewrite history like a time machine -- it *remembers that you tried.*
+`Fade to black. The project's title writes itself onto the screen, letter by letter.`
 
-`Zoom out, framing the gameplay in the node again. Fade away the framed video, continue zooming out.` So while most save systems are invisible, this one's designed to be seen -- both by the player and by the world they inhabit. Because when the act of saving itself becomes part of the story `Zoom out to reveal the graph taking the shape of the memento logo.`, the line between memory and consequence begins to disappear. `Fade out.`
+That question is the foundation of the system I, Jenson Searle, have been building -- a system where saving and loading aren't external tools for player convenience, but laws of physics. In this system, the timeline isn't a straight line. It's a web woven out of your revisions. Each save stitches a new thread into that fabric.
+
+`A single thread extends from the final letter. Camera zooms in along the thread, letting the title drift out of frame.`
+
+To understand why this matters, we need to look underneath.
+
+`Three node-clusters appear along the growing thread.`
+
+Most save systems flatten time. They take the entire world -- the player, the state of quests, variables scattered across the map --
+
+`A player character, a quest log, and bits of the environment appear, shrinking until they're absorbed into the final node.`
+
+-- and serialize it into a snapshot. When you load, that snapshot overwrites the present. It's efficient, reliable, perfectly usable for most games... and a total amnesia event for the world.
+
+`The two earlier nodes fade out cleanly.`
+
+`The faded nodes reappear.`
+
+`Camera rotates, revealing a much larger 3D network of nodes hidden behind them.`
+
+This system works differently. It records not only how the world *is*, but *how it became that way.*
+
+`Edges and nodes begin to glow, starting from an unseen root.`
+
+Every save becomes a node in a branching structure -- a graph of cause and consequence.
+
+`A wave of pulses travels through the graph.`
+
+It captures what led to the moment, and what you chose to undo.
+
+`Camera zooms into a dense subgraph.`
+
+Now the world can ask:
+- "How many times has this moment been visited?"
+- "Which paths converge on the same decision?"
+- "What keeps pulling the player back to this branch?"
+
+`Threads sprout and split as the graph grows, forming new nodes.`
+
+`One node is highlighted.`
+
+`A small counter appears: "3 visits".`
+
+For designers, this opens up a layer of interactivity that didn't exist before. You can query not just the state, but the player's intent.
+
+`The word "Betrayal?" appears under the counter.`
+
+Maybe an NPC starts to notice you always return to them before something goes wrong.
+
+`Another thread connects to a puzzle node. "Puzzle Changed!" appears.`
+
+Maybe a puzzle restructures itself because you've solved it twice already.
+
+`Saturation drains from the graph as the screen fades to black.`
+
+Maybe the timeline itself starts to strain under too many revisions.
+
+`Fade in on a single node.`
+
+`Label: "Current Save". A new child node sprouts from it. The label transfers to the new node.`
+
+Technically, it works because every save produces a *new* node -- never a replacement. Nodes carry metadata: their parent, their time of creation, even whether the save was created quietly by the system.
+
+`The root node lights up. The player loads an older save. A new child node appears, linking to both prior nodes, along with the label moving to this new third node.`
+
+The result is a causal map of the player's journey -- a record of how they think. Designers can query this graph:
+- "How many times has this object been restored?"
+- "Which saves share this piece of state?"
+
+`A wide view reveals a sprawling graph with multiple converging and diverging threads.`
+
+The innovation isn't persistence. It's context.
+
+`Zoom into a leaf node. Gameplay footage fills the node. Continue zoom until the footage fully replaces the view.`
+
+For players, the effect is subtle but meaningful. Saving stops being a utility function and becomes a choice the world can react to. Instead of the world resetting politely around you, the game begins to acknowledge your habits. If you always reload before a bad outcome, the world starts to treat that pattern as part of who you are.
+
+In the prototype, this takes the form of the Gallery: a physical space where each save manifests as a painting. Re-entering a painting means re-entering that moment, and the world acknowledges it.
+
+Paintings decay over resets. Dialogue shifts. Systems detect patterns. Puzzles begin to depend on your personal history with them.
+
+The world doesn't let you rewrite history, but it remembers that you tried.
+
+`Zoom back out until the gameplay footage sits frame inside its node. That frame dissolves. The camera continues pulling back.`
+
+Most save systems are invisible. This one is meant to be seen -- by the player, and by the world.
+
+And when you step into a world that remembers you, every choice becomes a mark the game carries forward. It's a way of letting players -- and designers -- explore stories that can only exist when memory itself becomes part of play.
+
+If *every* action you take becomes part of the story...
+
+`Zoom out to reveal the graph has arranged itself into the shape of the project logo.`
+
+... the line between memory and consequence starts to blur.
+
+`Fade out to black.`
