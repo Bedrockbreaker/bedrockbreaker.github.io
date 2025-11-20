@@ -15,6 +15,7 @@ export function BoardsGAM() {
 	return <>
 		<Text variant="h1" className="mx-auto text-center" t="boards.gam.header"/>
 		<Divider/>
+		<Link href="https://youtu.be/y30bcDMBObo">Boards Presentation Video</Link>
 		<OL className="marker:text-2xl marker:font-semibold marker:tracking-tight">
 			<div className="border-l-2 border-tag-1-bg pl-8">
 				<LI>

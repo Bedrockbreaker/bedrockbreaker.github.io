@@ -1,5 +1,6 @@
 import { Divider } from "~/Components/Divider";
 import { HoverTilt } from "~/Components/HoverTilt";
+import { Link } from "~/Components/Link";
 import { LI, OL } from "~/Components/List";
 import { ProjectCard } from "~/Components/ProjectCard";
 import { Text } from "~/Components/Text";
@@ -10,6 +11,7 @@ export function BoardsGPE() {
 	return <>
 		<Text variant="h1" className="mx-auto text-center" t="boards.gpe.header"/>
 		<Divider/>
+		<Link href="https://youtu.be/9DUSKLievDU">Boards Presentation Video</Link>
 		<OL className="marker:text-2xl marker:font-semibold marker:tracking-tight">
 			<div className="border-l-2 border-tag-1-bg pl-8">
 				<LI>
