@@ -17,6 +17,7 @@ import Placeholder_ThemeDark_en_US from "~/Assets/Projects/Placeholder_ThemeDark
 import Placeholder_ThemeLight_en_US from "~/Assets/Projects/Placeholder_ThemeLight_en-US.png";
 import Placeholder_ThemeDark_ja_JP from "~/Assets/Projects/Placeholder_ThemeDark_ja-JP.png";
 import Placeholder_ThemeLight_ja_JP from "~/Assets/Projects/Placeholder_ThemeLight_ja-JP.png";
+import Pnoq from "~/Assets/Projects/Pnoq.png";
 import Pushr4k from "~/Assets/Projects/Pushr4k.png";
 import SilentNightDeadlyNight from "~/Assets/Projects/SilentNightDeadlyNight.png";
 import TankGame from "~/Assets/Projects/TankGame.png";
@@ -28,12 +29,12 @@ import Yggdrasil_ThemeLight from "~/Assets/Projects/Yggdrasil_ThemeLight.png";
 function NoImage() {
 	return i18n.language === "ja-JP"
 		? <ThemedImage
-			sources={{light: Placeholder_ThemeLight_ja_JP, dark: Placeholder_ThemeDark_ja_JP}}
+			sources={{ light: Placeholder_ThemeLight_ja_JP, dark: Placeholder_ThemeDark_ja_JP }}
 			alt={i18n.t("component.project-card.no-image-alt")}
 			className="rounded-md"
 		/>
 		: <ThemedImage
-			sources={{light: Placeholder_ThemeLight_en_US, dark: Placeholder_ThemeDark_en_US}}
+			sources={{ light: Placeholder_ThemeLight_en_US, dark: Placeholder_ThemeDark_en_US }}
 			alt={i18n.t("component.project-card.no-image-alt")}
 			className="rounded-md"
 		/>;
@@ -46,8 +47,8 @@ export const Projects = {
 			{i18n.t("project.test.description")}
 		</Text>,
 		image: NoImage,
-		homepage: {url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"},
-		source: {url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", icon: "external"},
+		homepage: { url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
+		source: { url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", icon: "external" },
 		tags: AllTags
 	}),
 	yggdrasil: new Project({
@@ -56,11 +57,11 @@ export const Projects = {
 			{i18n.t("project.yggdrasil.description")}
 		</Text>,
 		image: () => <ThemedImage
-			sources={{light: Yggdrasil_ThemeLight, dark: Yggdrasil_ThemeDark}}
+			sources={{ light: Yggdrasil_ThemeLight, dark: Yggdrasil_ThemeDark }}
 			alt={i18n.t("project.yggdrasil.img-alt")}
 			className="rounded-md"
 		/>,
-		source: {url: "https://github.com/bedrockbreaker/Yggdrasil-Chess-Engine"},
+		source: { url: "https://github.com/bedrockbreaker/Yggdrasil-Chess-Engine" },
 		tags: [
 			"core-mechanics",
 			"cross-mod-compatibility",
@@ -88,8 +89,8 @@ export const Projects = {
 			alt={i18n.t("project.portfolio.img-alt")}
 			className="rounded-md"
 		/>,
-		homepage: {url: "https://bedrockbreaker.github.io", icon: "personal-website"},
-		source: {url: "https://github.com/Bedrockbreaker/bedrockbreaker.github.io"},
+		homepage: { url: "https://bedrockbreaker.github.io", icon: "personal-website" },
+		source: { url: "https://github.com/Bedrockbreaker/bedrockbreaker.github.io" },
 		tags: [
 			"data-driven-design",
 			"accessibility-design",
@@ -116,7 +117,7 @@ export const Projects = {
 			className="rounded-md"
 		/>,
 		hasDetails: true,
-		homepage: {url: "https://bedrockbreaker.itch.io/ganymede", icon: "itchio"},
+		homepage: { url: "https://bedrockbreaker.itch.io/ganymede", icon: "itchio" },
 		tags: [
 			"combat-design",
 			"ai-behavior",
@@ -144,8 +145,8 @@ export const Projects = {
 			className="rounded-md"
 		/>,
 		// hasDetails: true,
-		homepage: {url: "https://www.curseforge.com/minecraft/mc-mods/graduated-cylinders", icon: "curseforge"},
-		source: {url: "https://github.com/bedrockbreaker/Graduated-Cylinders"},
+		homepage: { url: "https://www.curseforge.com/minecraft/mc-mods/graduated-cylinders", icon: "curseforge" },
+		source: { url: "https://github.com/bedrockbreaker/Graduated-Cylinders" },
 		tags: [
 			"ux-interaction-design",
 			"cross-mod-compatibility",
@@ -166,7 +167,7 @@ export const Projects = {
 			{i18n.t("project.tcresearchsolver.description")}
 		</Text>,
 		image: NoImage,
-		source: {url: "https://github.com/bedrockbreaker/TCResearchSolver"},
+		source: { url: "https://github.com/bedrockbreaker/TCResearchSolver" },
 		tags: [
 			"pathfinding",
 			"serialization",
@@ -191,7 +192,7 @@ export const Projects = {
 			className="rounded-md"
 		/>,
 		// hasDetails: true,
-		source: {url: "https://github.com/bedrockbreaker/unobot"},
+		source: { url: "https://github.com/bedrockbreaker/unobot" },
 		tags: [
 			"multiplayer-logic",
 			"rendering-pipeline",
@@ -237,7 +238,7 @@ export const Projects = {
 			alt={i18n.t("project.tankgame.img-alt")}
 			className="rounded-md"
 		/>,
-		source: {url: "https://github.com/bedrockbreaker/TankGame"},
+		source: { url: "https://github.com/bedrockbreaker/TankGame" },
 		tags: [
 			"core-mechanics",
 			"ai-behavior",
@@ -259,8 +260,8 @@ export const Projects = {
 			{i18n.t("project.partypooper.description")}
 		</Text>,
 		image: NoImage,
-		homepage: {url: "https://github.com/bedrockbreaker/PartyPooper/releases/latest", icon: "github"},
-		source: {url: "https://github.com/bedrockbreaker/PartyPooper"},
+		homepage: { url: "https://github.com/bedrockbreaker/PartyPooper/releases/latest", icon: "github" },
+		source: { url: "https://github.com/bedrockbreaker/PartyPooper" },
 		tags: [
 			"modding-tools",
 			"asset-pipelines",
@@ -286,7 +287,7 @@ export const Projects = {
 			alt={i18n.t("project.pushr4k.img-alt")}
 			className="rounded-md"
 		/>,
-		homepage: {url: "https://bedrockbreaker.itch.io/pushr4k", icon: "itchio"},
+		homepage: { url: "https://bedrockbreaker.itch.io/pushr4k", icon: "itchio" },
 		tags: [
 			"input-systems",
 			"data-driven-design",
@@ -300,7 +301,8 @@ export const Projects = {
 			"programmer",
 			"designer",
 			"artist"
-		]}),
+		]
+	}),
 	quiethours: new Project({
 		title: i18n.t("project.quiethours.title"),
 		description: () => <Text variant="muted">
@@ -330,7 +332,7 @@ export const Projects = {
 			className="rounded-md"
 		/>,
 		// hasDetails: true,
-		source: {url: "https://github.com/bedrockbreaker/Memento"},
+		source: { url: "https://github.com/bedrockbreaker/Memento" },
 		tags: [
 			"core-mechanics",
 			"devtools",
@@ -356,7 +358,7 @@ export const Projects = {
 			alt={i18n.t("project.tumblyroos.img-alt")}
 			className="rounded-md"
 		/>,
-		homepage: {url: "https://www.tongueincheek.dev/", icon: "external"},
+		homepage: { url: "https://www.tongueincheek.dev/", icon: "external" },
 		tags: [
 			"core-mechanics",
 			"ai-behavior",
@@ -382,7 +384,7 @@ export const Projects = {
 			alt={i18n.t("project.katalyst.img-alt")}
 			className="rounded-md"
 		/>,
-		homepage: {url: "https://bsky.app/profile/project-katalyst.bsky.social", icon: "bluesky"},
+		homepage: { url: "https://bsky.app/profile/project-katalyst.bsky.social", icon: "bluesky" },
 		tags: [
 			"multiplayer-logic",
 			"devtools",
@@ -456,7 +458,7 @@ export const Projects = {
 			alt={i18n.t("project.oldmanwhiskers.img-alt")}
 			className="rounded-md"
 		/>,
-		homepage: {url: "https://bedrockbreaker.itch.io/old-man-whiskers", icon: "itchio"},
+		homepage: { url: "https://bedrockbreaker.itch.io/old-man-whiskers", icon: "itchio" },
 		tags: [
 			"animation-systems",
 			"input-systems",
@@ -477,12 +479,12 @@ export const Projects = {
 			{i18n.t("project.gachagoobers.description")}
 		</Text>,
 		image: () => <ThemedImage
-			sources={{light: GachaGoobers_ThemeLight, dark: GachaGoobers_ThemeDark}}
+			sources={{ light: GachaGoobers_ThemeLight, dark: GachaGoobers_ThemeDark }}
 			alt={i18n.t("project.gachagoobers.img-alt")}
 			className="rounded-md"
 		/>,
-		homepage: {url: "https://bedrockbreaker.itch.io/gacha-goobers", icon: "itchio"},
-		source: {url: "https://github.com/Bedrockbreaker/GachaMall"},
+		homepage: { url: "https://bedrockbreaker.itch.io/gacha-goobers", icon: "itchio" },
+		source: { url: "https://github.com/Bedrockbreaker/GachaMall" },
 		tags: [
 			"ai-behavior",
 			"level-scripting",
@@ -506,8 +508,8 @@ export const Projects = {
 			alt={i18n.t("project.brickbybrick.img-alt")}
 			className="rounded-md"
 		/>,
-		homepage: {url: "https://bedrockbreaker.itch.io/brick-by-brick", icon: "itchio"},
-		source: {url: "https://github.com/Tongue-N-Cheek/BrickByBrick"},
+		homepage: { url: "https://bedrockbreaker.itch.io/brick-by-brick", icon: "itchio" },
+		source: { url: "https://github.com/Tongue-N-Cheek/BrickByBrick" },
 		tags: [
 			"data-driven-design",
 			"narrative-systems",
@@ -531,7 +533,7 @@ export const Projects = {
 			alt={i18n.t("project.johnlemon.img-alt")}
 			className="rounded-md"
 		/>,
-		source: {url: "https://github.com/Bedrockbreaker/ArizonaJam2025"},
+		source: { url: "https://github.com/Bedrockbreaker/ArizonaJam2025" },
 		tags: [
 			"core-mechanics",
 			"level-scripting",
@@ -539,6 +541,30 @@ export const Projects = {
 			"game",
 			"pc",
 			"unity",
+			"csharp",
+			"48-hours",
+			"5-14-team-members",
+			"programmer"
+		]
+	}),
+	pnoq: new Project({
+		title: i18n.t("project.pnoq.title"),
+		description: () => <Text variant="muted">
+			{i18n.t("project.pnoq.description")}
+		</Text>,
+		image: () => <img
+			src={Pnoq}
+			alt={i18n.t("project.pnoq.img-alt")}
+			className="rounded-md"
+		/>,
+		homepage: { url: "https://bayleeblu.itch.io/pnoq", icon: "itchio" },
+		source: { url: "https://github.com/Bedrockbreaker/CRTGame" },
+		tags: [
+			"core-mechanics",
+			"level-scripting",
+			"game",
+			"pc",
+			"godot",
 			"csharp",
 			"48-hours",
 			"5-14-team-members",

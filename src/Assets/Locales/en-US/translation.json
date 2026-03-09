@@ -25,9 +25,9 @@
 		"icons": {
 			"bluesky-alt": "Bluesky Logo",
 			"curseforge-alt": "CurseForge Logo",
-			"github-alt":"GitHub Logo",
+			"github-alt": "GitHub Logo",
 			"itchio-alt": "itch.io Logo",
-			"linkedin-alt":"LinkedIn Logo",
+			"linkedin-alt": "LinkedIn Logo",
 			"yggdrasil-alt": "Yggdrasil Logo"
 		}
 	},
@@ -363,6 +363,11 @@
 			"title": "John Lemon's Ghastly Hassle",
 			"description": "A horror puzzle game made for the 2025 Arizona Game Challenge between several universities with a team of 5. Implemented smooth camera controls, multiple mix-and-matchable puzzle elements, and UI.",
 			"img-alt": "Ivan (John Lemon's friend) creeping through a hallway."
+		},
+		"pnoq": {
+			"title": "pnoq",
+			"description": "A puzzle game with Pong-like mechanics. Programmed the color hiding and combining mechanics.",
+			"img-alt": "The word \"pnoq\" with a heavy CRT effect applied."
 		}
 	}
 }
