@@ -57,13 +57,13 @@ export function About() {
 		<div className="flex flex-row flex-wrap gap-6 justify-center -mt-6">
 			<div className="flex flex-col md:max-xl:flex-row sm:max-xl:min-w-full xl:min-w-max text-center pt-6 justify-center">
 				<div className="my-auto">
-					<Text variant="h1" t="about.title"/>
-					<Text variant="h3" t="about.subtitle"/>
+					<Text variant="h1" t="about.title" />
+					<Text variant="h3" t="about.subtitle" />
 				</div>
 				<div className="flex justify-center mt-6">
 					<HoverTilt>
 						<ThemedImage
-							sources={{light: HomepageLogo_ThemeLight, dark: HomepageLogo_ThemeDark}}
+							sources={{ light: HomepageLogo_ThemeLight, dark: HomepageLogo_ThemeDark }}
 							alt={t("about.hero-alt")}
 							width={256}
 							height={256}
@@ -72,37 +72,37 @@ export function About() {
 				</div>
 			</div>
 			<Carousel
-				opts={{loop: true}}
+				opts={{ loop: true }}
 				setApi={setCarouselApi}
 				className="grow flex flex-col max-w-full big:max-w-[832px] mt-6"
 			>
 				<CarouselContent>
-					<CarouselItem><ProjectCard project="ganymede"/></CarouselItem>
-					<CarouselItem><ProjectCard project="graduatedcylinders"/></CarouselItem>
-					<CarouselItem><ProjectCard project="katalyst"/></CarouselItem>
-					<CarouselItem><ProjectCard project="memento"/></CarouselItem>
-					<CarouselItem><ProjectCard project="cardbot"/></CarouselItem>
+					<CarouselItem><ProjectCard project="pnoq" /></CarouselItem>
+					<CarouselItem><ProjectCard project="ganymede" /></CarouselItem>
+					<CarouselItem><ProjectCard project="graduatedcylinders" /></CarouselItem>
+					<CarouselItem><ProjectCard project="katalyst" /></CarouselItem>
+					<CarouselItem><ProjectCard project="cardbot" /></CarouselItem>
 				</CarouselContent>
 				<div className="flex flex-row mt-1 gap-1 items-center">
-					<CarouselPrevious/>
-					<CarouselNext/>
-					<CarouselPause/>
-					<div className="grow"/>
+					<CarouselPrevious />
+					<CarouselNext />
+					<CarouselPause />
+					<div className="grow" />
 					{carouselApi?.scrollSnapList().map((_, index) => {
-						return <CarouselDot key={index} snapIndex={index}/>;
+						return <CarouselDot key={index} snapIndex={index} />;
 					})}
 				</div>
 			</Carousel>
 		</div>
-		<Text variant="lead" className="text-center" t="about.quote"/>
-		<Text variant="muted" className="text-right mr-6 mt-2" t="about.quote-author"/>
-		<Divider/>
+		<Text variant="lead" className="text-center" t="about.quote" />
+		<Text variant="muted" className="text-right mr-6 mt-2" t="about.quote-author" />
+		<Divider />
 		<article className="mt-6">
-			<Text variant="h4" className="-mb-6" t="about.about-me.header"/>
-			<Text t="about.about-me.paragraphs.0"/>
-			<Text t="about.about-me.paragraphs.1"/>
-			<Text variant="h4" className="mt-12 -mb-6" t="about.current-projects.header"/>
-			<Text t="about.current-projects.paragraphs.0"/>
+			<Text variant="h4" className="-mb-6" t="about.about-me.header" />
+			<Text t="about.about-me.paragraphs.0" />
+			<Text t="about.about-me.paragraphs.1" />
+			<Text variant="h4" className="mt-12 -mb-6" t="about.current-projects.header" />
+			<Text t="about.current-projects.paragraphs.0" />
 			<UL>
 				<LI>{t("about.current-projects.paragraphs.1")}</LI>
 				<LI>
@@ -116,17 +116,17 @@ export function About() {
 					</Trans>
 				</LI>
 			</UL>
-			<Text variant="h4" className="mt-12 -mb-6" t="about.working-in-japan.header"/>
-			<Text t="about.working-in-japan.paragraphs.0"/>
-			<Text t="about.working-in-japan.paragraphs.1"/>
-			<Text t="about.working-in-japan.paragraphs.2"/>
+			<Text variant="h4" className="mt-12 -mb-6" t="about.working-in-japan.header" />
+			<Text t="about.working-in-japan.paragraphs.0" />
+			<Text t="about.working-in-japan.paragraphs.1" />
+			<Text t="about.working-in-japan.paragraphs.2" />
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center mt-12">
 				<Card
 					borderStyle="1"
 					className="motion-safe:hover:-translate-y-1 motion-safe:focus-within:-translate-y-1"
 				>
-					<Text variant="h4" t="about.cards.0.header"/>
-					<Text t="about.cards.0.description"/>
+					<Text variant="h4" t="about.cards.0.header" />
+					<Text t="about.cards.0.description" />
 					<Button kind="outline" asChild className="mt-6">
 						<Link href="/portfolio">{t("about.cards.0.call-to-action")}</Link>
 					</Button>
@@ -135,8 +135,8 @@ export function About() {
 					borderStyle="5"
 					className="motion-safe:hover:-translate-y-1 motion-safe:focus-within:-translate-y-1"
 				>
-					<Text variant="h4" t="about.cards.1.header"/>
-					<Text t="about.cards.1.description"/>
+					<Text variant="h4" t="about.cards.1.header" />
+					<Text t="about.cards.1.description" />
 					<Button kind="outline" asChild className="mt-6">
 						<Link href="/resume">{t("about.cards.1.call-to-action")}</Link>
 					</Button>
@@ -148,8 +148,8 @@ export function About() {
 						+ "motion-safe:hover:-translate-y-1 motion-safe:focus-within:-translate-y-1"
 					}
 				>
-					<Text variant="h4" t="about.cards.2.header"/>
-					<Text t="about.cards.2.description"/>
+					<Text variant="h4" t="about.cards.2.header" />
+					<Text t="about.cards.2.description" />
 					<Button kind="outline" asChild className="mt-6">
 						<Link href="mailto:searlejenson@gmail.com" hasExternalIcon={false}>
 							{t("about.cards.2.call-to-action")}

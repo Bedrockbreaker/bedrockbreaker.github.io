@@ -17,13 +17,11 @@ export function Portfolio() {
 
 	// Doesn't really need to be a state variable, but ¯\_(ツ)_/¯
 	const [projects] = useState<(keyof typeof Projects)[]>([
+		"pnoq",
 		"ganymede",
 		"graduatedcylinders",
 		"katalyst",
-		"memento",
-		"cardbot",
 		"pushr4k",
-		"oldmanwhiskers",
 		"portfolio"
 	]);
 
@@ -83,48 +81,48 @@ export function Portfolio() {
 	}, [projects, activeTags]);
 
 	return <div className="flex flex-col p-6 max-w-7xl mx-auto grow overflow-x-hidden">
-		<Text variant="h1" className="mx-auto text-center" t="portfolio.header"/>
+		<Text variant="h1" className="mx-auto text-center" t="portfolio.header" />
 		<Text variant="lead" className="mx-auto text-center">
 			{t("portfolio.subtitle")}
 		</Text>
-		<Divider/>
+		<Divider />
 		<div className="mt-6 bg-dark rounded p-6">
 			<div className="flex flex-row gap-1">
-			<Text variant="large" className="inline" t="portfolio.filter-header"/>
-			<div className="grow"/>
-			<Button
-				kind="outline"
-				size="icon"
-				aria-label={
-					matchMode === "all"
-						? t("portfolio.tag-match-any")
-						: t("portfolio.tag-match-all")
-				}
-				onClick={() => {
-					if (matchMode === "all") {
-						searchParams.delete("mode");
-					} else {
-						searchParams.set("mode", "all");
-					}
-					setSearchParams(searchParams);
-				}}
-			>
-				{matchMode === "all" ? <ListMinus/> : <ListPlus/>}
-			</Button>
-			{activeTags.size > 0
-				? <Button
+				<Text variant="large" className="inline" t="portfolio.filter-header" />
+				<div className="grow" />
+				<Button
 					kind="outline"
 					size="icon"
-					aria-label={t("portfolio.tags-clear")}
+					aria-label={
+						matchMode === "all"
+							? t("portfolio.tag-match-any")
+							: t("portfolio.tag-match-all")
+					}
 					onClick={() => {
-						searchParams.delete("tags");
+						if (matchMode === "all") {
+							searchParams.delete("mode");
+						} else {
+							searchParams.set("mode", "all");
+						}
 						setSearchParams(searchParams);
 					}}
 				>
-					<Trash2/>
+					{matchMode === "all" ? <ListMinus /> : <ListPlus />}
 				</Button>
-				: undefined
-			}
+				{activeTags.size > 0
+					? <Button
+						kind="outline"
+						size="icon"
+						aria-label={t("portfolio.tags-clear")}
+						onClick={() => {
+							searchParams.delete("tags");
+							setSearchParams(searchParams);
+						}}
+					>
+						<Trash2 />
+					</Button>
+					: undefined
+				}
 			</div>
 			<div className="flex flex-wrap gap-1 mt-6">
 				{allUsedTags.map(tag => {
